@@ -1,0 +1,43 @@
+<?php
+if($this->pageCount){
+?>
+<!-- First page link -->
+<?php if (isset($this->previous)){ ?>
+   <a class="number" href="#" onclick="loadPage('<?php echo $this->first?>')">Trang đầu</a>
+<?php }?>
+
+<!-- ADD PREVIOUS BUTTON -->
+<?php
+if(isset($this->previous)){
+?>
+   <a class="number" href="#" onclick="loadPage('<?php echo $this->previous?>')">Trang trước</a>
+<?php }?>
+
+<!-- SHOW THE AVAILABLE PAGES -->
+<?php
+foreach($this->pagesInRange as $page){
+   if($page != $this->current){
+?>
+   <a class="number" href="#" onclick="loadPage('<?php echo $page?>')"><?php echo $page; ?></a>
+<?php
+   }else{
+?>
+   <a class="number current" href="#"><?php echo $this->current; ?></a>
+<?php
+   }
+}
+?>
+<!-- ADD NEXT BUTTON -->
+<?php
+if(isset($this->next)){
+?>
+	<a class="number" href="#" onclick="loadPage('<?php echo $this->next?>')">Trang sau</a>
+<?php } ?>
+
+<!-- Last page link -->
+<?php if (isset($this->next)){ ?>
+    <a class="number" href="#" onclick="loadPage('<?php echo $this->last?>')">Trang cuối</a>
+<?php }?>
+<?php
+}
+?>

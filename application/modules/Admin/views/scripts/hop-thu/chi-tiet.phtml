@@ -1,0 +1,46 @@
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+<div class="content-box-header">
+
+<h3><?php echo $this->translate('Hộp thư góp ý');?></h3>
+
+</div>
+<!-- End .content-box-header -->
+<div class="content-box-content">
+
+	<div class="tab-content default-tab" id="tab1">
+		<div class="info_gop_y">
+			<fieldset>
+			<table class="tbl_gop_y_info" align="center">
+				<tbody>
+					<tr>
+						<td class="title"><?php echo $this->translate('Loại')?></td>
+						<td class="content"><?php echo $this->gop_y->getLoai()->ten?></td>			
+					</tr>
+					<tr>
+						<td class="title"><?php echo $this->translate('Chủ đề')?></td>
+						<td class="content" style="color: red;font-weight: bold;"><?php echo $this->gop_y->ten?></td>			
+					</tr>
+					<tr>
+						<td class="title"><?php echo $this->translate('Mô tả')?></td>
+						<td class="content"><?php echo nl2br($this->gop_y->mo_ta)?></td>			
+					</tr>
+					<tr>
+						<td class="title"><?php echo $this->translate('Người gởi')?></td>
+						<td class="content"><?php echo $this->gop_y->getNguoiDung()->ten_dang_nhap?></td>			
+					</tr>
+					<tr>
+						<td class="title"><?php echo $this->translate('Ngày gởi')?></td>
+						<td class="content"><?php echo $this->gop_y->ngay_tao?></td>			
+					</tr>
+				</tbody>
+			</table>
+			</fieldset>
+		</div>
+		<?php echo $this->form?>
+	</div>
+</div>
+</div> <!-- End .content-box -->
+<script type="text/javascript">
+CKEDITOR.replace( 'ghi_chu', {'skin' : 'v2'} );
+</script>

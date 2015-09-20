@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<?php
+		$counter = (int) $this->layout()->counter;
+		$staticBaseUrl = $this->layout()->staticBaseUrl;
+		
+		$request = Zend_Controller_Front::getInstance()->getRequest();
+		$this->headTitle()
+		  ->setSeparator(' - ');
+		$pageTitleKey = 'pagetitle-' . $request->getModuleName() . '-' . $request->getActionName()
+			. '-' . $request->getControllerName();
+		$pageTitle = $this->translate($pageTitleKey);
+	  
+		// Make description and keywords
+		$description = '';
+		$keywords = '';
+		
+		$description .= ' ' .$this->layout()->siteinfo['description'];
+		$keywords = $this->layout()->siteinfo['keywords'];
+		
+		$this->headMeta()->appendName('description', trim($description));
+		$this->headMeta()->appendName('keywords', trim($keywords));
+
+		// Get body identity
+		if( isset($this->layout()->siteinfo['identity']) ) {
+		  $identity = $this->layout()->siteinfo['identity'];
+		} else {
+		  $identity = $request->getModuleName() . '-' .
+			  $request->getControllerName() . '-' .
+			  $request->getActionName();
+		}
+	?>
+	
+	<?php echo $this->render('includes/js_css.phtml') ?>
+</head>
+<body id="global_page_<?php echo $identity ?>">
+	<div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
+		
+		<?php echo $this->render('includes/sidebar.phtml') ?> <!-- End #sidebar -->
+		
+		<div id="main-content"> <!-- Main Content Section with everything -->
+			
+			<?php echo $this->render('includes/noscript.phtml') ?>
+			
+			<?php echo $this->layout()->content; ?>
+			
+			<?php echo $this->render('includes/footer.phtml') ?><!-- End #footer -->
+			
+		</div> <!-- End #main-content -->
+	</div>
+</body>
+</html>

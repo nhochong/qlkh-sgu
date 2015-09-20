@@ -1,0 +1,37 @@
+<?php $this->titleBlock("Bài Báo Khoa Học");?>
+<style type="text/css">
+	
+</style>
+<div class="list-baibao">
+	<?php 
+		if ($this->paginator->getTotalItemCount() > 0){
+			foreach ($this->paginator as $bai_bao)
+			{
+				$giangViens = $bai_bao->getGiangViens();
+	?>
+		<div class="baibao">
+			<div class="ten_san_pham"><a href="<?php echo $this->url(array('controller' => 'bai-bao', 'action' => 'chi-tiet' , 'id' => $bai_bao->bai_bao_id),NULL,true)?>" class="ten"><?php echo $bai_bao->ten?></a></div>
+			<div class="info">
+				<div class="thong_tin">
+					<span style="text-transform: capitalize;"><?php echo $bai_bao->thong_tin?></span>
+					-
+					<span><?php echo $this->translate('Đợt: ') . $bai_bao->dot?></span>
+					-
+					<span><?php echo $bai_bao->thang . '/' . $bai_bao->nam?></span>
+				</div>
+			</div>
+		</div>
+	<?php 
+			}
+		}else{
+	?>
+			<div id="updating">
+				<span><?php echo $this->translate('Đang cập nhật...');?></span>
+			</div>
+	<?php
+		}
+	?>	
+<div class="pagination">
+<?php echo $this->paginator?>
+</div>
+</div>

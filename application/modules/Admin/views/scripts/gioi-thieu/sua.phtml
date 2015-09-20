@@ -1,0 +1,38 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Bài Báo";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+
+<div class="content-box-header">
+
+<h3>Cập nhật bài báo</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<?php echo $this->form?>
+<script type="text/javascript">
+CKEDITOR.replace( 'mo_ta', {'skin' : 'v2'} );
+$(function() {
+	$( "#thoi_gian" ).datepicker({
+		showOn: "button",
+		changeYear: true,
+		changeMonth: true,
+		buttonImage: "<?php echo $baseURL . '/images/calendar.gif'?>",
+		buttonImageOnly: true,
+		altFormat: 'dd-mm-yy',
+		dateFormat: 'dd-mm-yy',
+		yearRange : '2005:2030'
+	});
+});
+</script>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->

@@ -1,0 +1,24 @@
+<?php $this->titleBlock("Sinh hoạt chuyên đề");?>
+<div class="browse_list">
+	<?php 
+		if ($this->paginator->getTotalItemCount() > 0){
+			foreach ($this->paginator as $sinh_hoat_chuyen_de)
+			{
+	?>
+		<div class="list_item">
+			<div class="item"><a href="<?php echo $this->url(array('controller' => 'sinh-hoat-chuyen-de', 'action' => 'chi-tiet' , 'id' => $sinh_hoat_chuyen_de->getIdentity()),NULL,true)?>" class="ten"><?php echo $sinh_hoat_chuyen_de->getTitle()?></a></div>
+		</div>
+	<?php 
+			}
+		}else{
+	?>
+			<div id="updating">
+				<span><?php echo $this->translate('Đang cập nhật...');?></span>
+			</div>
+	<?php
+		}
+	?>	
+<div class="pagination">
+<?php echo $this->paginator?>
+</div>
+</div>

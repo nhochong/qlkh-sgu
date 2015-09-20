@@ -1,0 +1,6180 @@
+KHCN CMS - 2013-01-15T00:00:04+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/closelabel`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:00:04+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/loading`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:00:07+07:00
+DEBUG [7]: Exception
+Message: Could not find row 0
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 381
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:00:07+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:01:37+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:01:42+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/closelabel`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:01:42+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:01:42+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/loading`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:01:45+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/closelabel`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:01:45+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/loading`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:01:46+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:01:46+07:00
+DEBUG [7]: Exception
+Message: Could not find row 0
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 381
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:06+07:00
+DEBUG [7]: Exception
+Message: Could not find row 0
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 381
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:06+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:08+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:11+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/loading`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:11+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:11+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/closelabel`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:13+07:00
+DEBUG [7]: Exception
+Message: Could not find row 0
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 381
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:13+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:18+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:23+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:23+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/closelabel`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:23+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/loading`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:42+07:00
+DEBUG [7]: Exception
+Message: Could not find row 0
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 381
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:03:42+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:04:23+07:00
+DEBUG [7]: Exception
+Message: Could not find row 0
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 381
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:04:23+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:04:34+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:04:34+07:00
+DEBUG [7]: Exception
+Message: Could not find row 0
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 381
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:04:48+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:04:51+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:04:51+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/closelabel`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:04:51+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/loading`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:04:53+07:00
+DEBUG [7]: Exception
+Message: Could not find row 0
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 381
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:04:53+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:16:56+07:00
+DEBUG [7]: Exception
+Message: Could not find row 0
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 381
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:16:56+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:21:01+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:21:06+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/loading`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:21:06+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T00:21:07+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/closelabel`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T20:21:23+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/closelabel`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T20:21:23+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T20:21:23+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/loading`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T20:36:37+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T20:38:01+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/loading`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T20:38:02+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:closeImage' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T20:38:02+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`/`.``.`/`.``.`/images/closelabel`.`gif` ASC' at line 3
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalGiangVien.php
+-- Line: 187
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 198
+-- Function: loc
+-- Class: Default_Model_DAL_DalGiangVien
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 47
+-- Function: loc
+-- Class: Default_Model_BLL_BizGiangVien
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_GiangVienController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T20:38:09+07:00
+DEBUG [7]: Exception
+Message: Could not find row 0
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 381
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T20:38:09+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:41:06+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (application)
+Stack trace: 4
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:41:23+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (application)
+Stack trace: 4
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:44:57+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:48:02+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:48:12+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:55:03+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:55:06+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:56:09+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:56:42+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:57:14+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:59:07+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:59:10+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:59:12+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:59:18+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T21:59:25+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:00:46+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:06:56+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:07:03+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:07:44+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:07:47+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:19:44+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:19:44+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (21000) 
+Message: SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalHDD.php
+-- Line: 81
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizHDD.php
+-- Line: 130
+-- Function: loc
+-- Class: Default_Model_DAL_DalHDD
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\HoiDongController.php
+-- Line: 55
+-- Function: loc
+-- Class: Default_Model_BLL_BizHDD
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: danhSachHddAction
+-- Class: Admin_HoiDongController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:19:46+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (21000) 
+Message: SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalHDD.php
+-- Line: 81
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizHDD.php
+-- Line: 130
+-- Function: loc
+-- Class: Default_Model_DAL_DalHDD
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\HoiDongController.php
+-- Line: 55
+-- Function: loc
+-- Class: Default_Model_BLL_BizHDD
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: danhSachHddAction
+-- Class: Admin_HoiDongController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:19:48+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (21000) 
+Message: SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalHDD.php
+-- Line: 81
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizHDD.php
+-- Line: 130
+-- Function: loc
+-- Class: Default_Model_DAL_DalHDD
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\HoiDongController.php
+-- Line: 55
+-- Function: loc
+-- Class: Default_Model_BLL_BizHDD
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: danhSachHddAction
+-- Class: Admin_HoiDongController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:46:27+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:46:30+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:46:32+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:46:45+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:46:53+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "resetSessionHDD" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\HoiDongController.php
+-- Line: 521
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\HoiDongController.php
+-- Line: 521
+-- Function: resetSessionHDD
+-- Class: Admin_HoiDongController
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaHddAction
+-- Class: Admin_HoiDongController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:48:36+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:50:18+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "resetHdd" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:51:43+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:51:49+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:53:56+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:54:06+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:54:12+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:54:12+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:54:15+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:54:19+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:56:21+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T22:59:47+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:04:24+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:04:39+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:04:40+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:06:06+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:images' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:06:47+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:06:48+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:07:41+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:07:42+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:08:48+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:08:48+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:09:25+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:09:26+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:11:05+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:11:05+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:11:18+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:11:18+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:11:58+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:11:58+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:12:13+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:12:13+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:31:36+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:39:41+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:40:45+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:41:48+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:46:13+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:47:00+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-15T23:48:56+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+

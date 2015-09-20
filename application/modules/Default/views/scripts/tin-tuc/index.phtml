@@ -1,0 +1,37 @@
+<?php $this->titleBlock("Sự kiện nổi bật");?>
+<div class="list-news">
+<table class="blog" cellpadding="0" cellspacing="0">
+	<tbody>
+	<?php 
+		foreach ($this->paginator as $tin_tuc)
+		{
+	?>
+			<tr>
+				<td valign="top">
+				<div class="news">
+				<span class="tieude <?php echo $tin_tuc->noi_bat? 'featured' : ''?>">
+					<a href="<?php echo $this->url(array('controller' => 'tin-tuc', 'action' => 'chi-tiet' , 'id' => $tin_tuc['id']),NULL,true)?>"><?php echo $tin_tuc['tieu_de']?></a>
+					<?php 
+					if($tin_tuc->isNew(true)){
+					?>	
+						<img class="new" alt="new" src="<?php echo $this->baseUrl() . '/images/news.gif'?>">
+					<?php }?>
+				</span>
+				<img class="hinh" src="<?php echo $tin_tuc->getPhotoUrl()?>" />
+				<div class="tomtat">
+					<b><?php echo date('d/m/Y', strtotime($tin_tuc['ngay_tao']))?></b> - <?php echo $tin_tuc['mo_ta_tom_tat']?>
+				</div>
+				<a class="chitiet" href="<?php echo $this->url(array('controller' => 'tin-tuc', 'action' => 'chi-tiet' , 'id' => $tin_tuc['id']),NULL,true)?>">Chi tiết...</a>
+				<div class="cleared"></div>
+				</div>
+				</td>
+			</tr>
+	<?php 
+		}
+	?>
+	</tbody>
+</table>
+<div class="pagination">
+<?php echo $this->paginator?>
+</div>
+</div>

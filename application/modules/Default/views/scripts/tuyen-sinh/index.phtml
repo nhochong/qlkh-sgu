@@ -1,0 +1,17 @@
+<?php $this->titleBlock("Tuyển sinh SĐH");?>
+<?php if($this->tss){?>
+<ul class="rules">
+	<?php 
+		foreach ($this->tss as $tuyen_sinh)
+		{
+	?>
+			<li><a href="<?php echo $this->url(array('controller' => 'tuyen-sinh','action' => 'chi-tiet','id' => $tuyen_sinh['id']),null,true); ?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder2.gif'?>" /> <?php echo $tuyen_sinh['ten']?></a></li>
+	<?php 
+		}
+	?>
+</ul>
+<?php
+	}else{
+?>
+		<p>Đang cập nhật ...</p>
+<?php }?>

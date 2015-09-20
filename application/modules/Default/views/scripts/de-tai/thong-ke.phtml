@@ -1,0 +1,86 @@
+<?php $this->titleBlock("Thống kê số lượng đề tài");?>
+<p>Đang cập nhật ...</p>
+<?php return; ?>
+
+<script>
+$(function() {
+	var select = <?php echo $this->tab?>;
+	var $tabs = $('#tabs').tabs();
+	$( "#tabs" ).tabs( "option", "selected", select );// switch tab
+});
+</script>
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1"><?php echo $this->translate('Theo năm')?></a></li>
+		<li><a href="#tabs-2"><?php echo $this->translate('Theo đơn vị')?></a></li>
+	</ul>
+	<div id="tabs-1">
+		<?php echo $this->form_nam;?>
+	</div>
+	<div id="tabs-2">
+		<?php echo $this->form_don_vi;?>
+	</div>
+</div>
+<div id="image_ajax" align="center" style="width: 100px;height: 20px;margin-left: 300px;margin-top: 5px"></div>
+<div id="thongke_dt" style="margin-top: 5px;"><!-- Start_Module_741 -->
+
+</div>
+<script type="text/javascript">
+$(document).ready(function(){ 	
+	$("#year_submit").click(function(){
+		var from = $("#year_from").val();
+		var to = $("#year_to").val();
+		var amount = $("#year_amount").val();
+		if(to < from){
+			alert("<?php echo $this->translate('Lỗi. Năm được chọn không hợp lệ')?>");
+			return false;
+		}
+		$.ajax({
+			type: "POST",
+		 	url: "<?=$this->url(array('action' => 'tk-nam'));?>",
+		 	data: {'from' : from , 'to' : to, 'amount' : amount},
+		 	beforeSend : function() {
+		 		$("#result").replaceWith('');
+		 	    $('#image_ajax').css('background', 'url(../../public/images/ajax-loader.gif) no-repeat');
+		 	},
+		 	complete: function(){
+		 	    $('#image_ajax').css('background', 'none');
+		 	},
+		 	success: function(responce) {
+			 	$("#result").replaceWith('');
+		     	// Insert list
+		     	$("#thongke_dt").after(responce);
+		 	}
+		})	
+	});
+
+	$("#dept_submit").click(function(){
+		var from = $("#dept_from").val();
+		var to = $("#dept_to").val();
+		var ma_don_vi = $("#dept_don_vi").val();
+		var amount = $("#dept_amount").val();
+		if(to < from){
+			alert("<?php echo $this->translate('Lỗi. Năm được chọn không hợp lệ')?>");
+			return false;
+		}
+		$.ajax({
+			type: "POST",
+		 	url: "<?=$this->url(array('action' => 'tk-don-vi'));?>",
+		 	data: {'from' : from , 'to' : to, 'ma_don_vi' : ma_don_vi, 'amount' : amount},
+		 	beforeSend : function() {
+		 		$("#result").replaceWith('');
+		 	    $('#image_ajax').css('background', 'url(../../public/images/ajax-loader.gif) no-repeat');
+		 	},
+		 	complete: function(){
+		 	    $('#image_ajax').css('background', 'none');
+		 	},
+		 	success: function(responce) {
+			 	$("#result").replaceWith('');
+		     	// Insert list
+		     	$("#thongke_dt").after(responce);
+		 	}
+		})
+	}); 
+	
+});
+</script>

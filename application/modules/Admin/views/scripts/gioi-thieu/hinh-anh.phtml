@@ -1,0 +1,117 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Hình ảnh";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<script>
+	var currentOrder = '<?php echo $this->filterValues['order'] ?>';
+    var currentOrderDirection = '<?php echo $this->filterValues['direction'] ?>';
+    var changeOrder = function(order, default_direction)
+    {
+		var direction = '';
+		// Just change direction
+		if( order == currentOrder ) {
+			direction = currentOrderDirection == 'ASC' ? 'DESC' : 'ASC';
+		} else {
+			direction = default_direction;
+		}
+		window.location.href = '<?php echo $this->baseUrl()?>/admin/gioi-thieu/hinh-anh?order=' + order + '&direction=' + direction;
+    }
+	
+	function slideshow(hinh_anh_id){
+		var element = document.getElementById('slideshow_content_' + hinh_anh_id);
+		var checkbox = document.getElementById('slideshow_' + hinh_anh_id);
+		var status = 0;
+		
+		if(checkbox.checked==true) status = 1;
+		else status = 0;
+		var content = element.innerHTML;
+		element.innerHTML= "<img  src='<?php echo $this->baseUrl()?>/../application/modules/Default/externals/images/loading.gif'></img>";
+		
+		$.ajax({ 
+			type: "POST", 
+			url: "<?php echo $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'slideshow'))?>", 
+			data: {
+				'format' : 'json',
+				'hinh_anh_id' : hinh_anh_id,
+				'status' : status
+			},
+			success: function(data){
+				element.innerHTML = content;
+				checkbox = document.getElementById('slideshow_'+hinh_anh_id);
+				if( status == 1) checkbox.checked=true;
+				else checkbox.checked=false;
+			}
+		});
+    }
+</script>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách hình ảnh</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div class="danh_sach_hinh_anh">
+<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'xoas-ha'),null,true)?>" method="post" name="f2">
+<div class="clear"></div>
+<table class="tbl_hinhanh" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('deletes',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+			<th>Hình</th>
+			<th class="center"><a href="javascript:void(0);" onclick="javascript:changeOrder('slideshow', 'DESC');">Slideshow</a></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+				<?php echo $this->formButton('add','Thêm',array('onclick' => 'window.location.href="' . $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'them-ha'),null,true) . '"','class' => 'button'))?>
+			</div>
+			<div class="pagination"> 
+            	<?php echo $this->paginator?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->paginator as $hinh_anh) 
+    	{
+    ?>
+    		<tr>
+				<td><?php echo $this->formCheckbox('item[]',$hinh_anh->getIdentity(),null)?></td>
+				<td class="hinh_anh"><img src="<?php echo $hinh_anh->getPhotoUrl()?>" /></td>
+				<td class="center">
+					<div id='slideshow_content_<?php echo $hinh_anh->getIdentity(); ?>'>
+						<?php if($hinh_anh->slideshow): ?>
+							<input type="checkbox" id='slideshow_<?php echo $hinh_anh->getIdentity(); ?>'  onclick="slideshow(<?php echo $hinh_anh->getIdentity(); ?>,this)" checked />
+						<?php else: ?>
+							<input type="checkbox" id='slideshow_<?php echo $hinh_anh->getIdentity(); ?>'  onclick="slideshow(<?php echo $hinh_anh->getIdentity(); ?>,this)" />
+						<?php endif; ?>
+					</div>
+				</td>
+				<td>				
+					<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'xoa-ha','id' => $hinh_anh->getIdentity()),null,true)?>" title="Delete" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+					<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+				</a></td>
+			</tr>
+    <?php
+    	}
+    ?>
+                              </tbody>
+</table>
+</form>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

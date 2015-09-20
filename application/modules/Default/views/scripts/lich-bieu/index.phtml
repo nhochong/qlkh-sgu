@@ -1,0 +1,17 @@
+<?php $this->titleBlock("Lịch biểu SĐH");?>
+<?php if($this->lbs){?>
+<ul class="rules">
+	<?php 
+		foreach ($this->lbs as $lich_bieu)
+		{
+	?>
+			<li><a href="<?php echo $this->url(array('controller' => 'lich-bieu','action' => 'chi-tiet','id' => $lich_bieu['id']),null,true); ?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder2.gif'?>" /> <?php echo $lich_bieu['ten']?></a></li>
+	<?php 
+		}
+	?>
+</ul>
+<?php
+	}else{
+?>
+		<p>Đang cập nhật ...</p>
+<?php }?>

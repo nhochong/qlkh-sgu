@@ -1,0 +1,258 @@
+KHCN CMS - 2012-06-03T08:35:09+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-06-03T16:57:40+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42) 
+Message: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hdd.ma' in 'where clause'
+Stack trace: 14
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\application\modules\default\models\DAL\DalHDD.php
+-- Line: 113
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\application\modules\default\models\BLL\BizHDD.php
+-- Line: 159
+-- Function: getDSHDByNam
+-- Class: Default_Model_DAL_DalHDD
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\application\modules\admin\forms\TBDuyet.php
+-- Line: 22
+-- Function: getDSHDByNam
+-- Class: Default_Model_BLL_BizHDD
+
+#6
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Form.php
+-- Line: 240
+-- Function: init
+-- Class: Admin_Form_TBDuyet
+
+#7
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\application\modules\admin\controllers\HoiDongController.php
+-- Line: 850
+-- Function: __construct
+-- Class: Zend_Form
+
+#8
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: tbDuyetAction
+-- Class: Admin_HoiDongController
+
+#9
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-06-03T16:58:22+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-06-03T16:59:27+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-06-03T17:12:28+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "closeimage" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+

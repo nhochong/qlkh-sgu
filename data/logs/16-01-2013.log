@@ -1,0 +1,132 @@
+KHCN CMS - 2013-01-16T00:07:50+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (21000) 
+Message: SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalThongBao.php
+-- Line: 122
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizThongBao.php
+-- Line: 267
+-- Function: loc
+-- Class: Default_Model_DAL_DalThongBao
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ThongBaoController.php
+-- Line: 45
+-- Function: loc
+-- Class: Default_Model_BLL_BizThongBao
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_ThongBaoController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-16T00:39:29+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "resetSession" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\HoiThaoController.php
+-- Line: 294
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\HoiThaoController.php
+-- Line: 294
+-- Function: resetSession
+-- Class: Admin_HoiThaoController
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_HoiThaoController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+

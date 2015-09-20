@@ -1,0 +1,103 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Trang chủ";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+
+<div class="content-box-header">
+
+<h3>Thống kê truy cập</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+<div class="tab-content default-tab" id="container"><!-- This is the target div. id must match the href of this div's tab -->
+<script type="text/javascript" src="<?php #echo $baseURL . '/../application/templates/admin/scripts/facebox.js'?>"></script>
+<script type="text/javascript" src="<?php echo $baseURL . '/../application/templates/admin/js/jquery/external/Highcharts-2.1.9/js/highcharts.js'?>"></script>
+<script type="text/javascript" src="<?php echo $baseURL . '/../application/templates/admin/js/jquery/external/Highcharts-2.1.9/js/modules/exporting.js'?>"></script>
+<script type="text/javascript">
+var chart;
+$(document).ready(function() {
+	chart = new Highcharts.Chart({
+		chart: {
+			renderTo: 'container',
+			zoomType: 'xy'
+		},
+		title: {
+			text: 'Biểu đồ số lượng truy cập trong 7 ngày'
+		},
+		subtitle: {
+			text: 'Từ ngày <?php echo date('d-m-Y', strtotime('-6 days'))?> đến ngày <?php echo date('d-m-Y')?>'
+		},
+		xAxis: [{
+			//categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+			categories: [<?php
+				for($i=6 ; $i>=1 ; $i--) {
+					echo "'";
+					echo date('d-m', strtotime("-$i days"));
+					echo "', ";
+				}
+				
+				echo "'";
+				echo date('d-m');
+				echo "'";			
+				
+			?>]
+		}],
+		yAxis: [{ // Primary yAxis
+			labels: {
+				formatter: function() {
+					return this.value +' lượt';
+				},
+				style: {
+					color: '#89A54E'
+				}
+			},
+			title: {
+				text: 'Lượt truy cập',
+				style: {
+					color: '#89A54E'
+				}
+			}
+		}],
+		tooltip: {
+			formatter: function() {
+				return ''+
+					this.x +': '+ this.y +
+					(this.series.name == 'Lượt truy cập' ? ' lượt' : '');
+			}
+		},
+		legend: {
+			layout: 'vertical',
+			align: 'left',
+			x: 120,
+			verticalAlign: 'top',
+			y: 100,
+			floating: true,
+			backgroundColor: '#FFFFFF'
+		},
+		series: [{
+			name: 'Lượt truy cập',
+			color: '#89A54E',
+			type: 'spline',
+			data: [<?php
+					$bo_dem = new Default_Model_BoDem();
+					for($i=6 ; $i>=1 ; $i--) {
+						$ngay =  date('Y-m-d', strtotime("-$i days"));
+						echo $bo_dem->so_luong_theo_ngay($ngay);
+						echo ", ";
+					}
+					
+					$ngay = date('Y-m-d');
+					echo $bo_dem->so_luong_theo_ngay($ngay);						
+				?>]
+		}]
+	});
+	
+	
+});
+</script>
+</div></div></div>

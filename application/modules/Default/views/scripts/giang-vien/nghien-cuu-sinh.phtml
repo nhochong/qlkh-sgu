@@ -1,0 +1,63 @@
+<?php $this->titleBlock($this->giang_vien->getHoTen());?>
+<div>
+	<?php echo $this->form->render($this) ?>
+</div>
+<script type="text/javascript">
+	$(function() {
+		
+	});
+	
+	function themChuyenDe(){
+		var current = parseInt($('#tong_chuyen_de').val());
+		var next = current + 1;
+		
+		// Add chuyen_de
+		var chuyen_de = $('#chuyen_de_' + current + '-wrapper').clone().insertAfter($('#ten_chuyen_de_' + current + '-wrapper'));
+		chuyen_de.attr('id','chuyen_de_' + next + '-wrapper');
+		$('#chuyen_de_' + next + '-wrapper #chuyen_de_' + current + '-label').attr('id','chuyen_de_' + next + '-label');
+		$('#chuyen_de_' + next + '-wrapper #chuyen_de_' + current + '-element').attr('id','chuyen_de_' + next + '-element');
+		$('#chuyen_de_' + next + '-wrapper #chuyen_de_' + next + '-label label').attr('for','chuyen_de_' + next);		
+		$('#chuyen_de_' + next + '-wrapper #chuyen_de_' + next + '-label label').text('Chuyên đề ' + next);
+		
+		// Add thoi_gian
+		var thoi_gian = $('#thoi_gian_chuyen_de_' + current + '-wrapper').clone().insertAfter($('#chuyen_de_' + next + '-wrapper'));
+		thoi_gian.attr('id','thoi_gian_chuyen_de_' + next + '-wrapper');
+		$('#thoi_gian_chuyen_de_' + next + '-wrapper #thoi_gian_chuyen_de_' + current + '-label').attr('id','thoi_gian_chuyen_de_' + next + '-label');
+		$('#thoi_gian_chuyen_de_' + next + '-wrapper #thoi_gian_chuyen_de_' + current + '-element').attr('id','thoi_gian_chuyen_de_' + next + '-element');
+		$('#thoi_gian_chuyen_de_' + next + '-wrapper #thoi_gian_chuyen_de_' + next + '-label label').attr('for','thoi_gian_chuyen_de_' + next);
+		$('#thoi_gian_chuyen_de_' + next + '-wrapper #thoi_gian_chuyen_de_' + current).attr('id','thoi_gian_chuyen_de_' + next);
+		
+		$('#thoi_gian_chuyen_de_' + next).removeAttr('class');
+		$('#thoi_gian_chuyen_de_' + next + '-element .ui-datepicker-trigger').remove();
+		$('#thoi_gian_chuyen_de_' + next).val('');
+		$('#thoi_gian_chuyen_de_' + next).datepicker({showOn : 'button',changeMonth : 1,changeYear : 1,buttonImageOnly : 1,altFormat : 'dd-mm-yy',dateFormat : 'dd-mm-yy',yearRange : '2004:2024',buttonImage : '/khcn/public/images/calendar.gif',});
+		
+		// Add ten_chuyen_de
+		var ten_chuyen_de = $('#ten_chuyen_de_' + current + '-wrapper').clone().insertAfter($('#thoi_gian_chuyen_de_' + next + '-wrapper'));
+		ten_chuyen_de.attr('id','ten_chuyen_de_' + next + '-wrapper');
+		$('#ten_chuyen_de_' + next + '-wrapper #ten_chuyen_de_' + current + '-label').attr('id','ten_chuyen_de_' + next + '-label');
+		$('#ten_chuyen_de_' + next + '-wrapper #ten_chuyen_de_' + current + '-element').attr('id','ten_chuyen_de_' + next + '-element');
+		$('#ten_chuyen_de_' + next + '-wrapper #ten_chuyen_de_' + next + '-label label').attr('for','ten_chuyen_de_' + next);
+		$('#ten_chuyen_de_' + next + '-wrapper #ten_chuyen_de_' + current).attr('id','ten_chuyen_de_' + next);
+		$('#ten_chuyen_de_' + next).val('');
+		
+		$('#tong_chuyen_de').val(next);
+		if(next > 1){
+			$('#xoa_chuyen_de').css('display', 'inline-block');
+		}
+	}
+	
+	function xoaChuyenDe(){
+		var current = parseInt($('#tong_chuyen_de').val());
+		var prev = current - 1;
+		
+		$('#chuyen_de_' + current + '-wrapper').remove();
+		$('#thoi_gian_chuyen_de_' + current + '-wrapper').remove();
+		$('#ten_chuyen_de_' + current + '-wrapper').remove();
+		
+		$('#tong_chuyen_de').val(prev);
+		if(prev == 1){
+			$('#xoa_chuyen_de').css('display', 'none');
+		}
+	}
+</script>

@@ -1,0 +1,54 @@
+KHCN CMS - 2013-05-12T23:34:58+07:00
+DEBUG [7]: Exception
+Message: Cell coordinate can not be a range of cells.
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\admin\models\PHPExcel.php
+-- Line: 126
+-- Function: getCell
+-- Class: PHPExcel_Worksheet
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ReportController.php
+-- Line: 1186
+-- Function: setTitle
+-- Class: Admin_Model_PHPExcel
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: excelMau04Action
+-- Class: Admin_ReportController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+

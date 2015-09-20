@@ -1,0 +1,34 @@
+<?php 
+		$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+		$this->headMeta()->appendHttpEquiv('Content-Script-Type', 'text/javascript');
+		$this->headMeta()->appendHttpEquiv('Content-Script-Type', 'text/css');
+		$this->headTitle()->setSeparator(' - ');
+		$this->headTitle($this->tenPhong());
+		$baseURL = $this->baseUrl();
+
+		echo $this->headMeta();
+    	echo $this->headTitle();
+    
+    	$this->headLink()->appendStylesheet($baseURL . '/../application/templates/admin/css/reset.css');
+    	$this->headLink()->appendStylesheet($baseURL . '/../application/templates/admin/css/style.css');
+		$this->headLink()->appendStylesheet($baseURL . '/../application/templates/admin/css/invalid.css');
+		$this->headLink()->appendStylesheet($baseURL . '/../application/templates/admin/css/css/style.css');
+		
+		$this->headScript()->appendFile($baseURL . '/../application/templates/default/js/jquery/jquery-1.7.1.js');
+		$this->headScript()->appendFile($baseURL . '/../application/templates/admin/js/js.js');
+    	$this->headScript()->appendFile($baseURL . '/../application/templates/admin/scripts/simpla.jquery.configuration.js');
+    	//$this->headScript()->appendFile($baseURL . '/../application/templates/admin/scripts/facebox.js');
+    
+		/* Begin jquery */		
+		$this->headScript()->appendFile($baseURL . '/../application/templates/default/js/jquery/ui/jquery-ui-1.8.9.custom.js');
+		$this->headLink()->appendStylesheet($baseURL.'/../application/templates/default/js/jquery/themes/cupertino/jquery-ui-1.8.16.custom.css');
+		/* End jquery */
+
+		/* Begin ckeditor */
+		$this->headScript()->appendFile($baseURL . '/js/ckeditor/ckeditor.js');
+		/* End ckeditor */
+		
+		echo $this->headLink();
+		echo $this->headScript();
+?>
+	<link rel="shortcut icon" href="<?php echo $baseURL . '/images/favicon.ico'?>" type="image/x-icon"/>

@@ -1,0 +1,72 @@
+<?php $this->titleBlock("Đăng ký");?>
+
+<?php echo $this->form->render($this) ?>
+
+<!-- chen vao jquery ngày tháng đã có săn trong js-css -->	
+<script type="text/javascript">
+$(document).ready(function(){ 
+	var validImage = '<?php echo $this->baseUrl() . '/images/tick_circle.png'?>';
+	var invalidImage = '<?php echo $this->baseUrl() . '/images/cross_circle.png'?>';
+	$("#ten_dang_nhap").blur(function(){
+		var user = $('#ten_dang_nhap').val();
+		var $form = $("form#f2");
+		$.ajax({ type: "POST", 
+				 url: "<?php echo $this->url(array('controller' => 'index','action' => 'kiem-tra-user'))?>", 
+				 data: {user : user},
+				 success: function(response){
+					var response = $.parseJSON(response);
+					 $('#ajax').replaceWith('');
+			         // if the result is TRUE write a message to the page
+					 if(response.status == false){
+						$('#ten_dang_nhap').after('<span id="ajax" class="notification error png_bg">' +
+			             '<img src="' + invalidImage + '" title="' + response.message + '"/></span>');
+					 }else{
+						$('#ten_dang_nhap').after('<span id="ajax" class="notification success png_bg">' +
+			            '<img src="' + validImage + '" title="' + response.message + '"/></span>');
+					 }
+				},
+			});
+	}); 
+	$("#email").blur(function(){
+		var email = $('#email').val();
+		var $form = $("form#f2");
+		if(email != ''){
+			$.ajax({ type: "POST", 
+				 url: "<?php echo $this->url(array('controller' => 'index','action' => 'kiem-tra-email'))?>", 
+				 data: {email : email},
+				 success: function(data){
+					var response = $.parseJSON(data);
+					 $('#ajax_2').replaceWith('');
+			         // if the result is TRUE write a message to the page
+					 if(response.status == false){
+						$('#email').after('<span id="ajax_2" class="notification error png_bg">' +
+			             '<img src="' + invalidImage + '" title="' + response.message + '"/></span>');
+					 }else{
+						$('#email').after('<span id="ajax_2" class="notification success png_bg">' +
+			            '<img src="' + validImage + '" title="' + response.message + '"/></span>');
+					 }
+				}
+			});
+		}else{
+			$('#ajax_2').replaceWith('');
+			$('#email').after('<span id="ajax_2" class="notification error png_bg">' +
+				            '<img src="' + invalidImage + '" title="Vui lòng nhập địa chỉ email"/></span>');
+		}
+	}); 
+});
+</script>
+<script>
+	$(function() {
+		$( "#ngay_sinh" ).datepicker({
+		showOn: "button",
+		changeMonth: true,
+		changeYear: true,
+		buttonImage: "<?php echo $this->baseUrl() . '/images/calendar.gif' ?>",
+		buttonImageOnly: true,
+		altFormat: 'dd-mm-yy',
+		dateFormat: 'dd-mm-yy',
+		yearRange : '1950:<?php echo date('Y')?>'
+		});
+	});
+</script>
+

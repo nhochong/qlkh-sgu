@@ -1,0 +1,54 @@
+<?php $this->titleBlock("Hội thảo");?>
+<div class="hoi_thao_detail">
+	<div class="info_overview">
+		<div class="info_overview_header"><?php echo $this->translate('Thông Tin Hội Thảo')?></div>
+		<div class="info_overview_content">
+			<div class="chu_de item">
+				<div class="title title_left"><?php echo $this->translate('Chủ đề')?></div>
+				<div class="content"><?php echo $this->hoi_thao->chu_de?></div>
+			</div>
+			<div class="quy-mo_ngay-to-chuc item">
+				<div class="quy_mo">
+					<div class="title title_left"><?php echo $this->translate('Quy mô')?></div>
+					<div class="content"><?php echo $this->capQLs[$this->hoi_thao->cap_quan_ly]?></div>
+				</div>
+				<div class="ngay_to_chuc">
+					<div class="title title_right"><?php echo $this->translate('Ngày tổ chức')?></div>
+					<div class="content"><?php echo date('d-m-Y',strtotime($this->hoi_thao->ngay_to_chuc))?></div>
+				</div>
+			</div>
+			<div class="so-luong_dia-diem item">
+				<div class="dia_diem">
+					<div class="title title_left"><?php echo $this->translate('Địa điểm')?></div>
+					<div class="content"><?php echo $this->hoi_thao->dia_diem?></div>
+				</div>
+				<div class="so_luong">
+					<div class="title title_right"><?php echo $this->translate('Số lượng đại biểu')?></div>
+					<div class="content"><?php echo $this->hoi_thao->so_luong_dai_bieu?></div>
+				</div>
+			</div>
+			<div class="don_vi_phu_trach item">
+				<div class="title"><?php echo $this->translate('Đơn vị phụ trách')?></div>
+				<div class="content"><?php echo $this->hoi_thao->don_vi_phu_trach?></div>
+			</div>
+		</div>
+	</div>
+	<div class="info_detail">
+		<div class="info_detail_header"><?php echo $this->translate('Thông Tin Chi Tiết')?></div>
+		<div class="info_detail_content">
+			<?php if(!empty($this->hoi_thao->anh_trang_bia)):?>
+			<div class="anh_trang_bia">
+				<div class="content"><img src="<?php echo $this->baseUrl() . '/upload/images/hoi_thao/' .$this->hoi_thao->anh_trang_bia?>" /></div>
+			</div>
+			<?php endif;?>
+		</div>
+	</div>
+	<div class="content_detail"><?php echo $this->hoi_thao->mo_ta?></div>
+	<br/>
+	<?php if(!empty($this->hoi_thao->thong_cao_bao_chi)):?>
+	<div class="thong_cao_bao_chi">
+		<div class="title" style="margin-right: 10px"><?php echo $this->translate('Thông cáo báo chí')?></div>
+		<div class="content"><a href="<?php echo $this->baseUrl() . '/upload/files/hoi_thao/' . $this->hoi_thao->thong_cao_bao_chi?>"><?php echo $this->hoi_thao->thong_cao_bao_chi?></a></div>
+	</div>
+	<?php endif;?>
+</div>

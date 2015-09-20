@@ -1,0 +1,79 @@
+<?php 
+	$form_dv = new Admin_Form_PopupDV();
+?>
+<ul class="shortcut-buttons-set">
+	<li><a class="shortcut-button" href="#them_dv" rel="modal" title="Thêm đơn vị"><span>
+		<img src="<?php echo $this->baseUrl() . '/../application/templates/admin/images/icons/paper_content_pencil_48.png'?>" alt="icon" /><br />
+		Thêm đơn vị
+	</span></a></li>
+</ul>
+<div id="them_dv" style="display: none"><!-- Messages are shown when a link with these attributes are clicked: href="#messages" rel="modal"  -->
+<h3>Thêm đơn vị</h3>
+	<?php echo $form_dv?>
+</div>
+<script type="text/javascript">
+function add_dv(form){
+	var ma = form.popup_dv_ma.value;
+	var ten = form.popup_dv_ten.value;
+	for( i = 0; i < form.popup_dv_thuoc_sgu.length; i++ )
+		if( form.popup_dv_thuoc_sgu[i].checked == true )
+			thuoc_sgu = form.popup_dv_thuoc_sgu[i].value;
+	for( i = 0; i < form.popup_dv_la_khoa.length; i++ )
+		if( form.popup_dv_la_khoa[i].checked == true )
+			la_khoa = form.popup_dv_la_khoa[i].value;
+    $.ajax({
+        type: "post",
+        url: "<?php echo $this->url(array('module' => 'admin','controller' => 'don-vi','action' => 'them-popup'))?>",
+        data: {'ma' : ma,'ten' : ten,'thuoc_sgu' : thuoc_sgu,'la_khoa' : la_khoa},
+        success: function(data) {
+        	var datas = data.split(",");
+            if(datas[0] == "YES"){
+            	alert('Thành công. Thêm đơn vị thành công.');
+            	select = document.getElementById("popup_gv_ma_don_vi");
+            	select.options[select.options.length] = new Option(ten,datas[1]);
+            	var code = $("#code").val();
+            	if(code > 0){
+					for(i = 0 ; i<code ; i++){
+						select = document.getElementById("don_vi_" + i);
+		            	select.options[select.options.length] = new Option(ten,datas[1]);
+					}
+                }
+            }else if(datas[0] == "EXIST"){
+                alert('Lỗi. Mã đơn vị đã tồn tại, vui lòng kiểm tra lại .');
+            }else if(datas[0] == "NO_NAME"){
+            	alert('Lỗi. Chưa nhập tên cho đơn vị.');
+            }else if(datas[0] == "ERROR"){
+                alert('Lỗi. Đã có lỗi trong quá trình xử lý.');
+            }
+        }            
+    });    
+    $.facebox.close(); 
+}
+function kiem_tra_dv(dk){
+	var ma = dk.value;
+	$.ajax({ type: "POST", 
+			 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'don-vi','action' => 'kiem-tra-ma'))?>", 
+			 data: {'ma' : ma},
+			 success: function(data){
+				 $('#ajax_dv').replaceWith('');
+		         // if the result is TRUE write a message to the page
+				 if (data == "YES") {
+		           $(dk).after('<span id="ajax_dv" class="input-notification error png_bg">' +
+		             'Mã đơn vị đã tồn tại.</span>');
+		         }else if(data == "NO"){
+		        	$(dk).after('<span id="ajax_dv" class="input-notification success png_bg">' +
+		            'Có thể sử dụng.</span>');
+		         }}
+		});
+}
+function change_thuoc_sgu(thuoc_sgu){
+//	var la_khoa = document.getElementById("la_khoa");
+//	if(thuoc_sgu.value == '1'){
+//		document.getElementById("la_khoa").removeAttribute("style");
+//		$("#la_khoa").removeAttr('style');
+//	}else{
+//		document.getElementById("la_khoa").setAttribute("style", "display: none");
+//		$("#la_khoa").attr('style', 'display: none');
+//	}
+}
+</script>

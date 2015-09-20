@@ -1,0 +1,44 @@
+<?php $this->titleBlock("Bài báo khoa học");?>
+<div class="bai_bao_detail">
+	<div class="info_overview">
+		<div class="info_overview_header"><?php echo $this->translate('Thông Tin Bài Báo')?></div>
+		<div class="info_overview_content">
+			<div class="ten_san_pham">
+				<div class="title title_left"><?php echo $this->translate('Chủ đề')?></div>
+				<div class="content"><?php echo $this->bai_bao->ten?></div>
+			</div>
+			<div class="thong_tin">
+				<div class="content" style="margin-left: 90px; margin-top: 10px; color: blue; font-weight: bold;">
+					<span style="text-transform: capitalize;"><?php echo $this->bai_bao->thong_tin?></span>
+					-
+					<span><?php echo $this->translate('Đợt: ') . $this->bai_bao->dot?></span>
+					-
+					<span><?php echo $this->bai_bao->thang . '/' . $this->bai_bao->nam?></span>
+				</div>
+			</div>
+			<div class="tac_gias">
+				<div class="title title_left"><?php echo $this->translate('Tác giả')?></div>
+				<div class="content">
+					<ul class="list_tac_gia">
+						<?php foreach($this->giangViens as $giang_vien):?>
+							<li>
+								<div class="ten"><?php echo $giang_vien->getDisplayname();?></div>
+								<div class="don_vi"><?php echo $giang_vien->getDonVi()->ten;?></div>
+							</li>
+						<?php endforeach;?>
+					</ul>
+				</div>
+			</div>		
+		</div>
+	</div>
+	<div class="info_detail">
+		<div class="info_detail_header"><?php echo $this->translate('Thông Tin Chi Tiết')?></div>
+		<?php if(!empty($this->bai_bao->ten_file)):?>
+		<div class="file">
+			<div class="title"><?php echo $this->translate('Sản phẩm : ')?></div>
+			<div class="content"><a href="<?php echo $this->baseUrl() . '/upload/files/bai_bao/' . $this->bai_bao->ten_file?>"><?php echo $this->bai_bao->ten_file?></a></div>
+		</div>
+		<?php endif;?>
+	</div>
+	<div class="content_detail"><?php echo $this->bai_bao->mo_ta;?></div>
+</div>

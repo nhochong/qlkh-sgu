@@ -1,0 +1,40 @@
+<?php $this->titleBlock("Hội thảo");?>
+
+<div class="list-hoithao">
+<table class="blog"> 
+	<tbody>
+	<?php 
+		if ($this->paginator){
+			foreach ($this->paginator as $hoi_thao)
+			{
+	?>
+		<tr>
+		<td>
+		<div class="hoithao">
+			<table border="0" width="100%">
+				<tbody>
+					<tr>
+						<td colspan="2" class="header"><p><a href="<?php echo $this->url(array('controller' => 'hoi-thao', 'action' => 'chi-tiet' , 'id' => $hoi_thao->id),NULL,true)?>" class="ten"><?php echo $hoi_thao->chu_de?></a></p></td>
+					</tr>
+					<tr>
+						<td width="50%">Quy mô : <?php echo $this->capQLs[$hoi_thao->cap_quan_ly]?></td>
+						<td width="50%">Ngày tổ chức : <?php echo date('d/m/Y', strtotime($hoi_thao->ngay_to_chuc)) ?></td>
+					</tr>
+					<tr>
+						<td width="50%" colspan="2">Đơn vị phụ trách : <?php echo $hoi_thao['don_vi_phu_trach']?></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		</td>
+		</tr>
+	<?php 
+			}
+		}
+	?>				
+	</tbody>
+</table>
+<div class="pagination">
+<?php echo $this->paginator?>
+</div>
+</div>

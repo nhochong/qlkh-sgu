@@ -1,0 +1,111 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Import";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box">
+<div class="content-box-header">
+
+<h3>Import đề tài</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<?php if(isset($this->deTais)){?>
+<ul>
+	<li>Đơn vị : <?php echo $this->ten_don_vi;?></li>
+	<li>Năm : <?php echo $this->nam?></li>
+	<li>Tổng số đề tài : <?php echo $this->tong_so_dt?></li>
+	<li>Tổng số giảng viên : <?php echo $this->tong_so_gv?></li>	
+	<li>Giảng viên sai mã học vị : <?php echo count($this->gv_sai_ma_hoc_vi)?></li>
+	<?php 
+	if(count($this->gv_sai_ma_hoc_vi) > 0){
+	?>
+		<?php
+			foreach ($this->gv_sai_ma_hoc_vi as $id=>$ho_ten){
+		?>
+			<li style="margin-left: 30px">
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'sua','id' => $id),null,true)?>" title="Edit" target="_blank"><?php echo $ho_ten ?></a>
+			</li>
+		<?php }?>
+	<?php }?>
+	<li>Giảng viên sai mã đơn vị : <?php echo count($this->gv_sai_ma_don_vi)?></li>
+	<?php 
+	if(count($this->gv_sai_ma_don_vi) > 0){
+	?>
+		<?php
+			foreach ($this->gv_sai_ma_don_vi as $id=>$ho_ten){
+		?>
+			<li style="margin-left: 30px">
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'sua','id' => $id),null,true)?>" title="Edit" target="_blank"><?php echo $ho_ten ?></a>
+			</li>
+		<?php }?>
+	<?php }?>
+</ul>
+<br/>
+<div class="ds_dt">
+<table>
+	<tr class="alt-row">
+		<td><label style="font-weight: bold;">Danh sách đề tài đã được import</label></td>
+	</tr>
+	<tr>
+		<td>
+			<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'xoas'),null,true)?>" method="post" name="f2">
+				<div class="clear"></div>
+				<table class="tbl_dt" align="center">
+					<thead>
+						<tr class="alt-row">
+							<th><?php echo $this->formCheckbox('deletes',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+							<th>Mã đề tài</th>
+							<th style="width: 60%">Tên đề tài</th>
+							<th class="center">Lĩnh vực</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td colspan="9">
+							<div class="bulk-actions align-left">
+								<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+							</div>
+							</td>
+						</tr>
+					</tfoot>
+					<tbody>
+				    <?php
+				    	foreach ($this->deTais as $de_tai) 
+				    	{
+				    ?>
+				    		<tr>
+							<td><?php echo $this->formCheckbox('item[]',$de_tai['id'],null)?></td>
+							<td><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'sua','id' => $de_tai['id']),null,true)?>"><?php echo $de_tai['ma']?></a></td>
+							<td><?php echo $de_tai['ten']?></td>
+							<td class="center"><?php echo $de_tai['ten_linh_vuc']?></td>
+							<td>
+								<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'sua','id' => $de_tai['id']),null,true)?>" title="Edit"> 
+								<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/pencil.png'?>" alt="Edit"> </a>
+								<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'xoa','id' => $de_tai['id']),null,true)?>" title="Delete" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+								<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+							</a></td>
+						</tr>
+				    <?php
+				    	}
+				    ?>
+				                              </tbody>
+				</table>
+			</form>
+		</td>
+	</tr>
+</table>
+</div>
+<?php }else{?>
+<div class="import-dt">Chưa có đề tài được import</div>
+<?php }?>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>

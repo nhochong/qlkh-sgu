@@ -1,0 +1,45 @@
+<?php
+	$this->title = "Bài Báo";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+
+<div class="content-box-header">
+
+<h3>Thêm tác giả</h3>
+
+<div class="clear"></div>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<div class="bai_bao_info">
+	<div class="title"><?php echo $this->translate('Tên sản phẩm : ')?></div>
+	<div class="content"><?php echo $this->bai_bao->ten;?></div>
+</div>
+<?php echo $this->form?>
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#don_vi_id").change(function(){
+		var id = $('#don_vi_id').val();
+		$.ajax({
+				 type: "POST",
+				 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'load'))?>", 
+				 data: {'id' : id},
+				 success: function(response){
+					 $('#giang_vien_id').empty().append(response);
+			     }
+			});
+	});
+});
+</script>
+</div>
+<!-- End #tab1 -->
+<!--<div class="tab-content" id="tab2"></div>-->
+</div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->

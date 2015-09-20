@@ -1,0 +1,72 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Nhân sự";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách nhân sự</h3>
+<div class="clear"></div>
+
+</div>
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div class="danh_sach_nhan_su">
+<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'xoas-nhan-su'),null,true)?>" method="post" name="f2">
+<div class="clear"></div>
+<table class="tbl_nhansu" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('deletes',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+			<th class="tieu_de">Họ Tên</th>
+			<th class="center">Chức vụ</th>
+			<th class="center">Email</th>
+			<th class="center">Website</th>
+			<th class="center">Số điện thoại</th>
+			<th class="center">Số thứ tự</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+				<?php echo $this->formButton('add','Thêm',array('onclick' => 'window.location.href="' . $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'them-nhan-su'),null,true) . '"','class' => 'button'))?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->nhanSus as $nhan_su) 
+    	{
+    ?>
+    		<tr>
+			<td><?php echo $this->formCheckbox('item[]',$nhan_su->getIdentity(),null)?></td>
+			<td class="tieu_de"><?php echo $nhan_su->ho_ten?></td>
+			<td class="center"><?php echo $nhan_su->chuc_vu?></td>
+			<td class="center"><?php echo $nhan_su->email?></td>
+			<td class="center"><?php echo $nhan_su->website?></td>
+			<td class="center"><?php echo $nhan_su->so_dien_thoai?></td>
+			<td class="center"><?php echo $nhan_su->order?></td>
+			<td>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'sua-nhan-su','id' => $nhan_su->getIdentity()),null,true)?>" title="Edit"> 
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/pencil.png'?>" alt="Edit"> </a>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'xoa-nhan-su','id' => $nhan_su->getIdentity()),null,true)?>" title="Delete" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+			</a></td>
+		</tr>
+    <?php
+    	}
+    ?>
+                              </tbody>
+</table>
+</form>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

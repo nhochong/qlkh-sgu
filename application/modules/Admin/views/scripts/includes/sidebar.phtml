@@ -1,0 +1,264 @@
+<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
+	
+	<h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
+  
+	<!-- Logo (221px wide) -->
+	<a href="#"><img id="logo" src="<?php echo $this->baseUrl() ?>/../application/templates/admin/images/logo_3.png" alt="Simpla Admin logo" /></a>
+  
+	<!-- Sidebar Profile links -->
+	<?php 
+		$viewer = Khcn_Api::_()->getViewer();
+		$ldnc = date('H:i d/m/Y');
+		if($viewer->lan_dang_nhap_cuoi != null)
+			$ldnc = date('H:i d/m/Y',strtotime($viewer->lan_dang_nhap_cuoi));
+	?>
+	<div id="profile-links">
+		Xin chào, <a href="#" title="Edit your profile"><?php echo $viewer->ten_hien_thi?></a><br />
+		<?php echo $ldnc?><br/>
+		<a href="<?php echo $this->url(array(),null,true)?>" title="Sign Out" target="_blank">View site</a> | <a href="<?php echo $this->url(array('controller' => 'dang-nhap','action' => 'logout'),null,true)?>" title="Sign Out">Sign Out</a>
+	</div>        
+	
+	<ul id="main-nav">  <!-- Accordion Menu -->
+		
+		<li>
+			<a id="index-index" parent_id="index-index" href="<?php echo $this->url(array('module' => 'admin','controller' => 'index','action' => 'index'),null,true)?>" class="nav-top-item no-submenu"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
+				Trang chủ
+			</a>       
+		</li>	
+		<li> 
+			<a id="gioi-thieu" href="#" class="nav-top-item"> <!-- Add the class "current" to current menu item -->
+				Giới thiệu - Liên hệ
+			</a>
+			<ul>
+				<li><a id="gioi-thieu-index" parent_id="gioi-thieu" href="<?php echo $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'index'),null,true)?>">Giới thiệu</a></li>
+				<li><a id="gioi-thieu-nhan-su" parent_id="gioi-thieu" href="<?php echo $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'nhan-su'),null,true)?>">Nhân sự</a></li>
+				<li><a id="gioi-thieu-hinh-anh" parent_id="gioi-thieu" href="<?php echo $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'hinh-anh'),null,true)?>">Hình ảnh</a></li>
+				<li><a id="gioi-thieu-lien-he" parent_id="gioi-thieu" href="<?php echo $this->url(array('module' => 'admin','controller' => 'gioi-thieu','action' => 'lien-he'),null,true)?>">Liên hệ</a></li>
+			</ul>
+		</li>
+		<li> 
+			<a id="hoat-dong-khoa-hoc" href="#" class="nav-top-item">
+				Hoạt động khoa học
+			</a>
+			<ul>
+				<li><a id="hoi-thao-them" parent_id="hoat-dong-khoa-hoc" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-thao','action' => 'them'),null,true)?>">Thêm hội thảo</a></li>
+				<li><a id="hoi-thao-index" parent_id="hoat-dong-khoa-hoc" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-thao','action' => 'index'),null,true)?>">Danh sách hội thảo</a></li>
+				<li><a id="bai-bao-them" parent_id="hoat-dong-khoa-hoc" href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'them'),null,true)?>">Thêm bài báo</a></li>
+				<li><a id="bai-bao-import" parent_id="hoat-dong-khoa-hoc" href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'import'),null,true)?>">Import bài báo</a></li>
+				<li><a id="bai-bao-index" parent_id="hoat-dong-khoa-hoc" href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'index'),null,true)?>">Danh sách bài báo</a></li>
+				<li><a id="tai-lieu-them" parent_id="hoat-dong-khoa-hoc" href="<?php echo $this->url(array('module' => 'admin','controller' => 'tai-lieu','action' => 'them'),null,true)?>">Thêm phổ biến kiến thức</a></li>
+				<li><a id="tai-lieu-index" parent_id="hoat-dong-khoa-hoc" href="<?php echo $this->url(array('module' => 'admin','controller' => 'tai-lieu','action' => 'index'),null,true)?>">Danh sách phổ biến kiến thức</a></li>
+				<li><a id="sinh-hoat-chuyen-de-them" parent_id="hoat-dong-khoa-hoc" href="<?php echo $this->url(array('module' => 'admin','controller' => 'sinh-hoat-chuyen-de','action' => 'them'),null,true)?>">Thêm sinh hoạt chuyên đề</a></li>
+				<li><a id="sinh-hoat-chuyen-de-index" parent_id="hoat-dong-khoa-hoc" href="<?php echo $this->url(array('module' => 'admin','controller' => 'sinh-hoat-chuyen-de','action' => 'index'),null,true)?>">Danh sách sinh hoạt chuyên đề</a></li>
+			</ul>
+		</li>
+		<li> 
+			<a id="dao-tao-sdh" href="#" class="nav-top-item">
+				Đào tạo SĐH
+			</a>
+			<ul>
+				<li><a id="lich-hoc-them" parent_id="dao-tao-sdh" href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-hoc','action' => 'them'),null,true)?>">Thêm lịch học</a></li>
+				<li><a id="lich-hoc-index" parent_id="dao-tao-sdh" href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-hoc','action' => 'index'),null,true)?>">Danh sách lịch học</a></li>
+				<li><a id="lich-thi-them" parent_id="dao-tao-sdh" href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-thi','action' => 'them'),null,true)?>">Thêm lịch thi</a></li>
+				<li><a id="lich-thi-index" parent_id="dao-tao-sdh" href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-thi','action' => 'index'),null,true)?>">Danh sách lịch thi</a></li>
+				<li><a id="danh-sach-lop-them" parent_id="dao-tao-sdh" href="<?php echo $this->url(array('module' => 'admin','controller' => 'danh-sach-lop','action' => 'them'),null,true)?>">Thêm danh sách lớp</a></li>
+				<li><a id="danh-sach-lop-index" parent_id="dao-tao-sdh" href="<?php echo $this->url(array('module' => 'admin','controller' => 'danh-sach-lop','action' => 'index'),null,true)?>">Danh sách lớp</a></li>
+			</ul>
+		</li>
+		<li> 
+			<a id="dt-lv" href="#" class="nav-top-item"> <!-- Add the class "current" to current menu item -->
+				Đề tài - Lĩnh vực
+			</a>
+			<ul>
+				<li><a id="de-tai-them" parent_id="dt-lv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'them'),null,true)?>">Thêm đề tài</a></li>
+				<li><a id="de-tai-index" parent_id="dt-lv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'index'),null,true)?>">Danh sách đề tài</a></li> <!-- Add class "current" to sub menu items also -->
+				<li><a id="loai-lv-them" parent_id="dt-lv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'loai-lv','action' => 'them'),null,true)?>">Thêm loại lĩnh vực</a></li>
+				<li><a id="loai-lv-index" parent_id="dt-lv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'loai-lv','action' => 'index'),null,true)?>">Danh sách loại lĩnh vực</a></li>
+				<li><a id="linh-vuc-them" parent_id="dt-lv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'linh-vuc','action' => 'them'),null,true)?>">Thêm lĩnh vực</a></li>
+				<li><a id="linh-vuc-index" parent_id="dt-lv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'linh-vuc','action' => 'index'),null,true)?>">Danh sách lĩnh vực</a></li>
+			</ul>
+		</li>
+		<li>
+			<a id="tt-tb" href="#" class="nav-top-item">
+				Tin tức - Thông báo
+			</a>
+			<ul>
+				<li><a id="tin-tuc-them" parent_id="tt-tb" href="<?php echo $this->url(array('module' => 'admin','controller' => 'tin-tuc','action' => 'them'),null,true)?>">Thêm tin tức</a></li>
+				<li><a id="tin-tuc-index" parent_id="tt-tb" href="<?php echo $this->url(array('module' => 'admin','controller' => 'tin-tuc','action' => 'index'),null,true)?>">Danh sách tin tức</a></li>
+				<li><a id="thong-bao-them" parent_id="tt-tb" href="<?php echo $this->url(array('module' => 'admin','controller' => 'thong-bao','action' => 'them'),null,true)?>">Thêm thông báo</a></li>
+				<li><a id="thong-bao-index" parent_id="tt-tb" href="<?php echo $this->url(array('module' => 'admin','controller' => 'thong-bao','action' => 'index'),null,true)?>">Danh sách thông báo</a></li>
+			</ul>
+		</li>
+		<li>
+			<a id="qd-bm" href="#" class="nav-top-item">
+				Qui định-Biểu mẫu-Hồ sơ
+			</a>
+			<ul>
+				<li><a id="qui-dinh-them" parent_id="qd-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'qui-dinh','action' => 'them'),null,true)?>">Thêm qui định</a></li>
+				<li><a id="qui-dinh-index" parent_id="qd-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'qui-dinh','action' => 'index'),null,true)?>">Danh sách qui định</a></li>
+				<li><a id="loai-bm-them" parent_id="qd-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'loai-bm','action' => 'them'),null,true)?>">Thêm loại biểu mẫu</a></li>
+				<li><a id="loai-bm-index" parent_id="qd-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'loai-bm','action' => 'index'),null,true)?>">Danh sách loại biểu mẫu</a></li>
+				<li><a id="bieu-mau-them" parent_id="qd-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'bieu-mau','action' => 'them'),null,true)?>">Thêm biểu mẫu</a></li>
+				<li><a id="bieu-mau-index" parent_id="qd-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'bieu-mau','action' => 'index'),null,true)?>">Danh sách biểu mẫu</a></li>
+				<li><a id="loai-bm-them" parent_id="qd-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'loai-hs','action' => 'them'),null,true)?>">Thêm loại hồ sơ</a></li>
+				<li><a id="loai-bm-index" parent_id="qd-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'loai-hs','action' => 'index'),null,true)?>">Danh sách loại hồ sơ</a></li>
+				<li><a id="ho-so-them" parent_id="qd-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'ho-so','action' => 'them'),null,true)?>">Thêm hồ sơ</a></li>
+				<li><a id="ho-so-index" parent_id="qd-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'ho-so','action' => 'index'),null,true)?>">Danh sách hồ sơ</a></li>
+			</ul>
+		</li>
+		<li>
+			<a id="lb-lts" href="#" class="nav-top-item">
+				Lịch biểu - Lịch tuyển sinh
+			</a>
+			<ul>
+				<li><a id="lich-bieu-them" parent_id="lb-lts" href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-bieu','action' => 'them'),null,true)?>">Thêm lịch biểu</a></li>
+				<li><a id="lich-bieu-index" parent_id="lb-lts" href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-bieu','action' => 'index'),null,true)?>">Danh sách lịch biểu</a></li>
+				<li><a id="tuyen-sinh-them" parent_id="lb-lts"href="<?php echo $this->url(array('module' => 'admin','controller' => 'tuyen-sinh','action' => 'them'),null,true)?>">Thêm biểu lịch tuyển sinh</a></li>
+				<li><a id="tuyen-sinh-index" parent_id="lb-lts" href="<?php echo $this->url(array('module' => 'admin','controller' => 'tuyen-sinh','action' => 'index'),null,true)?>">Danh sách lịch tuyển sinh</a></li>
+			</ul>
+		</li>		
+		<li>
+			<a id="lct" href="#" class="nav-top-item">
+				Lịch công tác
+			</a>
+			<ul>
+				<li><a id="lich-cong-tac-them" parent_id="lct" href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'them'),null,true)?>">Thêm lịch công tác</a></li>
+				<li><a id="lich-cong-tac-index" parent_id="lct" href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'index'),null,true)?>">Danh sách lịch công tác</a></li>				
+			</ul>
+		</li>
+		<li>
+			<a id="gv" href="#" class="nav-top-item">
+				Giảng viên
+			</a>
+			<ul>
+				<li><a id="giang-vien-them" parent_id="gv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'them'),null,true)?>">Thêm giảng viên</a></li>
+				<li><a id="giang-vien-index" parent_id="gv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'index'),null,true)?>">Danh sách giảng viên</a></li>
+				<li><a id="giang-vien-ds-ngoai-sgu" parent_id="gv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'ds-ngoai-sgu'),null,true)?>">Danh sách chưa xác định</a></li>
+			</ul>
+		</li>
+		<li> 
+			<a id="chuong-trinh-trong-diem" href="#" class="nav-top-item">
+				Chương trình trọng điểm
+			</a>
+			<ul>
+				<li><a id="chuong-trinh-them" parent_id="chuong-trinh-trong-diem" href="<?php echo $this->url(array('module' => 'admin','controller' => 'chuong-trinh','action' => 'them'),null,true)?>">Thêm chương trình</a></li>
+				<li><a id="chuong-trinh-index" parent_id="chuong-trinh-trong-diem" href="<?php echo $this->url(array('module' => 'admin','controller' => 'chuong-trinh','action' => 'index'),null,true)?>">Danh sách chương trình trọng điểm</a></li>				
+			</ul>
+		</li>
+		<li> 
+			<a id="hd" href="#" class="nav-top-item"> <!-- Add the class "current" to current menu item -->
+				Hội đồng
+			</a>
+			<ul>
+				<li><a id="hoi-dong-them-hdd" parent_id="hd" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-dong','action' => 'them-hdd'),null,true)?>">Thêm hội đồng duyệt</a></li>
+				<li><a id="hoi-dong-danh-sach-hdd" parent_id="hd" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-dong','action' => 'danh-sach-hdd'),null,true)?>">Danh sách hội đồng duyệt</a></li> <!-- Add class "current" to sub menu items also -->
+				<li><a id="hoi-dong-them-hdnt" parent_id="hd" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-dong','action' => 'them-hdnt'),null,true)?>">Thêm hội đồng nghiệm thu</a></li>
+				<li><a id="hoi-dong-danh-sach-hdnt" parent_id="hd" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-dong','action' => 'danh-sach-hdnt'),null,true)?>">Danh sách hội đồng nghiệm thu</a></li>
+				<li><a id="hoi-dong-tb-duyet" parent_id="hd" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-dong','action' => 'tb-duyet'),null,true)?>">Thông báo duyệt</a></li>
+				<li><a id="hoi-dong-tb-nghiem-thu" parent_id="hd" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-dong','action' => 'tb-nghiem-thu'),null,true)?>">Thông báo nghiệm thu</a></li>
+				<li><a id="hoi-dong-ds-mail-tb" parent_id="hd" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-dong','action' => 'ds-mail-tb'),null,true)?>">Danh sách mail thông báo</a></li>
+			</ul>
+		</li>
+		<li>
+			<a id="ldt-bm" href="#" class="nav-top-item">
+				Loại đề tài - Bộ môn
+			</a>
+			<ul>
+				<li><a id="loai-dt-them" parent_id="ldt-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'loai-dt','action' => 'them'),null,true)?>">Thêm loại đề tài</a></li>
+				<li><a id="loai-dt-index" parent_id="ldt-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'loai-dt','action' => 'index'),null,true)?>">Danh sách loại đề tài</a></li>
+				<li><a id="bo-mon-them" parent_id="ldt-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'bo-mon','action' => 'them'),null,true)?>">Thêm bộ môn</a></li>
+				<li><a id="bo-mon-index" parent_id="ldt-bm" href="<?php echo $this->url(array('module' => 'admin','controller' => 'bo-mon','action' => 'index'),null,true)?>">Danh sách bộ môn</a></li>
+			</ul>
+		</li>
+		<li>
+			<a id="dv-hv" href="#" class="nav-top-item">
+				Đơn vị - Học vị
+			</a>
+			<ul>
+				<li><a id="don-vi-them" parent_id="dv-hv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'don-vi','action' => 'them'),null,true)?>">Thêm đơn vị</a></li>
+				<li><a id="don-vi-index" parent_id="dv-hv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'don-vi','action' => 'index'),null,true)?>">Danh sách đơn vị</a></li>
+				<li><a id="hoc-vi-them" parent_id="dv-hv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoc-vi','action' => 'them'),null,true)?>">Thêm học vị</a></li>
+				<li><a id="hoc-vi-index" parent_id="dv-hv" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoc-vi','action' => 'index'),null,true)?>">Danh sách học vị</a></li>
+			</ul>
+		</li>
+		<li>
+			<a id="lkt" href="#" class="nav-top-item">
+				Liên kết trang mạng
+			</a>
+			<ul>
+				<li><a id="lien-ket-them" parent_id="lkt" href="<?php echo $this->url(array('module' => 'admin','controller' => 'lien-ket','action' => 'them'),null,true)?>">Thêm liên kết</a></li>
+				<li><a id="lien-ket-index" parent_id="lkt" href="<?php echo $this->url(array('module' => 'admin','controller' => 'lien-ket','action' => 'index'),null,true)?>">Danh sách liên kết</a></li>				
+			</ul>
+		</li>
+		<!--<li>
+			<a id="import" href="#" class="nav-top-item">
+				Import
+			</a>
+			<ul>
+				<li><a id="import-import-dt" parent_id="import" href="<?php echo $this->url(array('module' => 'admin','controller' => 'import','action' => 'import-dt'),null,true)?>">Đề tài</a></li>
+				<li><a id="import-finish-dt" parent_id="import" href="<?php echo $this->url(array('module' => 'admin','controller' => 'import','action' => 'finish-dt'),null,true)?>">Đề tài mới import</a></li>				
+			</ul>
+		</li>
+		<li>
+			<a id="report" href="#" class="nav-top-item">
+				Report
+			</a>
+			<ul>	
+				<li><a id="report-index" parent_id="report" href="<?php echo $this->url(array('module' => 'admin','controller' => 'report','action' => 'index'),null,true)?>">Xuất báo cáo</a></li>
+			</ul>
+		</li>-->
+		<li>
+			<a id="db" href="#" class="nav-top-item">
+				Backup
+			</a>
+			<ul>
+				<li><a id="database-backup" parent_id="db" href="<?php echo $this->url(array('module' => 'admin','controller' => 'database','action' => 'backup'),null,true)?>">Backup</a></li>
+				<li><a id="database-index" parent_id="db" href="<?php echo $this->url(array('module' => 'admin','controller' => 'database','action' => 'index'),null,true)?>">Danh sách backup</a></li>			
+			</ul>
+		</li>
+		<li>
+			<a id="hop-thu" href="#" class="nav-top-item">
+				Hộp thư
+			</a>
+			<ul>
+				<li><a id="hop-thu-gop-y" parent_id="hop-thu" href="<?php echo $this->url(array('module' => 'admin','controller' => 'hop-thu','action' => 'gop-y'),null,true)?>">Góp ý</a></li>
+			</ul>
+		</li>
+		<?php 
+			if($viewer->isAdminOnly()):
+		?>		
+		<li>
+			<a id="nd" href="#" class="nav-top-item">
+				Người dùng
+			</a>
+			<ul>
+				<li><a id="nguoi-dung-index" parent_id="nd" href="<?php echo $this->url(array('module' => 'admin','controller' => 'nguoi-dung','action' => 'index'),null,true)?>">Danh sách người dùng</a></li>
+				<li><a id="nguoi-dung-ds-vi-pham" parent_id="nd" href="<?php echo $this->url(array('module' => 'admin','controller' => 'nguoi-dung','action' => 'ds-vi-pham'),null,true)?>">Danh sách vi phạm</a></li>				
+				<li><a id="nguoi-dung-list-queues" parent_id="nd" href="<?php echo $this->url(array('module' => 'admin','controller' => 'nguoi-dung','action' => 'list-queues'),null,true)?>">Danh sách xác nhận GV</a></li>
+			</ul>
+		</li>
+		<li>
+			<a id="config" href="#" class="nav-top-item">
+				Cấu hình
+			</a>
+			<ul>
+				<li><a id="cau-hinh-index" parent_id="config" href="<?php echo $this->url(array('module' => 'admin','controller' => 'cau-hinh','action' => 'index'),null,true)?>">Cấu hình website</a></li>
+				<li><a id="cau-hinh-index" parent_id="config" href="<?php echo $this->url(array('module' => 'admin','controller' => 'cau-hinh','action' => 'mail-settings'),null,true)?>">Mail Settings</a></li>
+				<li><a id="cau-hinh-hinh-anh" parent_id="config" href="<?php echo $this->url(array('module' => 'admin','controller' => 'cau-hinh','action' => 'hinh-anh'),null,true)?>">Hình ảnh</a></li>
+				<li><a id="cau-hinh-create-index" parent_id="config" href="<?php echo $this->url(array('module' => 'admin','controller' => 'cau-hinh','action' => 'create-index'),null,true)?>">Search index</a></li>
+			</ul>
+		</li>  
+		<?php endif;?>
+		    
+		
+	</ul> <!-- End #main-nav -->	
+</div></div>
+<?php $request = Zend_Controller_Front::getInstance()->getRequest();?>
+<?php $controller_action = $request->getControllerName() . '-' . $request->getActionName();?>
+<script language="javascript">
+	if(document.getElementById('<?php echo $controller_action ?>')){
+		document.getElementById('<?php echo $controller_action ?>').className = 'current';
+		var parent_id = document.getElementById('<?php echo $controller_action ?>').getAttribute('parent_id');
+		document.getElementById(parent_id).className = 'nav-top-item current';
+	}
+</script>

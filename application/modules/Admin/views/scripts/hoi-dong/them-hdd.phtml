@@ -1,0 +1,131 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Hội đồng duyệt";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<script src="<?php echo $baseURL . '/../application/templates/admin/scripts/facebox.js'?>"></script>
+<?php echo $this->render('don-vi/faceboxDV.phtml')?>
+<?php echo $this->render('giang-vien/faceboxGV.phtml')?>
+<?php echo $this->message()?>
+<div class="clear"></div>
+
+<div class="content-box">
+
+<div class="content-box-header">
+
+<h3>Thêm hội đồng duyệt</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<?php echo $this->form?>
+<script type="text/javascript">
+    $(document).ready(function(  ){
+    	$("#id-label").load("<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-dong','action' => 'selected-dt','hd' => 'hdd'))?>");
+    });
+</script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#f2 input[name=ma]").blur(function(){
+		var $ma = $('#f2 input[name=ma]').val();
+		var $form = $("#f2");
+		$.ajax({ type: "POST", 
+				 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-dong','action' => 'kiem-tra-ma-hdd'))?>", 
+				 data: {ma : $ma},//$form.serialize(),//chuyen thanh doi tuong
+				 success: function(data){
+					 $('#ajax').replaceWith('');
+			         // if the result is TRUE write a message to the page
+			         if (data == "YES") {
+			           $('#f2 input[name=ma]').after('<span id="ajax" class="input-notification error png_bg">' +
+			             'Mã hội đồng duyệt đã tồn tại.</span>');
+			         }else if(data == "NO"){
+			        	$('#f2 input[name=ma]').after('<span id="ajax" class="input-notification success png_bg">' +
+			            'Có thể sử dụng.</span>');
+			         }else if (data == "ERROR") {
+			            $('#f2 input[name=ma]').after('<span id="ajax" class="input-notification error png_bg">' +
+			             'Mã không đúng định dạng.</span>');
+			         }}
+			});
+	}); 
+
+	$("#dsdt").click( 
+        function() { 
+            list();
+        }
+    );
+		 
+	$("#loc").click(
+	    function() {
+	        filter();
+	    }
+	);
+});
+
+function list() {
+	var $form = $("form#f2");
+	$.ajax(
+	{
+		 type: "POST",
+		 url: "<?=$this->url(array('action' => 'list-dt','hd' => 'hdd'));?>",
+		 data: $form.serialize(),
+		 success: function(response) {
+			$('#danh_sach_dt').replaceWith('');
+		    // Insert list
+		    $("#btn_function").after(response);
+		 }
+	}
+	);
+}
+
+function filter() {
+	var $form = $('form#f2');
+	$.ajax(
+	{
+		 type: "POST",
+		 url: "<?=$this->url(array('action' => 'filter-dt','hd' => 'hdd'));?>",
+		 data: $form.serialize(),
+		 success: function(response) {
+			 $('#danh_sach_dt').replaceWith('');
+		     // Insert list
+		     $("#btn_function").after(response);
+		 }
+	}
+	);
+}
+
+function change(dk,id)
+{
+	var ma = dk.value;
+	$.ajax({
+			 type: "POST",
+			 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'load'))?>", 
+			 data: {'id' : ma},
+			 success: function(response){
+				 $('#thanh_vien_' + id).empty().append(response);
+		     }
+		});	
+}
+</script>
+<script>
+$(function() {
+	$( "#ngay_thanh_lap" ).datepicker({
+		showOn: "button",
+		changeYear: true,
+		changeMonth: true,
+		buttonImage: "<?php echo $baseURL . '/images/calendar.gif'?>",
+		buttonImageOnly: true,
+		altFormat: 'dd-mm-yy',
+		dateFormat: 'dd-mm-yy',
+		yearRange : '2005:2030'
+	});
+});
+
+</script>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->
+ <!-- End #messages -->

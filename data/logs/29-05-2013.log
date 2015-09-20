@@ -1,0 +1,426 @@
+KHCN CMS - 2013-05-29T22:09:23+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:thong-ke' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:16:25+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:thong-ke' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:16:52+07:00
+DEBUG [7]: Zend_Acl_Exception
+Message: Resource 'admin:thong-ke' not found
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Acl.php
+-- Line: 846
+-- Function: get
+-- Class: Zend_Acl
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Controller\Plugin\Acl.php
+-- Line: 32
+-- Function: isAllowed
+-- Class: Zend_Acl
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Plugin\Broker.php
+-- Line: 309
+-- Function: preDispatch
+-- Class: Khcn_Controller_Plugin_Acl
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 941
+-- Function: preDispatch
+-- Class: Zend_Controller_Plugin_Broker
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:19:24+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "3cbr20" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:36:56+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (khcn)
+Stack trace: 4
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:37:22+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (khcn)
+Stack trace: 4
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:37:41+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (login-default)
+Stack trace: 4
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:38:24+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (khcn)
+Stack trace: 4
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:39:22+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (khcn)
+Stack trace: 4
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:40:38+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (khcn)
+Stack trace: 4
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:41:44+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (khcn)
+Stack trace: 4
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-29T22:42:04+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (khcn)
+Stack trace: 4
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 71
+-- Function: run
+-- Class: Zend_Application
+
+
+

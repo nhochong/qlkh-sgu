@@ -1,0 +1,420 @@
+KHCN CMS - 2012-05-30T10:28:10+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "images" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-05-30T10:28:18+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "images" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-05-30T10:32:14+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "images" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-05-30T10:32:19+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "images" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-05-30T10:45:29+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "images" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-05-30T10:46:46+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "images" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-05-30T10:46:49+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "images" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-05-30T12:31:32+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "images" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-05-30T12:31:44+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "images" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2012-05-30T12:38:37+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "blankGif" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: C:\Program Files\Zend\Apache2\htdocs\NghienCuuKhoaHoc\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+

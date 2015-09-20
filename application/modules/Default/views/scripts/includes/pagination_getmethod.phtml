@@ -1,0 +1,74 @@
+<?php
+	$url_params = "";
+	if (isset($_GET) && count($_GET) > 0) {
+		$i = 0;
+		foreach ($_GET as $param => $value) {
+			if ($i == 0) {
+				$url_params .= "?" . $param . "=" . $value;
+			} else {
+				if(!is_array($value)){
+					$url_params .= "&" . $param . "=" . $value;
+				}else{
+					foreach ($value as $k=>$v)
+						$url_params .= "&cate[]=" . $v;
+				}
+			}
+			$i++;
+		}
+	}
+?>
+
+<?php
+if($this->pageCount){
+?>
+<table>
+<tr>
+<!-- First page link -->
+<?php if (isset($this->previous)){ ?>
+   <td><a class="pagenav" href="<?= $this->url(array('page' => $this->first)); ?><?= $url_params ?>">Trang đầu</a>
+   </td>
+<?php }?>
+
+<!-- ADD PREVIOUS BUTTON -->
+<?php
+if(isset($this->previous)){
+?>
+   <td><a class="pagenav" href="<?= $this->url(array('page' => $this->previous)); ?><?= $url_params ?>">Trang trước</a>
+   </td>
+<?php }?>
+
+<!-- SHOW THE AVAILABLE PAGES -->
+<?php
+foreach($this->pagesInRange as $page){
+   if($page != $this->current){
+?>
+   <td>
+      <a class="pagenav" href="<?= $this->url(array('page' => $page)); ?><?= $url_params ?>"><?php echo $page; ?></a>
+   </td>
+<?php
+   }else{
+?>
+      <td><b class="pagecureent"><?php echo $this->current; ?></b></td>
+<?php
+   }
+}
+?>
+<!-- ADD NEXT BUTTON -->
+<?php
+if(isset($this->next)){
+?>
+	<td><a class="pagenav" href="<?= $this->url(array('page' => $this->next)); ?><?= $url_params ?>">Trang sau</a>
+	</td>
+<?php } ?>
+
+<!-- Last page link -->
+<?php if (isset($this->next)){ ?>
+	<td>
+    	<a class="pagenav" href="<?= $this->url(array('page' => $this->last)); ?><?= $url_params ?>">Trang cuối</a>
+    </td>
+<?php }?>
+</tr>
+</table>
+<?php
+}
+?>

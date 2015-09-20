@@ -1,0 +1,73 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Lịch công tác";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách lịch công tác</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div class="danh_sach_lich_ct">
+<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'xoas'),null,true)?>" method="post" name="f2">
+<div class="clear"></div>
+<table class="tbl_lichct" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('deletes',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+			<th>Tuần - Tháng</th>
+			<th class="center">Ngày bắt đầu</th>
+			<th class="center">Ngày kết thúc</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+				<?php echo $this->formButton('add','Thêm',array('onclick' => 'window.location.href="' . $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'them'),null,true) . '"','class' => 'button'))?>
+			</div>
+			<div class="pagination"> 
+            	<?php echo $this->paginator?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->paginator as $lich_ct) 
+    	{
+    ?>
+    		<tr>
+			<td><?php echo $this->formCheckbox('item[]',$lich_ct['id'],null)?></td>
+			<td><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'sua','id' => $lich_ct['id']),null,true)?>"><?php echo 'Tuần ' . $lich_ct['tuan'] . ' tháng ' . $lich_ct['thang']?></a></td>
+			<td class="center"><?php echo date('d-m-Y', strtotime($lich_ct['ngay_bat_dau']));?></td>
+			<td class="center"><?php echo date('d-m-Y', strtotime($lich_ct['ngay_ket_thuc']))?></td>
+			<td>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'hoat-dong','id' => $lich_ct['id']),null,true)?>" title="Quản lý hoạt động"> 
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/add.png'?>" alt="Add"> </a>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'sua','id' => $lich_ct['id']),null,true)?>" title="Edit"> 
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/pencil.png'?>" alt="Edit"> </a>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'xoa','id' => $lich_ct['id']),null,true)?>" title="Delete" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+			</a></td>
+		</tr>
+    <?php
+    	}
+    ?>
+                              </tbody>
+</table>
+</form>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

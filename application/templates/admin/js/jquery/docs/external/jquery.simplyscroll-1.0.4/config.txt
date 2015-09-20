@@ -1,0 +1,13 @@
+Property 		Default 		Description 
+===================================================================
+className 		'simply-scroll' 	Class name for styling 
+frameRate 		24 		Number of movements/frames per second 
+speed 		1 		Number of pixels moved per frame 
+horizontal 		true 		Direction of movement: false for vertical 
+autoMode 		'off' 		'loop' or 'bounce' (disables buttons) 
+pauseOnHover 	true 		Pause scroll on hover (auto only) 
+startOnLoad 	false 		Use this if encountering rendering problems on Safari 3?/Mac OSX 
+flickrFeed 		'' 		URL of flickr feed to use for Image JSON 
+jsonSource 	'' 		Local URL for JSON image data (see source code) 
+jsonImgWidth 	240 		Image width for Flickr/JSON data only 
+jsonImgHeight 	180 		Image height for Flickr/JSON data only 

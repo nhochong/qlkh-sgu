@@ -1,0 +1,360 @@
+KHCN CMS - 2013-01-21T22:55:42+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FormSulvit' was not found in the registry; used paths:
+Admin_View_Helper_: C:/wamp/www/khcn/application/modules/admin/views\helpers/
+Khcn_View_Helper_: Khcn/View/Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\admin\views\scripts\loai-lv\index.phtml
+-- Line: 35
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\admin\views\scripts\loai-lv\index.phtml
+-- Line: 35
+-- Function: formSulvit
+-- Class: Zend_View
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-21T22:57:45+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FormSulvit' was not found in the registry; used paths:
+Admin_View_Helper_: C:/wamp/www/khcn/application/modules/admin/views\helpers/
+Khcn_View_Helper_: Khcn/View/Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\admin\views\scripts\loai-lv\index.phtml
+-- Line: 35
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\admin\views\scripts\loai-lv\index.phtml
+-- Line: 35
+-- Function: formSulvit
+-- Class: Zend_View
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-21T23:11:53+07:00
+DEBUG [7]: Zend_Db_Table_Row_Exception
+Message: Unrecognized method 'getLoaiLV()'
+Stack trace: 14
+#0
+-- File: C:\wamp\www\khcn\application\modules\admin\views\scripts\linh-vuc\index.phtml
+-- Line: 55
+-- Function: __call
+-- Class: Zend_Db_Table_Row_Abstract
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\views\scripts\linh-vuc\index.phtml
+-- Line: 55
+-- Function: getLoaiLV
+-- Class: Zend_Db_Table_Row
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-21T23:20:15+07:00
+DEBUG [7]: Zend_Paginator_Exception
+Message: No adapter for type NULL
+Stack trace: 7
+#0
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\LinhVucController.php
+-- Line: 37
+-- Function: factory
+-- Class: Zend_Paginator
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: Admin_LinhVucController
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#6
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+

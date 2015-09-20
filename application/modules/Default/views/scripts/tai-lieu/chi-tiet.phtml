@@ -1,0 +1,16 @@
+<?php $this->titleBlock("Phổ biến kiến thức");?>
+<div class="item_detail">
+	<div class="info_overview">
+		<div class="info_overview_header"><?php echo $this->tai_lieu->getTitle()?></div>
+		<div class="info_overview_content">
+			<div class="content_detail"><?php echo $this->tai_lieu->getDescription();?></div>
+		</div>
+	</div>
+	<div class="info_detail_header"></div>
+	<?php if(!empty($this->tai_lieu->ten_file)):?>
+		<div class="file">
+			<div class="title title_left"><?php echo $this->translate('Download')?></div>
+			<div class="content"><a href="<?php echo $this->baseUrl() . '/upload/files/tai_lieu/' . $this->tai_lieu->ten_file?>"><?php echo $this->tai_lieu->ten_file?></a></div>
+		</div>
+	<?php endif;?>
+</div>

@@ -1,0 +1,186 @@
+<div id="result" class="detail-detai">
+	<?php $hasData = false;?>
+	<?php 
+		foreach ($this->result as $item){
+			if($item['tong_so_dt']['count'] > 0){
+				$hasData = true;
+	?>
+	<table class="list_statistic" cellspacing="0" cellpadding="0" style="margin-bottom: 20px">
+		<tbody>
+			<tr>
+				<td class="header" colspan="3"><strong><?php echo $this->translate('NĂM')?> <?php echo $item['nam'] . ' - ' . ($item['nam'] + 1)?> : <?php echo $item['tong_so_dt']['count']?> <?php echo $this->translate('đề tài')?></strong></td>
+			</tr>		
+			<tr>
+				<td colspan="2">
+					<ul class='tabs_<?php echo $item['nam']?> tabs' >
+						<li><a href='#tab1_<?php echo $item['nam']?>'><?php echo $this->translate('Tình Trạng')?></a></li>
+						<li><a href='#tab2_<?php echo $item['nam']?>'><?php echo $this->translate('Loại Đề Tài')?></a></li>
+						<li><a href='#tab3_<?php echo $item['nam']?>'><?php echo $this->translate('Cấp Quản Lý & Xếp Loại')?></a></li>
+						<li><a href='#tab4_<?php echo $item['nam']?>'><?php echo $this->translate('Giảng Viên')?></a></li>
+					</ul>
+					<div id='tab1_<?php echo $item['nam']?>'>
+						<table class="thong_ke tinh_trang">
+							<tr class="title">
+								<td class="title"><?php echo $this->translate('Tình trạng')?></td>
+								<td class="total"><?php echo $this->translate('Số lượng')?></td>
+								<td class="cost"><?php echo $this->translate('Kinh phí')?> (VNĐ)</td>
+							</tr>
+							<tr>
+								<td class="title"><?php echo $this->translate('Chưa duyệt')?></td>
+								<td class="total"><?php echo $item['chua_duyet']['count']?></td>
+								<td class="cost"><?php echo number_format($item['chua_duyet']['kinh_phi'])?></td>
+							</tr>
+							<tr>
+								<td class="title"><?php echo $this->translate('Không duyệt')?></td>
+								<td class="total"><?php echo $item['khong_duyet']['count']?></td>
+								<td class="cost"><?php echo number_format($item['khong_duyet']['kinh_phi'])?></td>
+							</tr>
+							<tr>
+								<td class="title"><?php echo $this->translate('Đã duyệt đang thực hiện')?></td>
+								<td class="total"><?php echo $item['da_duyet']['count']?></td>
+								<td class="cost"><?php echo number_format($item['da_duyet']['kinh_phi'])?></td>
+							</tr>
+							<tr>
+								<td class="title"><?php echo $this->translate('Đã nghiệm thu')?></td>
+								<td class="total"><?php echo $item['da_nghiem_thu']['count']?></td>
+								<td class="cost"><?php echo number_format($item['da_nghiem_thu']['kinh_phi'])?></td>
+							</tr>
+							<tr>
+								<td class="title"><?php echo $this->translate('Không được nghiệm thu')?></td>
+								<td class="total"><?php echo $item['khong_nghiem_thu']['count']?></td>
+								<td class="cost"><?php echo number_format($item['khong_nghiem_thu']['kinh_phi'])?></td>
+							</tr>
+							<tr class="total_cost">
+								<td colspan="3" class="total_cost_value"><?php echo $this->translate('Tổng kinh phí')?> : <?php echo number_format($item['tong_so_dt']['kinh_phi'])?> (VNĐ)</td>
+							</tr>
+						</table>
+					</div>
+					<div id='tab2_<?php echo $item['nam']?>'>
+						<table class="thong_ke list_don_vi">
+							<tr class="title"><td colspan="5"><?php echo $this->translate('Loại đề tài')?></td></tr>
+							<?php for ($i = 0 ; $i<count($item['loai_linh_vuc']) ; $i = $i +2){?>
+							<tr>
+								<td width="40%"><?php echo $item['loai_linh_vuc'][$i]['ten_loai_linh_vuc']?></td>
+								<td width="5%" class="count"><?php  echo $item['loai_linh_vuc'][$i]['so_luong']['count']?></td>
+								<td width="10%"></td>
+								<?php if($i+1 < count($item['loai_linh_vuc'])){?>				
+								<td width="40%"><?php echo $item['loai_linh_vuc'][$i+1]['ten_loai_linh_vuc']?></td>
+								<td width="5%" class="count"><?php  echo $item['loai_linh_vuc'][$i+1]['so_luong']['count']?></td>
+								<?php }?>
+							</tr>
+							<?php }?>
+						</table>
+					</div>
+					<div id='tab3_<?php echo $item['nam']?>'>
+						<table><tr>
+							<td style="width: 55%;vertical-align: top;">
+								<table class="thong_ke cap_quan_ly">
+									<tr class="title"><td colspan="2"><?php echo $this->translate('Cấp quản lý')?></td></tr>
+									<tr>
+										<td class="l"><?php echo $this->translate('Cấp trường')?></td>
+										<td class="r"><?php echo $item['cap_truong']['count']?></td>
+									</tr>
+									<tr>
+										<td class="l"><?php echo $this->translate('Cấp khoa')?></td>
+										<td class="r"><?php echo $item['cap_khoa']['count']?></td>
+									</tr>
+									<tr>
+										<td class="l"><?php echo $this->translate('Các cấp ngoài trường')?></td>
+										<td class="r"><?php echo $item['cac_cap_ngoai_truong']['count']?></td>
+									</tr>
+								</table>
+							</td>	
+							<td style="vertical-align: top;">
+								<table class="thong_ke xep_loai">
+									<tr class="title"><td colspan="2"><?php echo $this->translate('Xếp loại')?></td></tr>
+									<tr>
+										<td class="l"><?php echo $this->translate('Xuất sắc')?></td>
+										<td class="r"><?php echo $item['xuat_sac']['count']?></td>
+									</tr>
+									<tr>
+										<td class="l"><?php echo $this->translate('Giỏi')?></td>
+										<td class="r"><?php echo $item['gioi']['count']?></td>
+									</tr>
+									<tr>
+										<td class="l"><?php echo $this->translate('Khá')?></td>
+										<td class="r"><?php echo $item['kha']['count']?></td>
+									</tr>
+									<tr>
+										<td class="l"><?php echo $this->translate('Trung bình')?></td>
+										<td class="r"><?php echo $item['trung_binh']['count']?></td>
+									</tr>
+									<tr>
+										<td class="l"><?php echo $this->translate('Không đạt')?></td>
+										<td class="r"><?php echo $item['khong_dat']['count']?></td>
+									</tr>
+								</table>
+							</td>
+						</tr></table>
+					</div>
+					<div id='tab4_<?php echo $item['nam']?>'>
+						<table class="thong_ke list_giang_vien">
+							<tr class="title"><td colspan="5"><?php echo $this->translate('Số lượng đề tài đã tham gia')?></td></tr>
+							<?php for ($i = 0 ; $i<count($item['giang_vien_arr']) ; $i = $i +2){?>
+							<tr>
+								<td width="40%"><a href="<?php echo $this->url(array('controller' => 'giang-vien', 'action' => 'thong-ke', 'id' => $item['giang_vien_arr'][$i]->id), 'default', null)?>"><?php echo $item['giang_vien_arr'][$i]->getDisplayname()?></a></td>
+								<td width="5%" class="count"><?php  echo $item['giang_vien_arr'][$i]['count_dt']?></td>
+								<td width="10%"></td>
+								<?php if($i+1 < count($item['giang_vien_arr'])){?>				
+								<td width="40%"><a href="<?php echo $this->url(array('controller' => 'giang-vien', 'action' => 'thong-ke', 'id' => $item['giang_vien_arr'][$i+1]->id), 'default', null)?>"><?php echo $item['giang_vien_arr'][$i+1]->getDisplayname()?></a></td>
+								<td width="5%" class="count"><?php  echo $item['giang_vien_arr'][$i+1]['count_dt']?></td>
+								<?php }?>
+							</tr>
+							<?php }?>
+						</table>
+					</div>
+					
+				</td>	
+			</tr>	
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		// Wait until the DOM has loaded before querying the document
+		$(document).ready(function(){
+			$('ul.tabs_<?php echo $item['nam']?>').each(function(){
+				// For each set of tabs, we want to keep track of
+				// which tab is active and it's associated content
+				var $active, $content, $links = $(this).find('a');
+	 
+				// If the location.hash matches one of the links, use that as the active tab.
+				// If no match is found, use the first link as the initial active tab.
+				$active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+				$active.addClass('active');
+				$content = $($active.attr('href'));
+	 
+				// Hide the remaining content
+				$links.not($active).each(function () {
+					$($(this).attr('href')).hide();
+				});
+	 
+				// Bind the click event handler
+				$(this).on('click', 'a', function(e){
+					// Make the old tab inactive.
+					$active.removeClass('active');
+					$content.hide();
+	 
+					// Update the variables with the new link and content
+					$active = $(this);
+					$content = $($(this).attr('href'));
+	 
+					// Make the tab active.
+					$active.addClass('active');
+					$content.show();
+	 
+					// Prevent the anchor's default click action
+					e.preventDefault();
+				});
+			});
+		});
+	</script>
+	<?php }}?>
+	<?php if(!$hasData):?>
+		<div class="tip">
+			<span><?php echo $this->translate('Không tìm thấy dữ liệu, vui lòng thử lại.');?></span>			
+		</div>
+	<?php endif;?>
+</div>

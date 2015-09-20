@@ -1,0 +1,82 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Lịch công tác";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+
+<div class="content-box-header">
+
+<h3>Cập nhật lịch công tác</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<?php echo $this->form?>
+<script>
+$(function() {
+	$( "#ngay_bat_dau" ).datepicker({
+		showOn: "button",
+		changeMonth: true,
+		buttonImage: "<?php echo $baseURL . '/images/calendar.gif'?>",
+		buttonImageOnly: true,
+		altFormat: 'dd-mm-yy',
+		dateFormat: 'dd-mm-yy'
+	});
+});
+</script>
+<script>
+$(function() {
+	$( "#ngay_ket_thuc" ).datepicker({
+		showOn: "button",
+		changeMonth: true,
+		buttonImage: "<?php echo $baseURL . '/images/calendar.gif'?>",
+		buttonImageOnly: true,
+		altFormat: 'dd-mm-yy',
+		dateFormat: 'dd-mm-yy'
+	});
+});
+</script>
+<script type="text/javascript" language="javascript">
+	CKEDITOR.replace( 'ghi_chu', {'skin' : 'office2003','height' : '70px', 'toolbar' : [ 
+		[ "Source"],
+		["TextColor","BGColor","FontSize"],
+		["Bold", "Italic", "Underline","-","Undo","Redo"],
+		["NumberedList","BulletedList","-","Outdent","Indent"],
+		["JustifyLeft","JustifyCenter","JustifyRight","JustifyBlock"], 
+		["Link", "Unlink","SpecialChar"]
+	]} );						
+</script>
+<?php 
+	$thus = Default_Model_Constraints::lct_thu();
+	foreach ($thus as $k=>$v){
+		for($i = 1 ; $i <= 3 ; $i++)
+		{
+			if($i == 1)
+				$id = '_s';
+			else if($i == 2)
+				$id = '_c';
+			else
+				$id = '_gc';
+			echo '<script type="text/javascript" language="javascript">
+					CKEDITOR.replace( "' . $k . $id . '", {"skin" : "office2003","height" : "70px", "toolbar" : [ 
+						[ "Source"],
+						["TextColor","BGColor","FontSize"],
+						["Bold", "Italic", "Underline","-","Undo","Redo"],
+						["NumberedList","BulletedList","-","Outdent","Indent"],
+						["JustifyLeft","JustifyCenter","JustifyRight","JustifyBlock"], 
+						["Link", "Unlink","SpecialChar"]
+					]} );						
+				</script>';
+			
+		}
+	}
+?>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->

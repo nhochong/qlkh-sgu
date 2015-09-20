@@ -1,0 +1,91 @@
+<?php $this->titleBlock("Tìm kiếm");?>
+<div class="list-search">
+<script>
+$(function() {
+	//$( "#tabs" ).tabs();
+	var select = <?php echo $this->tab?>;
+	var $tabs = $('#tabs').tabs();
+	$( "#tabs" ).tabs( "option", "selected", select );// switch tab
+});
+</script>
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Chủ đề</a></li>
+		<li><a href="#tabs-2">Giảng viên</a></li>
+	</ul>
+	<div id="tabs-1">
+		<?php echo $this->form->render($this);?>
+	</div>
+	<div id="tabs-2">
+		<?php echo $this->formGV->render($this);?>
+	</div>
+</div>
+<br>
+<?php if(isset($this->keyword)){?>
+<div class="ket_qua">Có <span class="total"><?php echo number_format($this->total)?></span> kết quả tìm kiếm với từ khóa : "<?php echo $this->keyword?>"</div>
+<hr>
+<table class="blog" cellpadding="0" cellspacing="0">
+	<tbody>	
+		<?php 
+		if ($this->paginator){
+			foreach ($this->paginator as $search)
+			{
+				if(empty($search->type) || empty($search->id)) continue;
+				$item = Khcn_Api::_()->getItem($search->type, $search->id);
+				if(!$item) continue;
+		?>
+				<tr>
+					<td valign="top">
+						<div class="search">
+							<?php if(isset($this->searchtypes[$search->type])):?>
+								<span class="loai">(<?php echo $this->searchtypes[$search->type]?>)</span><br/>
+							<?php endif;?>
+							<?php 
+								if($item instanceof Default_Model_DeTai){
+							?>
+								<a class="tieu_de" href="<?php echo $item->getHref()?>"><?php echo $item->ma;?> - <?php echo $item->getTitle()?></a>
+							<?php }else{?>
+								<a class="tieu_de" href="<?php echo $item->getHref()?>"><?php echo $item->getTitle()?></a>
+							<?php }?>											
+							<div class="cleared"></div>
+						</div>
+					</td>
+				</tr>
+		<?php 
+			}
+		}
+		?>		
+	</tbody>
+</table>
+<?php }else{?>
+<div class="ket_qua">Có <span class="total"><?php echo number_format($this->total)?></span> kết quả tìm kiếm với giảng viên : "<?php echo $this->name?>"</div>
+<hr>
+<table class="blog" cellpadding="0" cellspacing="0">
+	<tbody>	
+		<?php 
+		if ($this->paginator){
+			foreach ($this->paginator as $search)
+			{
+		?>
+				<tr>
+					<td valign="top">
+						<div class="search">
+							<a class="tieu_de" href="<?php echo $search['link']?>"><?php echo $search['code']?> - <?php echo $search['title']?></a>										
+							<div class="mo_ta"><?php echo $search['description']?></div>
+							<a class="chi_tiet" href="<?php echo $search['link']?>">Chi tiết...</a>
+							<div class="cleared"></div>
+						</div>
+					</td>
+				</tr>
+		<?php 
+			}
+		}
+		?>		
+	</tbody>
+</table>
+<?php }?>
+
+<div class="pagination">
+<?php echo $this->paginator?>
+</div>
+</div>

@@ -1,0 +1,79 @@
+<table>
+	<tr class="alt-row">
+		<td><label style="font-weight: bold;">Danh sách đề tài đã chọn</label></td>
+	</tr>
+	<tr>
+		<td>
+			<table id="dsdtdc" align="center">
+				<thead>
+					<tr class="alt-row">
+						<th>
+						<?php 
+							if($this->hd == 'hdd'){
+								echo $this->formCheckbox('check_all_selected',null,array('id' => 'check_all_selected','class' => 'check-all','checked' => $this->checked));
+							}
+						?>
+						</th>
+						<th>Mã đề tài</th>
+						<?php 
+							if($this->field_linh_vuc == false){
+						?>
+						<th class="ten" style="width: 60%">Tên đề tài</th>
+						<th class="center">Đơn vị</th>
+						<?php }else{?>
+						<th class="ten" style="width: 40%">Tên đề tài</th>
+						<th class="center">Lĩnh vực</th>
+						<th class="center">Đơn vị</th>
+						<?php }?>
+					</tr>
+				</thead>
+				<tbody>
+				<?php
+			    if($this->hd == 'hdd'){
+			    	foreach ($this->deTais as $de_tai) 
+			    	{
+			    ?>
+			    		<tr>
+						<td><?php echo $this->formCheckbox('item_selected[]',$de_tai['id'],array('id' => 'ma[]','checked' => $this->checked))?></td>
+						<td><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'sua','id' => $de_tai['id']),null,true)?>"><?php echo $de_tai['ma']?></a></td>
+						<td class="ten"><?php echo $de_tai['ten']?></td>
+						<?php 
+							if($this->field_linh_vuc == true){
+						?>
+						<td class="center"><?php echo $de_tai['ten_linh_vuc']?></td>
+						<?php }?>
+						<td class="center"><?php echo $de_tai['ten_don_vi']?></td>
+						</tr>
+			    <?php
+			    	}
+			    }else{
+			    	foreach ($this->deTais as $de_tai) 
+			    	{
+			    ?>
+			    		<tr>
+						<td><?php echo $this->formCheckbox('hdnt[]',$de_tai['id'],array('id' => 'ma[]','checked' => $this->checked,'class' => 'unique'))?></td>
+						<td><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'sua','id' => $de_tai['id']),null,true)?>"><?php echo $de_tai['ma']?></a></td>
+						<td class="ten"><?php echo $de_tai['ten']?></td>
+						<?php 
+							if($this->field_linh_vuc == true){
+						?>
+						<td class="center"><?php echo $de_tai['ten_linh_vuc']?></td>
+						<?php }?>
+						<td class="center"><?php echo $de_tai['ten_don_vi']?></td>
+						</tr>
+			    <?php	    	
+			    }}
+			    ?>
+			    </tbody>	
+			</table>
+		</td>
+	</tr>
+</table>
+
+<script language="javascript">
+$(document).ready(function(){ // this line makes sure this code runs on page load
+    $('#check_all_selected').click(function () {
+    	$(this).parents('#dsdtdc').find(':checkbox').attr('checked', this.checked);
+    });
+});
+</script>

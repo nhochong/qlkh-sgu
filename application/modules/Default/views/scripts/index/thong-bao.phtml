@@ -1,0 +1,38 @@
+<?php $this->titleBlock("Thông báo từ Phòng KHCN");?>
+<?php if( empty($this->redirect ) && $this->autoRedirect): ?>
+	<meta http-equiv="refresh" content="3;url=<?php echo $this->url(array('module' => 'default','controller' => 'index','action' => 'index'),null,true)?>" />
+<?php endif; ?>
+
+		<?php if( $this->parentRefresh ): // Refresh parent window (for smoothboxes) ?>
+		<script type="text/javascript">
+		  setTimeout(function()
+		  {
+				parent.window.location.reload( false );
+		  }, <?php echo ( $this->parentRefresh === true ? 1000 : $this->parentRefresh ); ?>);
+		</script>
+	<?php endif; ?>
+
+	<?php if( $this->parentRedirect ): // Refresh parent window (for smoothboxes) ?>
+		<script type="text/javascript">
+		  setTimeout(function()
+		  {
+				parent.window.location.href = '<?php echo $this->parentRedirect ?>';
+		  }, <?php echo ( empty($this->parentRedirectTime) ? 1000 : $this->parentRedirectTime ); ?>);
+		</script>
+	<?php endif; ?>
+
+	<?php if( $this->redirect ): ?>
+		<script type="text/javascript">
+		  setTimeout(function()
+		  {
+				window.location.href = '<?php echo $this->redirect ?>';
+		  }, <?php echo ( isset($this->redirectTime) ? $this->redirectTime : 500 ); ?>);
+		</script>
+	<?php endif; ?>
+  
+	<?php foreach( $this->messages as $message ): // Show messages ?>
+	<div class="message <?php echo $this->type_msg ?>">
+		<div style="text-align: center;"><?php echo $message ?></div>
+	</div>
+	<?php endforeach; ?>
+<div align="right" style="margin-top: 20px"><a class="pagenav" href="<?php echo $this->url(array('module' => 'default','controller' => 'index','action' => 'index'),null,true)?>">[Bấm vào đây nếu trình duyệt không tự chuyển]</a></div>

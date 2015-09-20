@@ -1,0 +1,24 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Loại lĩnh vực";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box">
+
+<div class="content-box-header">
+
+<h3>Thêm loại lĩnh vực</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<span id="ajax_loading" style="color:red;"></span>
+<?php echo $this->form?>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->

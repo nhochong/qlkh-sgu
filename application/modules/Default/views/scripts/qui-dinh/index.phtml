@@ -1,0 +1,40 @@
+<?php $this->titleBlock("Qui Định");?>
+<div class="rules">
+	<div class="hdcn"><img src="<?php echo $this->baseUrl() . '/images/folder.gif'?>"/> Nghiên cứu khoa học</div>
+	<?php if($this->hdcn){?>
+		<ul class="rules list_folder_file">
+		<?php 
+			foreach ($this->hdcn as $qui_dinh)
+			{
+		?>
+				<li><a class="file" href="<?php echo $this->url(array('module'=> 'default','controller' => 'qui-dinh','action' => 'chi-tiet','id' => $qui_dinh['id']),null,true); ?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder2.gif'?>" /> <?php echo $qui_dinh['ten']?></a></li>
+		<?php 
+			}
+		?>
+			</ul>
+	<?php
+		}else{
+	?>
+			<p>Đang cập nhật ...</p>
+	<?php }?>
+	<!--
+	<br>
+	<div class="sdh"><img src="<?php echo $this->baseUrl() . '/images/folder.gif'?>"/> Đào tạo sau đại học</div>
+	<?php if($this->sdh){?>
+		<ul class="rules list_folder_file">
+		<?php 
+			foreach ($this->sdh as $qui_dinh)
+			{
+		?>
+				<li><a class="file" href="<?php echo $this->url(array('module'=> 'default','controller' => 'qui-dinh','action' => 'chi-tiet','id' => $qui_dinh['id']),null,true); ?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder2.gif'?>" /> <?php echo $qui_dinh['ten']?></a></li>
+		<?php 
+			}
+		?>
+			</ul>
+	<?php
+		}else{
+	?>
+			<p>Đang cập nhật ...</p>
+	<?php }?>
+	-->
+</div>

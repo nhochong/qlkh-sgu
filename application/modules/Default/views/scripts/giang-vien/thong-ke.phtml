@@ -1,0 +1,18 @@
+<?php $this->titleBlock($this->giang_vien->getHoTen());?>
+<script>
+$(function() {
+	$( "#tabs" ).tabs();
+});
+</script>
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1"><?php echo $this->translate('Hồ sơ NCKH')?></a></li>
+		<li><a href="#tabs-2"><?php echo $this->translate('Thông tin liên lạc')?></a></li>
+	</ul>
+	<div id="tabs-1">
+		<?php echo $this->render('giang-vien/ho-so-nckh.phtml') ?>
+	</div>
+	<div id="tabs-2">
+		<?php echo $this->render('giang-vien/thong-tin-lien-lac.phtml') ?>
+	</div>
+</div>

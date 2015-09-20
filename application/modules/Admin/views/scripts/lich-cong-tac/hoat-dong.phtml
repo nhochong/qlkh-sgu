@@ -1,0 +1,104 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Lịch Công Tác";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Hoạt động <?php echo 'Tuần ' . $this->lich_ct->tuan . ' - Tháng ' . $this->lich_ct->thang . ' ( ' . date('d/m/Y', strtotime($this->lich_ct->ngay_bat_dau)) . ' - ' . date('d/m/Y', strtotime($this->lich_ct->ngay_ket_thuc)) . ' )'?></h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+<?php echo $this->form;?>
+<div class="content-box-content">
+<div class="tab-content default-tab" id="tab1">
+<div class="danh_sach_hoat_dong">
+<div class="clear"></div>
+<table class="tbl_hoithao" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th class="center" style="width: 15%;">Ngày</th>
+			<th class="center" style="width: 35%;">Sáng</th>
+			<th class="center" style="width: 35%;">Chiều</th>
+			<!--<th></th>-->
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formButton('add','Thêm',array('onclick' => 'window.location.href="' . $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'them-hoat-dong', 'ma_cong_tac' => $this->lich_ct->getIdentity()),null,true) . '"','class' => 'button'))?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->ndcts as $ngay => $ndct) 
+    	{
+    ?>
+    		<tr>
+			<td><?php echo date('d/m/Y', strtotime($ngay))?></td>
+			<td>
+				<?php if(isset($ndct['sang']) && count($ndct['sang']) > 0):?>
+					<ul class="list_hoat_dong">
+					<?php foreach($ndct['sang'] as $noi_dung):?>
+						<?php 
+							$className = 'normal';
+							$title = '';
+							if($noi_dung->quan_trong){
+								$className = 'important';
+								$title = 'Hoạt động quan trọng';
+							}
+						?>
+						<li class="hd_left <?php echo $className?>" title="<?php echo $title?>">
+							<div class="hoat_dung"><?php echo $noi_dung->noi_dung?></div>
+						</li>
+						<li class="hd_right">
+							<div class="remove_noi_dung">
+								<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'remove-noi-dung','lct_id' => $this->lich_ct->getIdentity(),'ndct_id' => $noi_dung->getIdentity()),null,true)?>" title="Xóa hoạt động" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false "> 
+								<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete"> </a>
+							</div>
+						</li>
+					<?php endforeach;?>
+					</ul>
+				<?php endif;?>
+			</td>
+			<td class="center">
+				<?php if(isset($ndct['chieu']) && count($ndct['chieu']) > 0):?>
+					<ul class="list_hoat_dong">
+					<?php foreach($ndct['chieu'] as $noi_dung):?>
+						<?php 
+							$className = 'normal';
+							$title = '';
+							if($noi_dung->quan_trong){
+								$className = 'important';
+								$title = 'Hoạt động quan trọng';
+							}
+						?>
+						<li class="hd_left <?php echo $className?>" title="<?php echo $title?>">
+							<div class="hoat_dung"><?php echo $noi_dung->noi_dung?></div>
+						</li>
+						<li class="hd_right">
+							<div class="remove_noi_dung">
+								<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'lich-cong-tac','action' => 'remove-noi-dung','lct_id' => $this->lich_ct->getIdentity(),'ndct_id' => $noi_dung->getIdentity()),null,true)?>" title="Xóa hoạt động" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false "> 
+								<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete"> </a>
+							</div>
+						</li>
+					<?php endforeach;?>
+					</ul>
+				<?php endif;?>
+			</td>
+		</tr>
+    <?php
+    	}
+    ?>
+                              </tbody>
+</table>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

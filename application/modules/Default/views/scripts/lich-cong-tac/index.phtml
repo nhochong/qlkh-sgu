@@ -1,0 +1,27 @@
+<?php $this->titleBlock("Lịch công tác");?>
+<div class="list-shedules">
+<table class="blog" cellpadding="0" cellspacing="0">
+	<tbody>	
+		<?php 
+		if ($this->paginator){
+			foreach ($this->paginator as $lich_ct)
+			{
+		?>
+				<tr>
+					<td valign="top">
+					<div class="shedule">
+						<a href="<?php echo $this->url(array('controller' => 'lich-cong-tac', 'action' => 'chi-tiet' , 'id' => $lich_ct->getIdentity()),NULL,true)?>">Tuần <?php echo $lich_ct->tuan?>  tháng <?php echo $lich_ct->thang?> (<?php echo $lich_ct->ngay_bat_dau?> - <?php echo $lich_ct->ngay_ket_thuc?>)</a>						
+					<div class="cleared"></div>
+					</div>
+					</td>
+				</tr>
+		<?php 
+			}
+		}
+		?>		
+	</tbody>
+</table>
+<div class="pagination">
+<?php echo $this->paginator?>
+</div>
+</div>

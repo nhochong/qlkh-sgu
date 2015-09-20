@@ -1,0 +1,30 @@
+<?php $this->titleBlock("Hình ảnh hoạt động của phòng");?>
+<script type="text/javascript" src="<?php echo $this->baseUrl()?>/../application/templates/default/js/jquery/external/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl()?>/../application/templates/default/js/jquery/external/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl()?>/../application/templates/default/js/jquery/external/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<link rel="stylesheet" href="<?php echo $this->baseUrl()?>/../application/templates/default/js/jquery/external/jquery.fancybox-1.3.4/style.css" />
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("a[rel=slideshow_group]").fancybox({
+			'transitionIn'		: 'none',
+			'transitionOut'		: 'none',
+			'titlePosition' 	: 'over',
+			'cyclic'			: true,
+			'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+				return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+			}
+		});
+	});
+</script>
+<div class="browse_hinh_anh">
+	<?php foreach ($this->paginator as $hinh_anh): ?>
+		<div class="item">
+			<a rel="slideshow_group" href="<?php echo $this->baseUrl()?>/flash/image-scroller/images/<?php echo $hinh_anh->ten_file?>"><img alt="" src="<?php echo $this->baseUrl()?>/flash/image-scroller/images/<?php echo $hinh_anh->ten_file?>" /></a>
+		</div>
+	<?php endforeach;?>
+</div>
+<div class="clear"></div>
+<div class="pagination">
+	<?php echo $this->paginator?>
+</div>

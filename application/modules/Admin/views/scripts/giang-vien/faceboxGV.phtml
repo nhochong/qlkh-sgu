@@ -1,0 +1,74 @@
+<?php 
+	$form_gv = new Admin_Form_PopupGV();	
+?>
+<ul class="shortcut-buttons-set">
+	<li><a class="shortcut-button" href="#them_gv" rel="facebox"
+		title="Thêm giảng viên"><span> <img
+		src="<?php echo $this->baseUrl() . '/../application/templates/admin/images/icons/pencil_48.png'?>" alt="icon" /><br />
+		Thêm giảng viên 
+	</span></a></li>
+</ul>
+<div id="them_gv" style="display: none"><!-- Messages are shown when a link with these attributes are clicked: href="#messages" rel="modal"  -->
+<h3>Thêm giảng viên</h3>
+	<?php echo $form_gv;?>
+</div>
+<div class="clear"></div>
+<script type="text/javascript">
+function add_gv(form){
+	var ma = form.popup_gv_ma.value;
+	var ho_ten = form.popup_gv_ho_ten.value;
+	var ma_don_vi = form.popup_gv_ma_don_vi.value;
+	var ma_hoc_vi = form.popup_gv_ma_hoc_vi.value;
+	var chuc_vu = form.popup_gv_chuc_vu.value;
+	var email = form.popup_gv_email.value;
+	var so_dien_thoai = form.popup_gv_so_dien_thoai.value;
+    $.ajax({
+        type: "post",
+        url: "<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'them-popup'))?>",
+        data: {'ma' : ma,'ho_ten' : ho_ten,'ma_don_vi' : ma_don_vi,'ma_hoc_vi' : ma_hoc_vi,'chuc_vu' : chuc_vu,'email' : email,'so_dien_thoai' : so_dien_thoai},
+        success: function(data) {
+            if(data == "YES")
+            	alert('Thành công. Thêm giảng viên thành công.');
+            else if(data == "EXIST")
+                alert('Lỗi. Mã giảng viên đã tồn tại, vui lòng kiểm tra lại .');
+            else if(data == "NO_NAME")
+            	alert('Lỗi. Chưa nhập tên cho giảng viên.');
+            else if(data == "ERROR")
+                alert('Lỗi. Đã có lỗi trong quá trình xử lý.');
+        }            
+    });    
+    $.facebox.close();  
+}
+function kiem_tra_gv(dk){
+	var ma = dk.value;
+	$.ajax({ type: "POST", 
+			 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'kiem-tra-ma'))?>", 
+			 data: {'ma' : ma},
+			 success: function(data){
+				 $('#ajax_gv').replaceWith('');
+		         // if the result is TRUE write a message to the page
+				 if (data == "YES") {
+		           $(dk).after('<span id="ajax_gv" class="input-notification error png_bg">' +
+		             'Mã giảng viên đã tồn tại.</span>');
+		         }else if(data == "NO"){
+		        	$(dk).after('<span id="ajax_gv" class="input-notification success png_bg">' +
+		            'Có thể sử dụng.</span>');
+		         }}
+		});
+}
+function inputNumber(e)
+{
+	var keynum;
+	if(window.event) // IE
+	{
+	  keynum = e.keyCode;
+	}
+	else if(e.which) // Netscape/Firefox/Opera
+	{
+	  keynum = e.which;
+	}
+	if ( ((keynum > 45) && (keynum <58)) || (keynum == 8) || (keynum == 9) || (keynum == 190) || (keynum == 39)|| (keynum == 37) ) 	 			return true;
+	else 
+		return false;
+}
+</script>

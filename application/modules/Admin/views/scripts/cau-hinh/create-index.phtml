@@ -1,0 +1,26 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Search index";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+
+<div class="content-box-header">
+
+<h3>Tạo search index</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<div class="search-index">
+	<div><?php echo $this->msg;?></div>
+	<div class="total">Total Documents : <span class="total"><?php echo $this->total;?></span></div>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->

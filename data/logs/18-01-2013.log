@@ -1,0 +1,180 @@
+KHCN CMS - 2013-01-18T21:01:52+07:00
+DEBUG [7]: Zend_View_Exception
+Message: No view partial provided and no default set
+Stack trace: 16
+#0
+-- File: 
+-- Line: 
+-- Function: paginationControl
+-- Class: Zend_View_Helper_PaginationControl
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#2
+-- File: C:\wamp\www\khcn\application\modules\default\views\scripts\de-tai\danh-sach.phtml
+-- Line: 108
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\views\scripts\de-tai\danh-sach.phtml
+-- Line: 108
+-- Function: paginationControl
+-- Class: Zend_View
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#13
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#14
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#15
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-18T22:53:33+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (42000) 
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TO 4) asc' at line 6
+Stack trace: 12
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalDeTai.php
+-- Line: 105
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizDeTai.php
+-- Line: 218
+-- Function: getDSDT
+-- Class: Default_Model_DAL_DalDeTai
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\default\controllers\DeTaiController.php
+-- Line: 69
+-- Function: getDSDT
+-- Class: Default_Model_BLL_BizDeTai
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: indexAction
+-- Class: DeTaiController
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#11
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+

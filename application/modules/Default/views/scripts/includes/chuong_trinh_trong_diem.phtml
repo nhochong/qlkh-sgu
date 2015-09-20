@@ -1,0 +1,65 @@
+<div class="art-block" id="widget_chuong_trinh_trong_diem">
+<div class="art-block-tl"></div>
+<div class="art-block-tr"></div>
+<div class="art-block-bl"></div>
+<div class="art-block-br"></div>
+<div class="art-block-tc"></div>
+<div class="art-block-bc"></div>
+<div class="art-block-cl"></div>
+<div class="art-block-cr"></div>
+<div class="art-block-cc"></div>
+<div class="art-block-body">
+
+<div class="art-blockheader">
+<div class="l"></div>
+<div class="r"></div>
+<div class="t"><span id="" class="Head">Chương trình trọng điểm</span></div>
+</div>
+
+<div align="right"></div>
+<div class="art-blockcontent">
+<div class="art-blockcontent-tl"></div>
+<div class="art-blockcontent-tr"></div>
+<div class="art-blockcontent-bl"></div>
+<div class="art-blockcontent-br"></div>
+<div class="art-blockcontent-tc"></div>
+<div class="art-blockcontent-bc"></div>
+<div class="art-blockcontent-cl"></div>
+<div class="art-blockcontent-cr"></div>
+<div class="art-blockcontent-cc"></div>
+<div class="art-blockcontent-body"><!-- block-content -->
+<div id=""><!-- Start_Module_605 -->
+<?php 
+	$table = Khcn_Api::_()->getDbTable('chuong_trinh', 'default');
+	$chuongTrinhs = $table->fetchAll($table->select()->where('trang_thai = 1')->order('ngay_tao DESC')->limit(10));
+	if(count($chuongTrinhs) > 0){
+?>
+	<ul class="list_hoat_dong_quan_trong">
+		<?php foreach($chuongTrinhs as $chuong_trinh):?>
+			<li><a href="<?php echo $chuong_trinh->getHref()?>"><?php echo $chuong_trinh->getTitle()?></a></li>
+		<?php endforeach;?>
+	</ul>
+
+<?php	
+	}else{
+?>
+	<style type="text/css">
+		#widget_chuong_trinh_trong_diem {
+			display: none;
+		}
+	</style>
+	<?php }?>
+<!-- End_Module_605 -->
+</div>
+
+<!-- /block-content -->
+
+<div class="cleared"></div>
+</div>
+</div>
+
+<div align="right"></div>
+
+<div class="cleared"></div>
+</div>
+</div>

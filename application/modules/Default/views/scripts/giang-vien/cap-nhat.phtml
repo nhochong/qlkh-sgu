@@ -1,0 +1,10 @@
+<?php $this->titleBlock("Thông tin giảng viên");?>
+
+<?php echo $this->form->render($this) ?>
+
+<script type="text/javascript">
+	$('#ma-element').append($('<span style="color: red; font-weight: bold"><?php echo $this->giang_vien->ma?></span>'));
+	//$('#ma-element #ma').remove();
+	$('#ma-element #ma').css('display', 'none');
+</script>
+

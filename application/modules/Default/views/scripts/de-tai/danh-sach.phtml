@@ -1,0 +1,100 @@
+<?php $this->titleBlock("Đề Tài - " . $this->header);?>
+
+<div class="filter_dt"><!-- Start_Module_741 -->
+	<?php echo $this->form;?>
+</div>
+<div class="filter_dt"><!-- Start_Module_741 -->
+	<div class="total"><?php echo $this->paginator->getTotalItemCount();?> Đề tài</div>
+</div>
+<div class="list-detai">
+<?php 
+	if (count($this->paginator) != 0){
+?>
+	<table class="blog"> 
+	<tbody>
+	<?php 
+		foreach ($this->paginator as $deTai)
+		{
+	?>
+		<tr>
+		<td>
+		<div class="detai">
+			<table border="0" width="100%">
+				<tbody>
+					<tr>
+						<td colspan="3" class="header"><p><a href="<?php echo $this->url(array('controller' => 'de-tai', 'action' => 'chi-tiet' , 'id' => $deTai->getIdentity()),NULL,true)?>" class="storytitle"><?php echo $deTai->ma?> - <?php echo $deTai->getTitle()?></a></p></td>						
+					</tr>
+					<tr>
+						<td width="50%" class="left">
+							<table>
+								<tr>
+									<td class="l">Chủ nhiệm</td>
+									<td class="r"><span>:</span> <?php echo $deTai->getChuNhiem()->getHoTen()?></td>
+								</tr>
+								<tr>
+									<td class="l">Tình trạng</td>
+									<td class="r"><span>:</span> <?php echo $deTai->getTenTinhTrang()?></td>
+								</tr>
+								<tr>
+									<td class="l">Cấp quản lý</td>
+									<td class="r"><span>:</span> <?php echo $deTai->getTenCapQuanLy()?></td>
+								</tr>
+							</table>
+						</td>
+						<td class="right">
+							<table>
+								<tr>
+									<td class="l">Đơn vị</td>
+									<td class="r"><span>:</span> <?php echo $deTai->getDonVi()->getTitle()?></td>
+								</tr>
+								<tr>
+									<td class="l">Lĩnh vực</td>
+									<td class="r"><span>:</span> <?php echo $deTai->getLinhVuc()->getTitle()?></td>
+								</tr>
+								<tr>
+									<?php if(!empty($deTai->xep_loai)):?>
+									<td class="l">Xếp loại</td>
+									<td class="r"><span>:</span> <?php echo $deTai->getTenXepLoai()?></td>
+									<?php endif;?>
+								</tr>
+							</table>
+						</td>						
+					</tr>					
+				</tbody>
+			</table>
+		</div>
+		</td>
+		</tr>
+	<?php 
+		}		
+	?>		
+	</tbody>
+	</table>
+	<div class="pagination">
+	<?php echo $this->paginator?>
+	</div>
+<?php }else{?>
+	<div>Đang cập nhật ...</div>
+<?php }?>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $("form#f2").submit(function(){
+		if($("#to").val() != '0' && $("#to").val() < $("#from").val()){
+			alert("Lỗi. Năm không hợp lệ");
+			return false;
+		}
+		return true;
+	});
+	
+	<?php if(!empty($this->order)):?>
+		$("#direction").css('display','');
+	<?php endif;?>
+	
+	$("#order").change(function(e){
+		//$('#f2').submit();
+	});
+});
+</script>
+<!-- End news -->

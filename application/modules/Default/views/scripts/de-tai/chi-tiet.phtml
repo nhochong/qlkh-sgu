@@ -1,0 +1,87 @@
+<?php $this->titleBlock("Đề Tài - " . $this->de_tai->ma);?>
+<!-- Begin news -->
+<style type="text/css">
+	.detail-detai td.don_vi_quan_ly > div {
+		display: inline-table;
+		width: 220px;
+		margin: 0px 10px;
+	}
+</style>
+<div class="detail-detai">
+	<table class="blog" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr>
+				<td class="header" colspan="3"><strong>THÔNG TIN ĐỀ TÀI</strong></td>
+			</tr>
+			<tr>
+				<td class="r" style="width: 50%">Mã đề tài : <span class="ma_dt"> <?php echo $this->de_tai->ma?></span></td>
+				<td class="l">Cấp quản lý : <?php echo $this->de_tai->getTenCapQuanLy()?></td>
+			</tr>
+			<tr>
+				<td colspan="2">Tên đề tài : <span class="ten_dt"> <?php echo $this->de_tai->getTitle()?></span></td>
+			</tr>
+			<tr>
+				<?php if(!empty($this->de_tai->bo_mon_id)):?>
+					<td class="r don_v	i_quan_ly">Đơn vị quản lý : <div><?php echo $this->de_tai->getDonVi()->getTitle()?></div></td>
+					<td class="l bo_mon">Bộ môn : <?php echo $this->de_tai->getBoMon()->getTitle()?></td>
+				<?php else:?>
+					<td colspan="2">Đơn vị quản lý : <?php echo $this->de_tai->getDonVi()->getTitle()?></td>
+				<?php endif;?>
+			</tr>
+			<tr>
+				<td class="r">Thời gian thực hiện : <?php echo $this->de_tai->soNamThucHien()?> năm</td>
+				<td class="l">
+				<?php if($this->de_tai->ma_loai > 1):?>
+					Loại đề tài : <?php echo $this->de_tai->getLoaiDeTai()->getTitle()?>
+				<?php endif;?>
+				</td>
+			</tr>
+			<tr>
+				<td class="l">Tình trạng : <font style="color: red;font-weight: bold;"><?php echo $this->de_tai->getTenTinhTrang()?></font></td>
+				<td class="r">Xếp loại : <font style="color: red;font-weight: bold;"><?php echo $this->de_tai->getTenCapQuanLy()?></font></td>
+			</tr>
+			<tr>
+				<td class="l">Số tháng gia hạn : <?php echo $this->de_tai->so_thang_gia_han?></td>
+				<td class="r">Kinh phí : <?php echo number_format($this->de_tai->kinh_phi)?> VNĐ</td>
+			</tr>
+			<?php if(!empty($this->de_tai->ngay_gia_han)):?>
+			<tr>
+				<td class="l">Ngày gia hạn : <?php echo date('d-m-Y', strtotime($this->de_tai->ngay_gia_han))?></td>
+				<td class="r"></td>
+			</tr>
+			<?php endif;?>
+			<tr>
+				<td class="header" colspan="3"><strong>THÔNG TIN THÀNH VIÊN</strong></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<table class="table_gv">						
+						<tr class="title">
+							<th>Đơn vị</th>
+							<th>Tên thành viên</th>
+							<th>Nhiệm vụ</th>
+						</tr>                           
+						<?php 
+							foreach ($this->thanhViens as $thanh_vien)
+							{
+						?>						                          	
+								<tr>
+									<td><?php echo $thanh_vien->getGiangVien()->getDonVi()->getTitle()?></td>
+									<td><?php echo $thanh_vien->getGiangVien()->getHoTen()?></td>
+									<td><?php echo $thanh_vien->getTenNhiemVu()?></td>
+								</tr>
+						<?php 
+							}
+						?>                                                       
+					</table>
+				</td>
+			</tr>
+			<?php if(!empty($this->de_tai->file_tom_tat)):?>
+			<tr>
+				<td class="header" colspan="3"><strong>TÓM TẮT ĐỀ TÀI</strong></td>
+			</tr>
+			<tr><td><a href="<?php echo $this->baseUrl() . '/upload/files/de_tai/' . $this->de_tai->file_tom_tat?>"><img src="<?php echo $this->baseUrl() . '/images/download_button.png'?>" width="100px"/></a></td></tr>
+			<?php endif;?>
+		</tbody>
+	</table>
+</div>

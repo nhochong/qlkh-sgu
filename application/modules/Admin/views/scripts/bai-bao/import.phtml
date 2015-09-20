@@ -1,0 +1,25 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Import";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box">
+<div class="content-box-header">
+
+<h3>Import bài báo khoa học</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div id="import_dt">
+<?php echo $this->form;?>
+</div>
+</div>
+
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>

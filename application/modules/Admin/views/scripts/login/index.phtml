@@ -1,0 +1,30 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Đăng nhập";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<html>
+<head>
+	<?php echo $this->render('includes/js_css.phtml') ?>
+</head>
+	<body id="login">
+		
+		<div id="login-wrapper" class="png_bg">
+			<div id="login-top">
+				<!-- Logo (221px width) -->
+				<img id="logo" src="<?php echo $this->baseUrl() . '/../application/templates/admin/images/logo_2.png'?>" alt="LOGO Phòng Khoa học - Công nghệ" />
+			</div> <!-- End #logn-top -->
+			
+			<div id="login-content">
+				<?php if(isset($this->message)){?>
+					<div class="notification information png_bg">
+						<div><?php echo $this->message?></div>
+					</div>
+				<?php }?>
+				<?php echo $this->form ?>
+			</div> <!-- End #login-content -->
+			
+		</div> <!-- End #login-wrapper -->
+  </body>
+</html>

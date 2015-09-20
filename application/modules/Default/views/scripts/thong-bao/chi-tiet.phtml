@@ -1,0 +1,69 @@
+<?php $this->titleBlock("Thông Báo");?>
+<div class="content-announcements">
+<div class="detail">
+<div class="title">
+<?php echo $this->thongbao->getTitle()?>
+</div>
+<hr color="#06C"/>
+<div class="content">
+<!-- Begin content news -->
+<?php echo $this->thongbao->getDescription()?>
+<!-- End content news -->
+</div>
+<?php if(!empty($this->thongbao->file_pdf)):?>
+<div class="detail-rule">
+	<iframe src="<?php echo 'http://docs.google.com/gview?url=http://' . $_SERVER['HTTP_HOST'] . $this->baseUrl() . '/upload/files/thong_bao/' . $this->thongbao->file_pdf . '&embedded=true'?>" style="width:100%; height:700px;" frameborder="0"></iframe>
+</div><br/>
+<div class="rules-download">
+	<a href="<?php echo $this->baseUrl() . '/upload/files/thong_bao/' . $this->thongbao->file_pdf?>" title="<?php echo $this->thongbao->getTitle()?>"><img src="<?php echo $this->baseUrl() . '/images/download_button.png'?>" width="100px"/></a>
+</div>
+<?php endif;?>
+</div>
+<br/>
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4ef0b8c73a846dab"></script>
+<!-- AddThis Button END -->
+
+<div class="cung_chu_de">
+<div>
+	<table>
+        <tr>
+            <td class="header">Cùng chủ đề</td>
+            <td>
+                <hr style="margin-left: 0px" />
+            </td>
+        </tr>
+    </table>
+</div>
+<ul>
+<?php 
+	foreach ($this->cungchude as $thong_bao)
+	{
+?>
+		<li>
+			<img src="<?php echo $this->baseUrl().'/images/Index.jpg'?>" />
+			<b class="title"><a href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'chi-tiet' , 'id' => $thong_bao->getIdentity()),NULL,true)?>"><?php echo $thong_bao->getTitle()?></a></b>
+			(<?php echo date('d/m/Y', strtotime($thong_bao->ngay_tao))?>)
+			<?php 
+			if($thong_bao->isNew()){
+			?>	
+				<img class="new" alt="new" src="<?php echo $this->baseUrl() . '/images/news.gif'?>">
+			<?php }?>
+			<br/>	 	        
+		</li>
+<?php 
+	}
+?>
+</ul>
+</div>
+<div class="view-all"><strong><a href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'danh-sach' , 'loai' => $this->thongbao['loai']),NULL,true)?>">&gt;&gt;&gt; Xem tất cả</a></strong></div>
+<!-- End_Module_741 -->
+</div>

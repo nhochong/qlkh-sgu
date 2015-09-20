@@ -1,0 +1,140 @@
+2014-11-30T02:51:05+00:00 CRIT (2): 
+Error Code: 1804bb
+exception 'Zend_Db_Table_Row_Exception' with message 'Unrecognized method 'getIdentity()'' in E:\wamp\www\khcn\library\Zend\Db\Table\Row\Abstract.php:1158
+Stack trace:
+#0 E:\wamp\www\khcn\application\modules\Default\Model\DbTable\HeCaoHoc.php(20): Zend_Db_Table_Row_Abstract->__call('getIdentity', Array)
+#1 E:\wamp\www\khcn\application\modules\Default\Model\DbTable\HeCaoHoc.php(20): Khcn_Db_Table_Row->getIdentity()
+#2 E:\wamp\www\khcn\application\modules\Admin\Form\LichHoc.php(22): Default_Model_DbTable_HeCaoHoc->getListAssoc()
+#3 E:\wamp\www\khcn\library\Zend\Form.php(240): Admin_Form_LichHoc->init()
+#4 E:\wamp\www\khcn\application\modules\Admin\controllers\LichHocController.php(34): Zend_Form->__construct()
+#5 E:\wamp\www\khcn\library\Zend\Controller\Action.php(516): Admin_LichHocController->themAction()
+#6 E:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('themAction')
+#7 E:\wamp\www\khcn\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 E:\wamp\www\khcn\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#9 E:\wamp\www\khcn\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#10 E:\wamp\www\khcn\public\index.php(169): Khcn_Application->run()
+#11 {main}
+2014-11-30T02:55:34+00:00 CRIT (2): 
+Error Code: 1fc3a2
+exception 'Zend_Db_Table_Row_Exception' with message 'Specified column "loai" is not in the row' in E:\wamp\www\khcn\library\Zend\Db\Table\Row\Abstract.php:179
+Stack trace:
+#0 E:\wamp\www\khcn\application\modules\Default\Model\LichHoc.php(23): Zend_Db_Table_Row_Abstract->__get('loai')
+#1 E:\wamp\www\khcn\application\modules\Admin\views\scripts\lich-hoc\index.phtml(53): Default_Model_LichHoc->getTenLoai()
+#2 E:\wamp\www\khcn\library\Zend\View.php(108): include('E:\wamp\www\khc...')
+#3 E:\wamp\www\khcn\library\Zend\View\Abstract.php(888): Zend_View->_run('E:/wamp/www/khc...')
+#4 E:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php(900): Zend_View_Abstract->render('lich-hoc/index....')
+#5 E:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php(921): Zend_Controller_Action_Helper_ViewRenderer->renderScript('lich-hoc/index....', NULL)
+#6 E:\wamp\www\khcn\library\Zend\Controller\Action\Helper\ViewRenderer.php(960): Zend_Controller_Action_Helper_ViewRenderer->render()
+#7 E:\wamp\www\khcn\library\Zend\Controller\Action\HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#8 E:\wamp\www\khcn\library\Zend\Controller\Action.php(527): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#9 E:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#10 E:\wamp\www\khcn\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#11 E:\wamp\www\khcn\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#12 E:\wamp\www\khcn\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#13 E:\wamp\www\khcn\public\index.php(169): Khcn_Application->run()
+#14 {main}
+2014-12-10T14:45:55+00:00 DEBUG (7): Require class Khcn_Controller_Action_Helper_RequireAdmin failed check for: admin.index.index
+2014-12-10T14:45:55+00:00 DEBUG (7): Require class Khcn_Controller_Action_Helper_RequireUser failed check for: admin.index.index
+2014-12-10T14:45:55+00:00 DEBUG (7): Require class Khcn_Controller_Action_Helper_RequireUser failed check for: default.error.requireuser
+2014-12-10T18:00:22+00:00 CRIT (2): 
+Error Code: 377030
+exception 'Exception' with message 'Could not open  for reading! File does not exist.' in E:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2007.php:487
+Stack trace:
+#0 E:\wamp\www\khcn\application\modules\Admin\Api\Core.php(42): PHPExcel_Reader_Excel2007->load(NULL)
+#1 E:\wamp\www\khcn\application\modules\Admin\controllers\BaiBaoController.php(254): Admin_Api_Core->getDataImport(Array, 'E:\wamp\www\khc...', 'xlsx')
+#2 E:\wamp\www\khcn\library\Zend\Controller\Action.php(516): Admin_BaiBaoController->importAction()
+#3 E:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('importAction')
+#4 E:\wamp\www\khcn\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#5 E:\wamp\www\khcn\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#6 E:\wamp\www\khcn\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#7 E:\wamp\www\khcn\public\index.php(170): Khcn_Application->run()
+#8 {main}
+2014-12-10T18:06:13+00:00 CRIT (2): 
+Error Code: a990fe
+exception 'Exception' with message 'Could not open  for reading! File does not exist.' in E:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2007.php:487
+Stack trace:
+#0 E:\wamp\www\khcn\application\modules\Admin\Api\Core.php(42): PHPExcel_Reader_Excel2007->load(NULL)
+#1 E:\wamp\www\khcn\application\modules\Admin\controllers\BaiBaoController.php(254): Admin_Api_Core->getDataImport(Array, 'E:\wamp\www\khc...', 'xlsx')
+#2 E:\wamp\www\khcn\library\Zend\Controller\Action.php(516): Admin_BaiBaoController->importAction()
+#3 E:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('importAction')
+#4 E:\wamp\www\khcn\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#5 E:\wamp\www\khcn\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#6 E:\wamp\www\khcn\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#7 E:\wamp\www\khcn\public\index.php(170): Khcn_Application->run()
+#8 {main}
+2014-12-11T16:17:58+00:00 CRIT (2): 
+Error Code: f33d69
+exception 'Zend_Db_Statement_Mysqli_Exception' with message 'Mysqli prepare error: Unknown column 'bai_bao.thoi_gian' in 'where clause'' in E:\wamp\www\khcn\library\Zend\Db\Statement\Mysqli.php:77
+Stack trace:
+#0 E:\wamp\www\khcn\library\Zend\Db\Statement.php(115): Zend_Db_Statement_Mysqli->_prepare('SELECT COUNT(DI...')
+#1 E:\wamp\www\khcn\library\Zend\Db\Adapter\Mysqli.php(381): Zend_Db_Statement->__construct(Object(Zend_Db_Adapter_Mysqli), 'SELECT COUNT(DI...')
+#2 E:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php(478): Zend_Db_Adapter_Mysqli->prepare('SELECT COUNT(DI...')
+#3 E:\wamp\www\khcn\library\Zend\Db\Select.php(686): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select))
+#4 E:\wamp\www\khcn\library\Zend\Paginator\Adapter\DbSelect.php(123): Zend_Db_Select->query(2)
+#5 E:\wamp\www\khcn\library\Zend\Paginator\Adapter\DbSelect.php(164): Zend_Paginator_Adapter_DbSelect->setRowCount(Object(Zend_Db_Table_Select))
+#6 E:\wamp\www\khcn\library\Zend\Paginator.php(1060): Zend_Paginator_Adapter_DbSelect->count()
+#7 E:\wamp\www\khcn\library\Zend\Paginator.php(740): Zend_Paginator->_calculatePageCount()
+#8 E:\wamp\www\khcn\application\modules\Default\Model\DbTable\BaiBao.php(68): Zend_Paginator->setItemCountPerPage(10)
+#9 E:\wamp\www\khcn\application\modules\Admin\controllers\BaiBaoController.php(23): Default_Model_DbTable_BaiBao->getBaiBaosPaginator(Array)
+#10 E:\wamp\www\khcn\library\Zend\Controller\Action.php(516): Admin_BaiBaoController->indexAction()
+#11 E:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 E:\wamp\www\khcn\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 E:\wamp\www\khcn\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#14 E:\wamp\www\khcn\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#15 E:\wamp\www\khcn\public\index.php(170): Khcn_Application->run()
+#16 {main}
+2014-12-11T16:33:51+00:00 CRIT (2): 
+Error Code: ab4a59
+exception 'Zend_Db_Statement_Mysqli_Exception' with message 'Mysqli prepare error: Unknown column 'bai_bao.thoi_gian' in 'where clause'' in E:\wamp\www\khcn\library\Zend\Db\Statement\Mysqli.php:77
+Stack trace:
+#0 E:\wamp\www\khcn\library\Zend\Db\Statement.php(115): Zend_Db_Statement_Mysqli->_prepare('SELECT COUNT(DI...')
+#1 E:\wamp\www\khcn\library\Zend\Db\Adapter\Mysqli.php(381): Zend_Db_Statement->__construct(Object(Zend_Db_Adapter_Mysqli), 'SELECT COUNT(DI...')
+#2 E:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php(478): Zend_Db_Adapter_Mysqli->prepare('SELECT COUNT(DI...')
+#3 E:\wamp\www\khcn\library\Zend\Db\Select.php(686): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select))
+#4 E:\wamp\www\khcn\library\Zend\Paginator\Adapter\DbSelect.php(123): Zend_Db_Select->query(2)
+#5 E:\wamp\www\khcn\library\Zend\Paginator\Adapter\DbSelect.php(164): Zend_Paginator_Adapter_DbSelect->setRowCount(Object(Zend_Db_Table_Select))
+#6 E:\wamp\www\khcn\library\Zend\Paginator.php(1060): Zend_Paginator_Adapter_DbSelect->count()
+#7 E:\wamp\www\khcn\library\Zend\Paginator.php(740): Zend_Paginator->_calculatePageCount()
+#8 E:\wamp\www\khcn\application\modules\Default\Model\DbTable\BaiBao.php(68): Zend_Paginator->setItemCountPerPage(10)
+#9 E:\wamp\www\khcn\application\modules\Admin\controllers\BaiBaoController.php(23): Default_Model_DbTable_BaiBao->getBaiBaosPaginator(Array)
+#10 E:\wamp\www\khcn\library\Zend\Controller\Action.php(516): Admin_BaiBaoController->indexAction()
+#11 E:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 E:\wamp\www\khcn\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 E:\wamp\www\khcn\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#14 E:\wamp\www\khcn\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#15 E:\wamp\www\khcn\public\index.php(170): Khcn_Application->run()
+#16 {main}
+2014-12-12T15:34:31+00:00 CRIT (2): 
+Error Code: d73ee4
+exception 'Zend_Db_Statement_Mysqli_Exception' with message 'Mysqli prepare error: Unknown column 'ngay_tao' in 'order clause'' in E:\wamp\www\khcn\library\Zend\Db\Statement\Mysqli.php:77
+Stack trace:
+#0 E:\wamp\www\khcn\library\Zend\Db\Statement.php(115): Zend_Db_Statement_Mysqli->_prepare('SELECT `bai_bao...')
+#1 E:\wamp\www\khcn\library\Zend\Db\Adapter\Mysqli.php(381): Zend_Db_Statement->__construct(Object(Zend_Db_Adapter_Mysqli), 'SELECT `bai_bao...')
+#2 E:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php(478): Zend_Db_Adapter_Mysqli->prepare('SELECT `bai_bao...')
+#3 E:\wamp\www\khcn\library\Zend\Db\Table\Abstract.php(1529): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select))
+#4 E:\wamp\www\khcn\library\Zend\Db\Table\Abstract.php(1344): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 E:\wamp\www\khcn\application\modules\Default\controllers\BaiBaoController.php(9): Zend_Db_Table_Abstract->fetchAll(Object(Zend_Db_Table_Select))
+#6 E:\wamp\www\khcn\library\Zend\Controller\Action.php(516): Default_BaiBaoController->indexAction()
+#7 E:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#8 E:\wamp\www\khcn\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 E:\wamp\www\khcn\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#10 E:\wamp\www\khcn\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#11 E:\wamp\www\khcn\public\index.php(170): Khcn_Application->run()
+#12 {main}
+2014-12-12T15:43:14+00:00 CRIT (2): 
+Error Code: 141a56
+exception 'Zend_Db_Statement_Mysqli_Exception' with message 'Mysqli prepare error: Unknown column 'ngay_tao' in 'order clause'' in E:\wamp\www\khcn\library\Zend\Db\Statement\Mysqli.php:77
+Stack trace:
+#0 E:\wamp\www\khcn\library\Zend\Db\Statement.php(115): Zend_Db_Statement_Mysqli->_prepare('SELECT `bai_bao...')
+#1 E:\wamp\www\khcn\library\Zend\Db\Adapter\Mysqli.php(381): Zend_Db_Statement->__construct(Object(Zend_Db_Adapter_Mysqli), 'SELECT `bai_bao...')
+#2 E:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php(478): Zend_Db_Adapter_Mysqli->prepare('SELECT `bai_bao...')
+#3 E:\wamp\www\khcn\library\Zend\Db\Table\Abstract.php(1529): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select))
+#4 E:\wamp\www\khcn\library\Zend\Db\Table\Abstract.php(1344): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 E:\wamp\www\khcn\application\modules\Default\controllers\BaiBaoController.php(9): Zend_Db_Table_Abstract->fetchAll(Object(Zend_Db_Table_Select))
+#6 E:\wamp\www\khcn\library\Zend\Controller\Action.php(516): Default_BaiBaoController->indexAction()
+#7 E:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#8 E:\wamp\www\khcn\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 E:\wamp\www\khcn\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#10 E:\wamp\www\khcn\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#11 E:\wamp\www\khcn\public\index.php(170): Khcn_Application->run()
+#12 {main}

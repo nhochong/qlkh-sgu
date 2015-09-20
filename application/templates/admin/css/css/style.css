@@ -1,0 +1,366 @@
+@CHARSET "utf-8";
+/* Begin Common */
+/*
+GLOBAL NOTICES (OUTSIDE FORMS)
+Used to show a message or notice with an icon on a page,
+usually above content, not within a form.
+*/
+.tip
+{
+  overflow: hidden;
+  clear: both;
+}
+.tip > span
+{
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 6px 6px;
+  padding: 6px 6px 6px 27px;
+  background-color: #faf6e4;
+  float: left;
+  margin-bottom: 15px;
+  background-image: url(../../images/tip.png);
+  border: 1px solid #e4dfc6;
+}
+html[dir="rtl"] .tip > span
+{
+  background-position: 99% 50%;
+  padding: 6px 27px 6px 6px;
+  float: right;
+}
+ul.errors li{
+	color: red;
+}
+/* End Common */
+/* Begin Login */
+#login-wrapper #login-content input{
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+table.tblLogin ul.errors li{
+	text-align: center;
+	color: red;
+	font-weight: bold;
+}
+table.tblLogin tr td{
+	vertical-align: top;
+}
+table.tblLogin tr td label{
+	width: 85px !important;
+	margin-top: 10px;
+}
+table.tblLogin tr.remember span#Remember-label label.optional{
+	float: right !important;
+}
+table.tblLogin tr.remember td input.chkRemember{
+	margin-top: 10px !important;
+}
+input.btnsubmit{
+	width: 60px !important;
+}
+input.chkRemember{
+	width: 30px !important;
+	margin-top: 5px !important;
+}
+/* End Login */
+
+/* Begin list */
+td.center{
+	text-align: center;
+}
+th.center{
+	text-align: center;
+}	
+/* End list */
+
+/* Begin qui dinh */
+
+/* End qui dinh */
+
+/* Begin bieu mau */
+
+/* End bieu mau */
+
+/* Begin lịch biểu */
+
+/* End lịch biểu */
+
+/* Begin lịch tuyển sinh */
+
+/* End lịch tuyển sinh */
+
+/* Begin thông báo */
+table.tbl_thongbao th.tieu_de{
+	width: 40%;
+}
+/* End thông báo */
+
+/* Begin tin tức */
+table.tbl_tintuc th.tieu_de{
+	width: 60%;
+}
+table.tin_tuc input#image{
+	width: 170px;
+	height: 100px;
+}
+table.tin_tuc td#mo_ta_tom_tat-label{
+	vertical-align: middle;
+}
+/* End tin tức */
+
+/* Begin Linh Vuc */
+table.linh_vuc tr td#mo_ta-label{
+	vertical-align: middle;
+}
+/* End Linh Vuc */
+
+/* Begin hinh anh */
+table.tbl_hinhanh tr td{
+	vertical-align: top;
+}
+table.tbl_hinhanh tr td.hinh_anh img{
+	width: 170px;
+	height: 100px;
+}
+/* end hinh anh */
+
+/* Begin Học vị */
+table.hoc_vi tr td#ghi_chu-label{
+	vertical-align: middle;
+}
+/* End Học Vị */
+
+/* Begin Loại đt */
+table.loai_dt tr td#ghi_chu-label{
+	vertical-align: middle;
+}
+/* End Loại đt */
+
+/* Begin hội thảo */
+table.tbl_hoithao th.chu_de{
+	width: 40%;
+}
+table.hoi_thao input#image{
+	width: 320px;
+	height: 240px;
+}
+/* End hội thảo */
+
+/* Begin đơn vị */
+table.don_vi tr.bgwhite{
+	background-color: white !important;
+}
+table.popup_dv tr td.la_khoa label{
+	display: inline;
+	margin-right: 20px;
+}
+table.popup_dv tr td.thuoc_sgu label{
+	display: inline;
+	margin-right: 20px;
+}
+/* End Đơn vị */
+
+/* Begin giang vien */
+td.filter_btn_r{
+	padding-left: 0px !important;
+}
+td.filter_btn_l{
+	padding-right: 0px !important;
+}
+/* End giang vien */
+
+/* Begin đề tài */
+table.de_tai td#ghi_chu-label{
+	vertical-align: middle;
+}
+table.tbl_detai th.ten{
+	width: 35%;
+}
+table.filter_dt td.status{
+	
+}
+table.filter_dt td.title{
+	padding-left: 10px !important;
+}
+table.filter_dt td.group1{
+	text-align: center;
+}
+table.filter_dt td.group3{
+	/*text-align: right;*/
+}
+/* End đề tài */
+
+#facebox .body {
+    width: 450px !important;
+}
+
+/* Begin search-index */
+div.search-index{	
+	font-size: 14px;	
+	font-weight: bold;
+}
+div.search-index div.msg{
+	
+}
+div.search-index div.total{
+	margin-top: 5px;
+}
+div.search-index div.total span.total{
+	color: red;
+}
+/* End search-index */
+
+/* Begin import */
+div.import-dt{
+	margin-top: 15px;
+	text-align: center;
+	font-weight: bold;
+	color: blue;
+}
+/* End import */
+
+/* Begin report */
+table.report_dt tr td.thong_bao label{
+	display: inline;
+	margin-right: 20px;
+}
+/* Begin report */
+ul.shortcut-buttons-set{
+	padding: 0px !important;
+}
+.filter_dt #cap_quan_ly{
+	width: 120px;
+}
+.filter_dt #tinh_trang{
+	width: 130px;
+}
+.filter_dt #ma_linh_vuc{
+	width: 160px;
+}
+.filter_dt #ma_don_vi{
+	max-width: 420px;
+}
+#icon_order a{
+	padding-right : 15px;
+}
+.order:hover{
+	background: url('../../images/icons/up-icon.png') no-repeat;
+	background-position: 25px 0px;
+}
+.order_asc{
+	background: url('../../images/icons/up-icon.png') no-repeat;
+	background-position: 25px 0px;
+}
+.order_asc:hover{
+	background: url('../../images/icons/down-icon.png') no-repeat;
+	background-position: 25px 0px;
+}
+.order_desc{
+	background: url('../../images/icons/down-icon.png') no-repeat;
+	background-position: 25px 0px;
+}
+.order_desc:hover{
+	background: url('../../images/icons/up-icon.png') no-repeat;
+	background-position: 25px 0px;
+}
+.total_detai h3{
+	color: #808080;
+	padding-left: 10px;
+}
+.filter_gv #ma_don_vi{
+	width : 300px;
+}
+#global_page_admin-giang-vien-index .tbl_giangvien .tbl_giangvien_options > a + a {
+	margin-left: 5px;
+}
+.radio_inline label {
+	display: inline-block;
+}
+#popup_dv tr td#popup_dv_thuoc_sgu-label label,
+#popup_dv tr td#popup_dv_la_khoa-label label {
+	padding-top: 10px;
+}
+#global_page_admin-de-tai-index .filter_dt .group3 #nam-label {
+	float: left;
+}
+#global_page_admin-hoi-thao-them #f2 tr.trang_thai td input,
+#global_page_admin-hoi-thao-sua #f2 tr.trang_thai td input {
+	float: left;
+	margin-right: 10px;
+}
+#global_page_admin-hoi-thao-index div.filter_ht {
+	margin-top: 20px;
+}
+#global_page_admin-bai-bao-add .form_bai_bao_giang_vien #giang_vien_id {
+	min-width: 150px;
+}
+#global_page_admin-bai-bao-add .bai_bao_info,
+#global_page_admin-lich-cong-tac-them-hoat-dong .lich_cong_tac_info {
+	padding: 10px 0px 20px;
+	font-size: 20px;
+}
+#global_page_admin-bai-bao-add .bai_bao_info .title,
+#global_page_admin-lich-cong-tac-them-hoat-dong .lich_cong_tac_info .title {
+	float: left;
+}
+#global_page_admin-bai-bao-add .bai_bao_info .content,
+#global_page_admin-lich-cong-tac-them-hoat-dong .lich_cong_tac_info .content {
+	padding-left: 20px;
+	display: inline-block;
+	color: red;
+	overflow: hidden;
+	width: 790px;
+}
+#global_page_admin-bai-bao-index ul.list_giang_Vien li,
+#global_page_admin-bai-bao-index ul.list_don_vi li {
+	background: transparent;
+}
+#global_page_admin-bai-bao-index ul.list_giang_Vien li > .giang_vien,
+#global_page_admin-bai-bao-index ul.list_giang_Vien li > .remove_tac_gia{
+	display: inline-table;
+}
+#global_page_admin-hop-thu-gop-y .filter_hop_thu {
+	margin: 20px 0px;
+}
+#global_page_admin-hop-thu-chi-tiet .tbl_gop_y_info .title {
+	font-weight: bold;
+	width: 100px;
+}
+#global_page_admin-hop-thu-chi-tiet .form_gop_y_edit #tinh_trang-label {
+	width: 100px;
+}
+#global_page_admin-hop-thu-gop-y .form_filter_gop_y {
+	margin-left: 10px;
+}
+#global_page_admin-hop-thu-gop-y .form_filter_gop_y #loai_id-wrapper {
+	float: left;
+}
+#global_page_admin-hop-thu-gop-y .form_filter_gop_y #tinh_trang-wrapper {
+	padding-left: 10px;
+	display: inline-block;
+}
+#global_page_admin-lich-cong-tac-hoat-dong ul.list_hoat_dong > li {
+	list-style: none;
+}
+#global_page_admin-lich-cong-tac-hoat-dong ul.list_hoat_dong li.hd_left {
+	float: left;
+	margin-right: 10px;
+	overflow: hidden;
+	max-width: 330px;
+	clear: both;
+}
+#global_page_admin-lich-cong-tac-hoat-dong ul.list_hoat_dong li.hd_right {
+	line-height: 35px;
+	padding-left: 0px;
+	display: block;
+	float: left;
+}
+#global_page_admin-lich-cong-tac-hoat-dong ul.list_hoat_dong li.hd_right {
+	background: none !important;
+}
+#global_page_admin-lich-cong-tac-hoat-dong ul.list_hoat_dong li.hd_left.important {
+	color: red;
+}

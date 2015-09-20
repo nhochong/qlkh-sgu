@@ -1,0 +1,234 @@
+KHCN CMS - 2013-01-22T23:02:29+07:00
+DEBUG [7]: Zend_Db_Statement_Exception
+Message: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+Stack trace: 14
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 755
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalLinhVuc.php
+-- Line: 41
+-- Function: fetchRow
+-- Class: Zend_Db_Adapter_Abstract
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizLinhVuc.php
+-- Line: 150
+-- Function: getLVByMa
+-- Class: Default_Model_DAL_DalLinhVuc
+
+#6
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 183
+-- Function: getLVByMa
+-- Class: Default_Model_BLL_BizLinhVuc
+
+#7
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 89
+-- Function: save_dt
+-- Class: Admin_ImportController
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-22T23:06:20+07:00
+DEBUG [7]: Zend_Db_Statement_Exception (23000) 
+Message: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'ma' in where clause is ambiguous
+Stack trace: 14
+#0
+-- File: C:\wamp\www\khcn\library\Zend\Db\Statement.php
+-- Line: 300
+-- Function: _execute
+-- Class: Zend_Db_Statement_Pdo
+
+#1
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 479
+-- Function: execute
+-- Class: Zend_Db_Statement
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Pdo\Abstract.php
+-- Line: 238
+-- Function: query
+-- Class: Zend_Db_Adapter_Abstract
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Db\Adapter\Abstract.php
+-- Line: 755
+-- Function: query
+-- Class: Zend_Db_Adapter_Pdo_Abstract
+
+#4
+-- File: C:\wamp\www\khcn\application\modules\default\models\DAL\DalLinhVuc.php
+-- Line: 41
+-- Function: fetchRow
+-- Class: Zend_Db_Adapter_Abstract
+
+#5
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizLinhVuc.php
+-- Line: 150
+-- Function: getLVByMa
+-- Class: Default_Model_DAL_DalLinhVuc
+
+#6
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 183
+-- Function: getLVByMa
+-- Class: Default_Model_BLL_BizLinhVuc
+
+#7
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 89
+-- Function: save_dt
+-- Class: Admin_ImportController
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-22T23:52:54+07:00
+DEBUG [7]: Exception
+Message: Could not find row 453
+Stack trace: 8
+#0
+-- File: C:\wamp\www\khcn\application\modules\default\models\BLL\BizGiangVien.php
+-- Line: 129
+-- Function: getGiangVien
+-- Class: Default_Model_DAL_DalGiangVien
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\GiangVienController.php
+-- Line: 375
+-- Function: getGiangVien
+-- Class: Default_Model_BLL_BizGiangVien
+
+#2
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: suaAction
+-- Class: Admin_GiangVienController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+

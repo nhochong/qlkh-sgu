@@ -1,0 +1,439 @@
+<?php 
+$this->title = "Trang Chủ";
+$this->headTitle($this->title);
+$baseURL = $this->baseUrl();
+?>
+<script type="text/javascript"
+	src="<?php echo $baseURL.'/flash/image-scroller/swfobject.js'?>"></script>
+<script type="text/javascript">
+		var flashvars = {};
+		flashvars.folderPath = "<?php echo $baseURL.'/flash/image-scroller/'?>"
+		var params = {};
+		params.scale = "noscale";
+		params.salign = "tl";
+		params.wmode = "transparent";
+		params.allowScriptAccess = "always";
+		params.allowFullScreen = "false";
+		var attributes = {};	
+		swfobject.embedSWF("<?php echo $baseURL.'/flash/image-scroller/ImageScrollerFX.swf'?>", "DivImageScrollerFX", "600", "220", "9.0.0", false, flashvars, params, attributes);
+</script>
+
+<!-- Begin images -->
+<div class="art-block">
+    <div class="art-block-tl"></div>
+    <div class="art-block-tr"></div>
+    <div class="art-block-bl"></div>
+    <div class="art-block-br"></div>
+    <div class="art-block-tc"></div>
+    <div class="art-block-bc"></div>
+    <div class="art-block-cl"></div>
+    <div class="art-block-cr"></div>
+    <div class="art-block-cc"></div>
+    <div class="art-block-body">
+<!--Tiêu đề chạy -->
+<div class="art-blockheader">
+    <div class="l"></div>
+    <div class="r"></div>
+     <div class="t"><span class="Head"><marquee style="text-transform: uppercase;"><?php echo $this->tenPhong()?></marquee></span>
+</div>
+</div>
+ <!--File flash-->
+<div class="art-blockcontent">
+    <div class="art-blockcontent-tl"></div>
+    <div class="art-blockcontent-tr"></div>
+    <div class="art-blockcontent-bl"></div>
+    <div class="art-blockcontent-br"></div>
+    <div class="art-blockcontent-tc"></div>
+    <div class="art-blockcontent-bc"></div>
+    <div class="art-blockcontent-cl"></div>
+    <div class="art-blockcontent-cr"></div>
+    <div class="art-blockcontent-cc"></div>
+    <div class="art-blockcontent-body">
+<!-- block-content -->
+
+<div id="dnn_ctr602_ContentPane" class="DNNAligncenter"><!-- Start_Module_602 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td>
+			<!--Thêm file địa chỉ file flash ở đây-->
+			<div id="DivImageScrollerFX"></div>
+		</td>
+	</tr>
+	</table><!-- End_Module_602 -->
+</div>
+
+<!-- /block-content -->
+    </div>
+</div>
+		<div class="cleared"></div>
+    </div>
+</div>
+<!-- End images -->
+
+<!-- Begin Thong Bao Tuyen Sinh SDH -->
+<?php if(count($this->thongBaoSDH) > 0):?>
+<div class="art-block" id="widget_thong_bao_sdh">
+    <div class="art-block-tl"></div>
+    <div class="art-block-tr"></div>
+    <div class="art-block-bl"></div>
+    <div class="art-block-br"></div>
+    <div class="art-block-tc"></div>
+    <div class="art-block-bc"></div>
+    <div class="art-block-cl"></div>
+    <div class="art-block-cr"></div>
+    <div class="art-block-cc"></div>
+    <div class="art-block-body">
+
+<div class="art-blockheader">
+    <div class="l"></div>
+    <div class="r"></div>
+     <div class="t"><span id="dnn_ctr741_dnnTitle_lblTitle" class="Head">Đào tạo Sau đại học</span>
+</div>
+</div>
+
+<div class="art-blockcontent">
+    <div class="art-blockcontent-tl"></div>
+    <div class="art-blockcontent-tr"></div>
+    <div class="art-blockcontent-bl"></div>
+    <div class="art-blockcontent-br"></div>
+    <div class="art-blockcontent-tc"></div>
+    <div class="art-blockcontent-bc"></div>
+    <div class="art-blockcontent-cl"></div>
+    <div class="art-blockcontent-cr"></div>
+    <div class="art-blockcontent-cc"></div>
+    <div class="art-blockcontent-body">
+<!-- block-content -->
+
+<div id="dnn_ctr741_ContentPane"><!-- Start_Module_741 -->
+<div class="content-news">
+<div>
+<?php 
+	$count = 0;
+	$max_item_featured = 2;
+	foreach ($this->thongBaoSDH as $thong_bao)
+	{
+?>
+		<div class="baiviet">
+		<span class="title <?php echo $thong_bao->noi_bat? 'featured' : ''?>">
+			<a class="tieude" href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'chi-tiet' , 'id' => $thong_bao['id']),NULL,true)?>"><?php echo $thong_bao->getTitle()?></a>
+		<?php 
+			if($thong_bao->isNew(true)){
+		?>	
+			<img alt="new" src="<?php echo $baseURL . '/images/news.gif'?>">
+		<?php }?>
+		</span>
+		<div class="article_photo">
+			<ul class="thumb">
+				<li class="noborder"><a href="<?php echo $thong_bao->getPhotoUrl()?>" data-link="mylink.html"><img class="hinh" src="<?php echo $thong_bao->getPhotoUrl()?>" /></a></li>
+			</ul>
+		</div>
+		<div class="tomtat">
+		<b><?php echo date('d/m/Y', strtotime($thong_bao['ngay_tao']))?></b> - <?php echo Khcn_Api::_()->default()->subPhrase($thong_bao->getTitle(), 200)?></div>
+		<a class="chitiet" href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'chi-tiet' , 'id' => $thong_bao['id']),NULL,true)?>"><strong>&gt;&gt;&gt; </strong>Chi tiết...</a>
+		</div>
+<?php 
+		if(++$count >= $max_item_featured){
+			break;
+		}
+	}
+?>
+</div>
+<div class="cleared"></div>
+<?php if(count($this->thongBaoSDH) > $max_item_featured):?>
+<div class="cung_chu_de">
+<div>
+	<table>
+        <tr>
+            <td class="header">Các tin khác</td>
+            <td>
+                <hr/>
+            </td>
+        </tr>
+    </table>
+</div>
+<ul>
+<?php 
+	for($i = $max_item_featured ; $i <= count($this->thongBaoSDH) - 1; $i++){
+		$thong_bao = $this->thongBaoSDH[$i];
+?>
+		<li>
+			<img src="<?php echo $baseURL.'/images/Index.jpg'?>" />
+		    <b class="title <?php echo $thong_bao->noi_bat? 'featured' : ''?>"><a href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'chi-tiet' , 'id' => $thong_bao['id']),NULL,true)?>"><?php echo $thong_bao->getTitle()?></a></b> 
+		    (<?php echo date('d/m/Y', strtotime($thong_bao['ngay_tao']))?>)
+		    <?php 
+			if($thong_bao->isNew(true)){
+			?>	
+				<img class="new" alt="new" src="<?php echo $baseURL . '/images/news.gif'?>">
+			<?php }?>
+		</li>
+<?php 
+	}
+?>
+</ul>
+</div>
+<div>
+	<p style="text-align: right;"><strong><a href="<?php echo $this->url(array('controller' => 'tin-tuc', 'action' => 'index'),NULL,true)?>">&gt;&gt;&gt; Xem tất cả <br /></a></strong></p>
+</div>
+<?php endif;?>
+<!-- End_Module_741 -->
+</div>
+</div>
+
+<!-- /block-content -->
+
+		<div class="cleared"></div>
+    </div>
+</div>
+
+              <div align="right">
+                  
+                  
+              </div>
+
+		<div class="cleared"></div>
+    </div>
+</div>
+<?php endif;?>
+<!-- End Thong Bao Tuyen Sinh SDH -->
+
+<!-- Begin news -->
+<?php if(count($this->tinTucs) > 0):?>
+<div class="art-block" id="widget_su_kien_noi_bat">
+    <div class="art-block-tl"></div>
+    <div class="art-block-tr"></div>
+    <div class="art-block-bl"></div>
+    <div class="art-block-br"></div>
+    <div class="art-block-tc"></div>
+    <div class="art-block-bc"></div>
+    <div class="art-block-cl"></div>
+    <div class="art-block-cr"></div>
+    <div class="art-block-cc"></div>
+    <div class="art-block-body">
+
+<div class="art-blockheader">
+    <div class="l"></div>
+    <div class="r"></div>
+     <div class="t"><span id="dnn_ctr741_dnnTitle_lblTitle" class="Head">Sự kiện nổi bật</span>
+
+
+</div>
+</div>
+
+<div class="art-blockcontent">
+    <div class="art-blockcontent-tl"></div>
+    <div class="art-blockcontent-tr"></div>
+    <div class="art-blockcontent-bl"></div>
+    <div class="art-blockcontent-br"></div>
+    <div class="art-blockcontent-tc"></div>
+    <div class="art-blockcontent-bc"></div>
+    <div class="art-blockcontent-cl"></div>
+    <div class="art-blockcontent-cr"></div>
+    <div class="art-blockcontent-cc"></div>
+    <div class="art-blockcontent-body">
+<!-- block-content -->
+
+<div id="dnn_ctr741_ContentPane"><!-- Start_Module_741 -->
+<div class="content-news">
+<div>
+<?php 
+	$count = 0;
+	$max_item_featured = 2;
+	foreach ($this->tinTucs as $tin_tuc)
+	{
+?>
+		<div class="baiviet">
+		<span class="title <?php echo $tin_tuc->noi_bat? 'featured' : ''?>">
+			<a class="tieude" href="<?php echo $this->url(array('controller' => 'tin-tuc', 'action' => 'chi-tiet' , 'id' => $tin_tuc['id']),NULL,true)?>"><?php echo $tin_tuc['tieu_de']?></a>
+		<?php 
+			if($tin_tuc->isNew(true)){
+		?>	
+			<img alt="new" src="<?php echo $baseURL . '/images/news.gif'?>">
+		<?php }?>
+		</span>
+		<div class="article_photo">
+			<ul class="thumb">
+				<li class="noborder"><a href="<?php echo $tin_tuc->getPhotoUrl()?>" data-link="mylink.html"><img class="hinh" src="<?php echo $tin_tuc->getPhotoUrl()?>" /></a></li>
+			</ul>
+		</div>
+		<div class="tomtat">
+		<b><?php echo date('d/m/Y', strtotime($tin_tuc['ngay_tao']))?></b> - <?php echo Khcn_Api::_()->default()->subPhrase($tin_tuc->getMoTaTomTat(), 200)?></div>
+		<a class="chitiet" href="<?php echo $this->url(array('controller' => 'tin-tuc', 'action' => 'chi-tiet' , 'id' => $tin_tuc['id']),NULL,true)?>"><strong>&gt;&gt;&gt; </strong>Chi tiết...</a>
+		</div>
+<?php 
+		if(++$count >= $max_item_featured){
+			break;
+		}
+	}
+?>
+</div>
+<div class="cleared"></div>
+<?php if(count($this->tinTucs) > $max_item_featured):?>
+<div class="cung_chu_de">
+<div>
+	<table>
+        <tr>
+            <td class="header">Các tin khác</td>
+            <td>
+                <hr/>
+            </td>
+        </tr>
+    </table>
+</div>
+<ul>
+<?php 
+	for($i = $max_item_featured ; $i <= count($this->tinTucs) - 1; $i++){
+		$tin_tuc = $this->tinTucs[$i];
+?>
+		<li>
+			<img src="<?php echo $baseURL.'/images/Index.jpg'?>" />
+		    <b class="title <?php echo $tin_tuc->noi_bat? 'featured' : ''?>"><a href="<?php echo $this->url(array('controller' => 'tin-tuc', 'action' => 'chi-tiet' , 'id' => $tin_tuc['id']),NULL,true)?>"><?php echo $tin_tuc['tieu_de']?></a></b> 
+		    (<?php echo date('d/m/Y', strtotime($tin_tuc['ngay_tao']))?>)
+		    <?php 
+			if($tin_tuc->isNew(true)){
+			?>	
+				<img class="new" alt="new" src="<?php echo $baseURL . '/images/news.gif'?>">
+			<?php }?>
+		</li>
+<?php 
+	}
+?>
+</ul>
+</div>
+<div>
+	<p style="text-align: right;"><strong><a href="<?php echo $this->url(array('controller' => 'tin-tuc', 'action' => 'index'),NULL,true)?>">&gt;&gt;&gt; Xem tất cả <br /></a></strong></p>
+</div>
+<?php endif;?>
+<!-- End_Module_741 -->
+</div>
+</div>
+
+<!-- /block-content -->
+
+		<div class="cleared"></div>
+    </div>
+</div>
+
+              <div align="right">
+                  
+                  
+              </div>
+
+		<div class="cleared"></div>
+    </div>
+</div>
+<?php endif;?>
+<!-- End news -->
+
+<!-- Begin notice -->
+<div class="art-block" id="widget_thong_bao">
+    <div class="art-block-tl"></div>
+    <div class="art-block-tr"></div>
+    <div class="art-block-bl"></div>
+    <div class="art-block-br"></div>
+    <div class="art-block-tc"></div>
+    <div class="art-block-bc"></div>
+    <div class="art-block-cl"></div>
+    <div class="art-block-cr"></div>
+    <div class="art-block-cc"></div>
+    <div class="art-block-body">
+
+<div class="art-blockheader">
+    <div class="l"></div>
+    <div class="r"></div>
+     <div class="t"><span id="dnn_ctr741_dnnTitle_lblTitle" class="Head">Thông báo</span>
+
+
+</div>
+</div>
+
+<div class="art-blockcontent">
+    <div class="art-blockcontent-tl"></div>
+    <div class="art-blockcontent-tr"></div>
+    <div class="art-blockcontent-bl"></div>
+    <div class="art-blockcontent-br"></div>
+    <div class="art-blockcontent-tc"></div>
+    <div class="art-blockcontent-bc"></div>
+    <div class="art-blockcontent-cl"></div>
+    <div class="art-blockcontent-cr"></div>
+    <div class="art-blockcontent-cc"></div>
+    <div class="art-blockcontent-body">
+<!-- block-content -->
+
+<div id="dnn_ctr741_ContentPane"><!-- Start_Module_741 -->
+<div class="content-news">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<?php $loaiTbs = Khcn_Api::_()->getDbTable('loai_thong_bao', 'default')->getDanhSachLTB(array('he_cao_hoc' => false));?>
+<?php foreach($loaiTbs as $loai_tb):?>
+	<?php $thongBaos = Khcn_Api::_()->getDbTable('thong_bao', 'default')->getDSThongBaos(array('trang_thai' => 1, 'loai' => $loai_tb->getIdentity(), 'limit' => 10));?>
+	<tr><td>
+		<table>
+			<tr>
+				<td class="header"><?php echo $loai_tb->getTitle()?></td>
+				<td><hr /></td>
+			</tr>
+		</table>
+		<?php if(count($thongBaos) > 0):?>
+			<?php foreach ($thongBaos as $thong_bao):?>
+					<div class="news">
+						<img src="<?php echo $baseURL.'/images/Index.jpg'?>" />
+						<b class="title"><a href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'chi-tiet' , 'id' => $thong_bao->getIdentity()),NULL,true)?>"><?php echo $thong_bao->getTitle()?></a></b>
+						(<?php echo date('d/m/Y',strtotime($thong_bao->ngay_tao))?>)
+						<?php if($thong_bao->isNew()):?>	
+							<img class="new" alt="new" src="<?php echo $baseURL . '/images/news.gif'?>">
+						<?php endif;?>
+						<br/>	 	        
+					</div>
+			<?php endforeach; ?>
+			<div>
+				<p style="text-align: right;"><strong><a href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'danh-sach' , 'loai' => $loai_tb->getIdentity()),NULL,true)?>">&gt;&gt;&gt; Xem tất cả <br /></a></strong></p>
+			</div>
+		<?php else:?>
+			<br/>
+			<p>Đang cập nhật ...</p>
+		<?php endif;?>
+	</td></tr>
+<?php endforeach;?>
+</table><!-- End_Module_741 -->
+</div>
+</div>
+
+<!-- /block-content -->
+
+		<div class="cleared"></div>
+    </div>
+</div>
+    </div>
+</div>
+<!-- End notice -->
+
+<link  href="//fonts.googleapis.com/css?family=Cabin:bold" rel="stylesheet" type="text/css" >
+<link rel="stylesheet" href="<?php echo $this->baseUrl() . '/../application/templates/default/js/jquery/external/jquery-hoverZoom-master/css/style.css?v=2'?>">
+<link rel="stylesheet" href="<?php echo $this->baseUrl() . '/../application/templates/default/js/jquery/external/jquery-hoverZoom-master/jquery.hoverZoom.css'?>">
+<script src="<?php echo $this->baseUrl() . '/../application/templates/default/js/jquery/external/jquery-hoverZoom-master/jquery.hoverZoom.js'?>"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.thumb img').hoverZoom({
+			speedView:600, 
+			speedRemove:400, 
+			showCaption:true, 
+			speedCaption:600, 
+			debug:true, 
+			hoverIntent: true, 
+			loadingIndicatorPos: 'center', 
+			useBgImg : true
+		});
+		$('#widget_thong_bao_sdh .thumb img').hover(function() {
+			$('#widget_su_kien_noi_bat').css('z-index', '-1');
+		});
+		$('#widget_thong_bao_sdh .thumb img').mouseout(function() {
+			$('#widget_su_kien_noi_bat').css('z-index', '0');
+		});
+		
+		$('#widget_su_kien_noi_bat .thumb img').hover(function() {
+			$('#widget_thong_bao').css('z-index', '-1');
+		});
+		$('#widget_su_kien_noi_bat .thumb img').mouseout(function() {
+			$('#widget_thong_bao').css('z-index', '0');
+		});
+	});
+</script>

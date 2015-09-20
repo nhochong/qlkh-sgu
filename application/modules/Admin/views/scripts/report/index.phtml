@@ -1,0 +1,40 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Xuất báo cáo";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box">
+<div class="content-box-header">
+
+<h3>Xuất báo cáo</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div id="report">
+<?php echo $this->form;?>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#mau").change(function(){
+		if ($("#mau").val() == 'mau01'){            
+	        $('#ma_loai-wrapper').removeAttr('style');
+	        $('#thong_bao-wrapper').attr('class','alt-row');
+			$('#report').removeAttr('class');
+		}else {
+			$("#ma_loai").val('');
+	        $('#ma_loai-wrapper').attr('style', 'display: none');
+	        $('#report').attr('class','alt-row');
+			$('#thong_bao-wrapper').removeAttr('class');
+		}
+	});
+});
+</script>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>

@@ -1,0 +1,24 @@
+<?php $this->titleBlock("Chương trình trọng điểm");?>
+<div class="browse_list">
+	<?php 
+		if ($this->paginator->getTotalItemCount() > 0){
+			foreach ($this->paginator as $chuong_trinh)
+			{
+	?>
+		<div class="list_item">
+			<div class="item"><a href="<?php echo $this->url(array('controller' => 'chuong-trinh', 'action' => 'chi-tiet' , 'id' => $chuong_trinh->getIdentity()),NULL,true)?>" class="ten"><?php echo $chuong_trinh->getTitle()?></a></div>
+		</div>
+	<?php 
+			}
+		}else{
+	?>
+			<div id="updating">
+				<span><?php echo $this->translate('Đang cập nhật...');?></span>
+			</div>
+	<?php
+		}
+	?>	
+<div class="pagination">
+<?php echo $this->paginator?>
+</div>
+</div>

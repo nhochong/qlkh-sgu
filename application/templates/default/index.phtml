@@ -1,0 +1,225 @@
+<?php
+	echo $this->doctype()->__toString();  
+?>
+<html>
+<head>
+	<?php
+    $counter = (int) $this->layout()->counter;
+    $staticBaseUrl = $this->layout()->staticBaseUrl;
+    
+    $request = Zend_Controller_Front::getInstance()->getRequest();
+    $this->headTitle()
+      ->setSeparator(' - ');
+    $pageTitleKey = 'pagetitle-' . $request->getModuleName() . '-' . $request->getActionName()
+        . '-' . $request->getControllerName();
+    $pageTitle = $this->translate($pageTitleKey);
+  
+    // Make description and keywords
+    $description = '';
+    $keywords = '';
+    
+    $description .= ' ' .$this->layout()->siteinfo['description'];
+    $keywords = $this->layout()->siteinfo['keywords'];
+    
+    $this->headMeta()->appendName('description', trim($description));
+    $this->headMeta()->appendName('keywords', trim($keywords));
+
+    // Get body identity
+    if( isset($this->layout()->siteinfo['identity']) ) {
+      $identity = $this->layout()->siteinfo['identity'];
+    } else {
+      $identity = $request->getModuleName() . '-' .
+          $request->getControllerName() . '-' .
+          $request->getActionName();
+    }
+	
+	$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+	$this->headMeta()->appendHttpEquiv('Content-Script-Type', 'text/javascript');
+	$this->headMeta()->appendHttpEquiv('Content-Script-Type', 'text/css');
+	$this->headTitle()->setSeparator(' - ');
+	$this->headTitle($this->tenPhong());
+	$baseURL = $this->baseUrl();
+
+	echo $this->headMeta();
+	echo $this->headTitle();
+	$this->headLink()->prependStylesheet($baseURL.'/../application/templates/default/js/jquery/external/jquery-simplyscroll-2.0.4/jquery.simplyscroll.css');
+	$this->headLink()->prependStylesheet($baseURL.'/../application/templates/default/js/jquery/themes/cupertino/jquery-ui-1.8.16.custom.css');
+	$this->headLink()->prependStylesheet($baseURL . '/../application/templates/default/css/ZF/_default/Skins/Skin2/style.css');
+	$this->headLink()->prependStylesheet($baseURL . '/../application/templates/default/css/style.css');	
+	echo $this->headLink()->toString()."\n";
+	
+	
+	$this->headScript()->prependFile($baseURL . '/../application/templates/default/css/ZF/_default/Skins/Skin2/script.js');
+	$this->headScript()->prependFile($baseURL . '/../application/templates/default/js/jquery/external/staticlogo.js');
+	$this->headScript()->prependFile($baseURL . '/../application/templates/default/js/jquery/ui/jquery-ui-1.8.9.custom.js');
+	$this->headScript()->prependFile($baseURL . '/../application/templates/default/js/jquery/external/jquery-simplyscroll-2.0.4/jquery.simplyscroll.js');
+	$this->headScript()->prependFile($baseURL . '/../application/templates/default/js/jquery/jquery-1.7.1.js');	
+	echo $this->headScript()->toString()."\n";
+  ?>
+  
+  <link rel="shortcut icon" href="<?php echo $baseURL . '/images/favicon.ico'?>" type="image/x-icon"/>
+</head>
+<body id="global_page_<?php echo $identity ?>">
+
+<div id="art-page-background-glare">
+<div id="art-page-background-glare-image"></div>
+</div>
+<div id="art-main">
+<div class="art-sheet">
+<div class="art-sheet-tl"></div>
+<div class="art-sheet-tr"></div>
+<div class="art-sheet-bl"></div>
+<div class="art-sheet-br"></div>
+<div class="art-sheet-tc"></div>
+<div class="art-sheet-bc"></div>
+<div class="art-sheet-cl"></div>
+<div class="art-sheet-cr"></div>
+<div class="art-sheet-cc"></div>
+<div class="art-sheet-body">
+<div id="dnn_ControlPanel"></div>
+
+<!-- Begin header -->
+<?php echo $this->render('includes/header.phtml') ?>
+<!-- End header -->
+
+<!-- Begin nav -->
+<?php echo $this->render('includes/nav.phtml') ?>
+<!-- End nav -->
+
+<div class="art-content-layout">
+<div class="art-content-layout-row">
+<!-- Begin Sidebar 1 -->
+<div class="art-layout-cell art-sidebar1">
+
+<!-- Begin hoat_dong_quan_trong_trong_tuan -->
+<?php echo $this->render('includes/hoat_dong_quan_trong.phtml') ?>
+<!-- End hoat_dong_quan_trong_trong_tuan-->
+
+<!-- Begin su_kien_quan_trong_trong_thang -->
+<?php echo $this->render('includes/su_kien_quan_trong.phtml') ?>
+<!-- End su_kien_quan_trong_trong_thang-->
+
+<!-- Begin cesti -->
+<?php echo $this->render('includes/cesti.phtml') ?>
+<!-- End cesti -->
+
+<!-- Begin news-->
+<?php #echo $this->render('includes/news.phtml') ?>
+<!-- End news-->
+
+<!-- Begin Lĩnh vực nghiên cứu -->
+<?php #echo $this->render('includes/linh_vuc.phtml') ?>
+<!-- End Lĩnh vực nghiên cứu -->
+
+<!-- Begin Biểu mẫu -->
+<script>
+  /*$(function() {
+    $( "#ds_bieu_mau" ).accordion({
+      collapsible: true,
+	  heightStyle: "content"
+    });
+  });*/
+</script>
+<?php //echo $this->render('includes/bieu_mau.phtml') ?>
+<!-- End Biểu mẫu -->
+
+<!-- Begin contact -->
+<?php //echo $this->render('includes/contact.phtml') ?>
+<!-- Begin contact -->
+
+<!-- Begin access -->
+<?php //echo $this->render('includes/visitors.phtml') ?>
+<!-- End access -->
+</div>
+<!-- End Sidebar 1 -->
+
+<!-- Begin content -->
+<div class="art-layout-cell art-content">
+	<?php if(isset($this->layout()->isMultiBlock) && $this->layout()->isMultiBlock):?>
+		<div id="global_content">
+			<?php echo $this->layout()->content; ?>
+		</div>
+	<?php else:?>
+		<div class="art-block">
+			<div class="art-block-tl"></div>
+			<div class="art-block-tr"></div>
+			<div class="art-block-bl"></div>
+			<div class="art-block-br"></div>
+			<div class="art-block-tc"></div>
+			<div class="art-block-bc"></div>
+			<div class="art-block-cl"></div>
+			<div class="art-block-cr"></div>
+			<div class="art-block-cc"></div>
+			<div class="art-block-body">
+				<div class="art-blockheader">
+				<div class="l"></div>
+				<div class="r"></div>
+				<div class="t"><span class="Head"><?php echo $this->titleBlock()->getTitle() ?></span></div>
+				</div>
+
+				<div class="art-blockcontent">
+				<div class="art-blockcontent-tl"></div>
+				<div class="art-blockcontent-tr"></div>
+				<div class="art-blockcontent-bl"></div>
+				<div class="art-blockcontent-br"></div>
+				<div class="art-blockcontent-tc"></div>
+				<div class="art-blockcontent-bc"></div>
+				<div class="art-blockcontent-cl"></div>
+				<div class="art-blockcontent-cr"></div>
+				<div class="art-blockcontent-cc"></div>
+				<div class="art-blockcontent-body"><!-- block-content -->
+				<div id="global_content">
+					<?php echo $this->layout()->content; ?>
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	<?php endif;?>
+	
+</div>
+<!-- End content -->
+
+<!-- Begin Sidebar 2 -->
+<div class="art-layout-cell art-sidebar2">
+
+<!-- Begin schedule -->
+<?php echo $this->render('includes/chuong_trinh_trong_diem.phtml') ?>
+<!-- End schedule -->
+
+<!-- Begin schedule -->
+<?php //echo $this->render('includes/schedule.phtml') ?>
+<!-- End schedule -->
+
+<!-- Begin search -->
+<?php echo $this->render('includes/search.phtml') ?>
+<!-- End search -->
+
+<!-- Begin Login -->
+<?php echo $this->render('includes/login.phtml') ?>
+<!-- End Login -->
+
+<!-- Begin in-link -->
+<?php echo $this->render('includes/inner_links.phtml') ?>
+<!-- End in-link -->
+
+</div>
+<!-- End Sidebar 2 -->
+</div>
+</div>
+<div class="cleared"></div>
+
+<!-- Begin footer -->
+<?php echo $this->render('includes/lien_ket_trang_mang.phtml') ?>
+
+<?php echo $this->render('includes/footer.phtml') ?>
+<!-- End footer -->
+
+
+<div class="cleared"></div>
+</div>
+</div>
+<div class="cleared"></div>
+</div>
+</body>
+</html>

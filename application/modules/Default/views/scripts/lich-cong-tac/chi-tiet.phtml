@@ -1,0 +1,64 @@
+<?php $this->titleBlock("Lịch công tác");?>
+<div class="lich_cong_tac"><!-- Start_Module_741 -->
+<div class="header">
+	<p class="header">
+	LỊCH CÔNG TÁC TUẦN CỦA PHÒNG QUẢN LÝ KHOA HỌC & SĐH<br>
+	Từ ngày <span class="time"><?php echo date('d/m/Y', strtotime($this->lich_ct['ngay_bat_dau']))?></span> đến ngày <span class="time"><?php echo date('d/m/Y', strtotime($this->lich_ct['ngay_ket_thuc']))?></span>
+	</p>
+</div><br><br>
+<table border="1" cellpadding="10px" cellspacing="0px">
+	<tr>
+		<th style="width: 10%">Thứ</th>
+		<th style="width: 45%">Sáng</th>
+		<th style="width: 45%">Chiều</th>
+	</tr>
+<?php 
+foreach ($this->ndcts as $ngay => $ndct)
+{
+?>
+	<tr>
+		<td class="time"><p><span class="thu"><?php echo $this->thus[date('N',strtotime($ngay))]?></span><br><span class="ngay"><?php echo date('d/m/Y', strtotime($ngay))?></span></p></td>
+		<td>
+			<?php if(isset($ndct['sang']) && count($ndct['sang']) > 0):?>
+			<ul class="list_hoat_dong">
+			<?php foreach($ndct['sang'] as $noi_dung):?>
+				<?php 
+					$className = 'normal';
+					if($noi_dung->quan_trong){
+						$className = 'important';
+					}
+				?>
+				<li class="<?php echo $className?>">
+					<div class="hoat_dong"><?php echo $noi_dung->noi_dung?></div>
+				</li>
+			<?php endforeach;?>
+			</ul>
+			<?php endif;?>
+		</td>
+		<td>
+			<?php if(isset($ndct['chieu']) && count($ndct['chieu']) > 0):?>
+			<ul class="list_hoat_dong">
+			<?php foreach($ndct['chieu'] as $noi_dung):?>
+				<?php 
+					$className = 'normal';
+					if($noi_dung->quan_trong){
+						$className = 'important';
+					}
+				?>
+				<li class="<?php echo $className?>">
+					<div class="hoat_dong"><?php echo $noi_dung->noi_dung?></div>
+				</li>
+			<?php endforeach;?>
+			</ul>
+			<?php endif;?>
+		</td>
+	</tr>
+<?php 
+}
+?>
+</table>
+<br>
+<div class="ghi_chu">
+<span class="header"> *Lưu ý :</span><span class="content"><?php echo $this->lich_ct['ghi_chu']?></span>
+</div>
+</div>

@@ -1,0 +1,32 @@
+<div class="info_giang_vien">
+	<fieldset>
+	<table class="tbl_giangvien_info" align="center">
+		<tbody>
+			<tr>
+				<td class="title"><?php echo $this->translate('Mã')?></td>
+				<td class="content"><?php echo $this->giang_vien->ma?></td>			
+			</tr>
+			<tr>
+				<td class="title"><?php echo $this->translate('Họ & Tên')?></td>
+				<td class="content"><?php echo $this->giang_vien->getHoTen()?></td>			
+			</tr>
+			<tr>
+				<td class="title"><?php echo $this->translate('Đơn vị')?></td>
+				<td class="content"><?php echo $this->giang_vien->getDonVi()->ten?></td>			
+			</tr>
+			<tr>
+				<td class="title"><?php echo $this->translate('Chức vụ')?></td>
+				<td class="content"><?php echo $this->giang_vien->chuc_vu?></td>			
+			</tr>
+			<tr>
+				<td class="title"><?php echo $this->translate('Email')?></td>
+				<td class="content"><?php echo $this->giang_vien->email?></td>			
+			</tr>
+			<tr>
+				<td class="title"><?php echo $this->translate('Số điện thoại')?></td>
+				<td class="content"><?php echo $this->giang_vien->so_dien_thoai?></td>			
+			</tr>
+		</tbody>
+	</table>
+	</fieldset>
+</div>

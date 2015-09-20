@@ -1,0 +1,40 @@
+<?php $this->titleBlock("Lịch học - " . $this->he_cao_hoc->getTitle());?>
+<div class="list-announcement">
+<table class="blog" cellpadding="0" cellspacing="0">
+	<tbody>	
+		<?php 
+		if ($this->paginator->getTotalItemCount() > 0){
+			foreach ($this->paginator as $lich_hoc)
+			{
+		?>
+				<tr>
+					<td valign="top">
+					<div class="announcements">
+					<span class="tieude">
+						<strong><?php echo date('d/m/Y', strtotime($lich_hoc->ngay_tao))?></strong>
+						-
+						<a href="<?php echo $this->url(array('controller' => 'lich-hoc', 'action' => 'chi-tiet' , 'id' => $lich_hoc->getIdentity()),NULL,true)?>"><?php echo $lich_hoc->getTitle()?></a>
+						<?php 
+						if($lich_hoc->isNew()){
+						?>	
+							<img class="new" alt="new" src="<?php echo $this->baseUrl() . '/images/news.gif'?>">
+						<?php }?>
+					</span>						
+					<a class="chitiet" href="<?php echo $this->url(array('controller' => 'lich-hoc', 'action' => 'chi-tiet' , 'id' => $lich_hoc->getIdentity()),NULL,true)?>">Chi tiết...</a>
+					<div class="cleared"></div>
+					</div>
+					<span class="article_separator">&nbsp;</span></td>
+				</tr>
+		<?php 
+			}
+		}else{?>
+			<p>Đang cập nhật ...</p>
+		<?php
+		}
+		?>		
+	</tbody>
+</table>
+<div class="pagination">
+<?php echo $this->paginator?>
+</div>
+</div>

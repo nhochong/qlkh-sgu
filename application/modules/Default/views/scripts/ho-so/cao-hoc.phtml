@@ -1,0 +1,17 @@
+<?php $this->titleBlock($this->loai_ho_so->getTitle());?>
+<?php if(count($this->hoSos) > 0 ){?>
+<ul class="rules list_folder_file">
+	<?php 
+		foreach ($this->hoSos as $ho_so)
+		{
+	?>
+			<li><a class="Normal file" href="<?php echo $this->baseUrl() . '/upload/files/ho_so/' . $ho_so->ten_file ?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder2.gif'?>" /> <?php echo $ho_so->getTitle() ?></a></li>
+	<?php 
+		}
+	?>
+</ul>
+<?php
+	}else{
+?>
+		<p>Đang cập nhật ...</p>
+<?php }?>

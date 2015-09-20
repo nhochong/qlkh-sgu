@@ -1,0 +1,17 @@
+<?php $this->titleBlock("Hồ sơ");?>
+<div class="rules">
+	<?php foreach($this->loaiHSs as $loai_hs):?>
+		<div><img src="<?php echo $this->baseUrl() . '/images/folder.gif'?>"/> <?php echo $loai_hs->getTitle()?></div>
+		<?php $hoSos = $loai_hs->getDanhSachHoSo()?>
+		<?php if(count($hoSos) > 0):?>
+			<ul class="rules">
+				<?php foreach ($hoSos as $ho_so):?>
+					<li><a class="Normal" href="<?php echo $this->baseUrl() . '/upload/files/ho_so/' . $ho_so->ten_file ?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder2.gif'?>" /> <?php echo $ho_so->getTitle() ?></a></li>
+				<?php endforeach?>
+			</ul>
+		<?php else:?>
+			<p>Đang cập nhật ...</p>
+		<?php endif;?>
+		</br>
+	<?php endforeach;?>
+</div>

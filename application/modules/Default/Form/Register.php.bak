@@ -1,0 +1,182 @@
+<?php
+class Default_Form_Register extends Zend_Form
+{
+public function init()
+    {  	
+        $this->setName('f2')
+        	 ->setMethod('post')
+        	 ->setAttribs(array('id' => 'user'));
+        	 
+        $id = new Zend_Form_Element_Hidden('id');
+        $id->addFilter('Int')         
+           ->removeDecorator('label');
+
+        $username = new Zend_Form_Element_Text('ten_dang_nhap');       
+        $username->setLabel('Tên đăng nhập (*)')
+        		 ->setOptions(array('size' => '36')) 
+               	 ->setRequired(true)
+               	 ->addFilter('StripTags')
+               	 ->addFilter('StringTrim')
+                 ->addFilter('StringToLower')
+                 ->addValidator('NotEmpty')
+                 ->addValidator(new Zend_Validate_StringLength(0, 32))
+        		 ->setDecorators(array(
+							    'ViewHelper',
+							    'Errors',
+        		 				'Label',
+							    array(array('row' => 'HtmlTag'), array('tag' => 'div'))))
+				 ->setAttribs(array('id' => 'ten_dang_nhap'));
+                 
+        $password = new Zend_Form_Element_Password('mat_khau');
+        $password->setLabel('Mật khẩu (*)')
+               ->setRequired(true)              
+               ->addFilter('StripTags')
+               ->addFilter('StringTrim')
+               ->addValidator('NotEmpty')
+               ->setDecorators(array(
+							    'ViewHelper',
+							    'Errors',
+							    'Label',
+							    array(array('row' => 'HtmlTag'), array('tag' => 'div'))))
+			   ->setAttribs(array('id' => 'mat_khau'));  
+							              
+        $repassword = new Zend_Form_Element_Password('mat_khau_2');
+        $repassword->setLabel('Nhập lại mật khẩu (*)')
+               	   ->setRequired(true)             
+               	   ->addFilter('StripTags')
+               	   ->addFilter('StringTrim')
+               	   ->addValidator(new Zend_Validate_Identical('mat_khau'))
+               	   ->setDecorators(array(
+							    'ViewHelper',
+							    'Errors',
+							    'Label',
+							    array(array('row' => 'HtmlTag'), array('tag' => 'div'))))
+			   	   ->setAttribs(array('id' => 'mat_khau_2'));           
+        
+		$ho = new Zend_Form_Element_Text('ho');
+        $ho->setLabel('Họ (*)')
+           ->setOptions(array('size' => '36'))  
+           ->setRequired(true)             
+           ->addFilter('StripTags')
+           ->addFilter('StringTrim')
+           ->addValidator('NotEmpty')
+           ->addValidator(new Zend_Validate_StringLength(0, 100))
+           ->setDecorators(array(
+							    'ViewHelper',
+							    'Errors',
+							    'Label',
+							    array(array('row' => 'HtmlTag'), array('tag' => 'div'))))
+		   ->setAttribs(array('id' => 'ho'));             
+        
+		$ten = new Zend_Form_Element_Text('ten');
+        $ten->setLabel('Tên (*)')
+        	->setOptions(array('size' => '36'))  
+            ->setRequired(true)              
+            ->addFilter('StripTags')
+            ->addFilter('StringTrim')
+            ->addValidator('NotEmpty')
+            ->addValidator(new Zend_Validate_StringLength(0, 20))
+            ->setDecorators(array(
+							    'ViewHelper',
+							    'Errors',
+							    'Label',
+							    array(array('row' => 'HtmlTag'), array('tag' => 'div'))))
+			->setAttribs(array('id' => 'ten'));               
+        
+		$ngay_sinh = new Zend_Form_Element_Text('ngay_sinh');
+        $ngay_sinh->setLabel('Ngày sinh (*)')       	   
+               	  ->setRequired(true)             
+               	  ->addFilter('StripTags')
+               	  ->addFilter('StringTrim')
+               	  ->addValidator('NotEmpty')
+               	  ->setDecorators(array('ViewHelper',
+								    'Errors',
+								    'Label',
+								    array(array('row' => 'HtmlTag'), array('tag' => 'div'))))
+		       	  ->setAttribs(array('id' => 'ngay_sinh'));
+							                     
+        $email = new Zend_Form_Element_Text('email');
+        $email->setLabel('Email (*)')
+              ->setRequired(true)
+              ->setOptions(array('size' => '36'))              
+              ->addFilter('StripTags')
+              ->addFilter('StringTrim')
+              ->addValidator('NotEmpty')
+              ->addValidator(new Zend_Validate_EmailAddress())
+              ->setDecorators(array(
+							    'ViewHelper',
+							    'Errors',
+							    'Label',
+							    array(array('row' => 'HtmlTag'), array('tag' => 'div'))))
+			  ->setAttribs(array('id' => 'email'));  
+			  	         
+        $captcha = $this->createElement('captcha', 'captcha',
+						array(  'required' => true,
+								'captcha' => array('captcha' => 'Image',
+								'font' => APPLICATION_PATH . '/templates/default/fonts/arialn.ttf',
+								'fontSize' => '24',
+								'wordLen' => 6,
+								'height' => '50',
+								'width' => '150',
+								'imgDir' => APPLICATION_PATH.'/../public/captcha',
+								'imgUrl' => Khcn_View_Helper_GetBaseUrl::getBaseUrl() . '/captcha',
+								'dotNoiseLevel' => 50,
+								'lineNoiseLevel' => 5,
+								'decorators' => array('ViewHelper',
+												      'Errors',
+												      'Label',
+													  array(array('data' => 'HtmlTag'), array('tag' => 'span')),
+												      array(array('row' => 'HtmlTag'), array('tag' => 'div'))))));		
+		$captcha->setLabel('Nhập mã bảo vệ (*)');	
+		
+		$submit = new Zend_Form_Element_Submit('submit');
+        $submit->setDecorators(array(
+							        'ViewHelper',							        
+        							array(array('data' => 'HtmlTag'), array('tag' => 'span')),
+							        array(array('row' => 'HtmlTag'), array('tag' => 'span')),
+							    ))
+				->setAttribs(array('class' => 'art-button')); 
+
+		$url = new Zend_View_Helper_Url();
+		$link = $url->url(array('module' => 'default','controller' => 'index','action' => 'index'));
+		$cancel = new Zend_Form_Element_Button('cancel');
+        $cancel->setDecorators(array(
+							        'ViewHelper',
+							        array(array('data' => 'HtmlTag'), array('tag' => 'span')),
+							        array(array('row' => 'HtmlTag'), array('tag' => 'span')),
+							    ))
+			   ->setAttribs(array('class' => 'art-button','onclick' => 'window.location.href="' . $link . '"'));
+			
+		$this->addElements(array($id,$username,$password,$repassword,$ho,$ten,$ngay_sinh,$email,$captcha,$submit,$cancel));						
+
+		$this->addDisplayGroup(array('ten_dang_nhap','mat_khau','mat_khau_2'),'login_detail',array(
+			'Legend' => 'Thông tin tài khoản',
+            'decorators' => array(
+                'FormElements',
+			  	array('fieldset', array('class' => 'account')),
+				array(array('row' => 'HtmlTag'), array('tag' => 'div')),
+            ),
+        ));
+        
+        $this->addDisplayGroup(array('ho','ten','ngay_sinh','email','captcha'),'user_detail',array(
+			'Legend' => 'Thông tin nguời dùng',
+            'decorators' => array(
+                'FormElements',
+			  	array('fieldset', array('class' => 'contact')),
+				array(array('row' => 'HtmlTag'), array('tag' => 'div')),
+            ),
+        ));
+        
+		$this->addDisplayGroup(array('submit','cancel'),'submitbtn',array(
+            'decorators' => array(
+                'FormElements',
+				 array(array('row' => 'HtmlTag'), array('tag' => 'div','align' => 'center', 'class' => 'submit_buttons')),
+            ),
+        )); 
+        $this->setDecorators(array(
+					'FormElements',
+					array('HtmlTag', array('tag' => 'div')),
+					'Form',
+					));
+    }
+}

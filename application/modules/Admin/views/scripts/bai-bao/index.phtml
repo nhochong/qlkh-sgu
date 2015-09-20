@@ -1,0 +1,86 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Bài Báo";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách bài báo</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+<?php echo $this->form;?>
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div class="danh_sach_hoi_thao">
+<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'xoas'),null,true)?>" method="post" name="f2">
+<div class="clear"></div>
+<table class="tbl_hoithao" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('deletes',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+			<th class="chu_de" style="width: 35%;">Tên sản phầm</th>
+			<th class="center" style="width: 35%;">Giảng viên</th>
+			<th class="center">Thông tin</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+				<?php echo $this->formButton('add','Thêm',array('onclick' => 'window.location.href="' . $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'them'),null,true) . '"','class' => 'button'))?>
+			</div>
+			<div class="pagination"> 
+            	<?php echo $this->paginator?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->paginator as $bai_bao) 
+    	{
+			$giangViens = $bai_bao->getGiangViens();
+    ?>
+    		<tr>
+			<td><?php echo $this->formCheckbox('item[]',$bai_bao->getIdentity(),null)?></td>
+			<td><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'sua','id' => $bai_bao->getIdentity()),null,true)?>" title="<?php echo $bai_bao->ten?>"><?php echo Khcn_Api::_()->subPhrase($bai_bao->ten, 100);?></a></td>
+			<td class="center">
+				<ul class="list_giang_Vien">
+				<?php foreach($giangViens as $giang_vien):?>
+					<li>
+						<div class="giang_vien"><?php echo $giang_vien->getDisplayname();?></div>
+						<div class="remove_tac_gia">
+							<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'remove','bai_bao' => $bai_bao->getIdentity(), 'giang_vien' => $giang_vien->id),null,true)?>" title="Xóa Tác Giả"> 
+							<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Add"> </a>
+						</div>
+					</li>
+				<?php endforeach;?>
+				</ul>
+			</td>
+			<td class="center"><?php echo $bai_bao->thong_tin?></td>
+			<td>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'add','id' => $bai_bao->getIdentity()),null,true)?>" title="Thêm Giảng Viên"> 
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/add.png'?>" alt="Add"> </a>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'sua','id' => $bai_bao->getIdentity()),null,true)?>" title="Sửa"> 
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/pencil.png'?>" alt="Edit"> </a>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'xoa','id' => $bai_bao->getIdentity()),null,true)?>" title="Xóa" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+			</a></td>
+		</tr>
+    <?php
+    	}
+    ?>
+                              </tbody>
+</table>
+</form>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

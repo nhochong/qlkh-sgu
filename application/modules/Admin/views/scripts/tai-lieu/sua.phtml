@@ -1,0 +1,26 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Tài Liệu";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+
+<div class="content-box-header">
+
+<h3>Cập nhật tài liệu</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<?php echo $this->form?>
+<script type="text/javascript">
+CKEDITOR.replace( 'noi_dung', {'skin' : 'v2'} );
+</script>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->

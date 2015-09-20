@@ -1,0 +1,540 @@
+KHCN CMS - 2013-01-24T19:55:25+07:00
+DEBUG [7]: Exception
+Message: C:\wamp\www\khcn\public/upload/files/temp/1359032124_import---copy.xls is an Invalid Spreadsheet file.
+Stack trace: 9
+#0
+-- File: C:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2003XML.php
+-- Line: 341
+-- Function: loadIntoExisting
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 113
+-- Function: load
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#2
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 79
+-- Function: import_dt
+-- Class: Admin_ImportController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#8
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-24T19:59:17+07:00
+DEBUG [7]: Exception
+Message: C:\wamp\www\khcn\public/upload/files/temp/1359032357_import---copy.xls is an Invalid Spreadsheet file.
+Stack trace: 9
+#0
+-- File: C:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2003XML.php
+-- Line: 341
+-- Function: loadIntoExisting
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 115
+-- Function: load
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#2
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 79
+-- Function: import_dt
+-- Class: Admin_ImportController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#8
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-24T20:01:42+07:00
+DEBUG [7]: Exception
+Message: C:\wamp\www\khcn\public/upload/files/temp/1359032502_import2.xls is an Invalid Spreadsheet file.
+Stack trace: 9
+#0
+-- File: C:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2003XML.php
+-- Line: 341
+-- Function: loadIntoExisting
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 115
+-- Function: load
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#2
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 79
+-- Function: import_dt
+-- Class: Admin_ImportController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#8
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-24T20:02:54+07:00
+DEBUG [7]: Exception
+Message: C:\wamp\www\khcn\public/upload/files/temp/1359032574_import2.xls is an Invalid Spreadsheet file.
+Stack trace: 9
+#0
+-- File: C:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2003XML.php
+-- Line: 341
+-- Function: loadIntoExisting
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 115
+-- Function: load
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#2
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 79
+-- Function: import_dt
+-- Class: Admin_ImportController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#8
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-24T20:06:46+07:00
+DEBUG [7]: Exception
+Message: C:\wamp\www\khcn\public/upload/files/temp/1359032806_import2.xls is an Invalid Spreadsheet file.
+Stack trace: 9
+#0
+-- File: C:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2003XML.php
+-- Line: 341
+-- Function: loadIntoExisting
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 115
+-- Function: load
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#2
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 79
+-- Function: import_dt
+-- Class: Admin_ImportController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#8
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-24T20:08:23+07:00
+DEBUG [7]: Exception
+Message: C:\wamp\www\khcn\public/upload/files/temp/1359032903_import2.xls is an Invalid Spreadsheet file.
+Stack trace: 9
+#0
+-- File: C:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2003XML.php
+-- Line: 341
+-- Function: loadIntoExisting
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 115
+-- Function: load
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#2
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 79
+-- Function: import_dt
+-- Class: Admin_ImportController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#8
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-24T20:09:03+07:00
+DEBUG [7]: Exception
+Message: C:\wamp\www\khcn\public/upload/files/temp/1359032943_import2.xls is an Invalid Spreadsheet file.
+Stack trace: 9
+#0
+-- File: C:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2003XML.php
+-- Line: 341
+-- Function: loadIntoExisting
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 115
+-- Function: load
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#2
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 79
+-- Function: import_dt
+-- Class: Admin_ImportController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#8
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-24T20:13:06+07:00
+DEBUG [7]: Exception
+Message: C:\wamp\www\khcn\public/upload/files/temp/1359033186_new-microsoft-excel-worksheet.xls is an Invalid Spreadsheet file.
+Stack trace: 9
+#0
+-- File: C:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2003XML.php
+-- Line: 341
+-- Function: loadIntoExisting
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 115
+-- Function: load
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#2
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 79
+-- Function: import_dt
+-- Class: Admin_ImportController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#8
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-01-24T20:13:40+07:00
+DEBUG [7]: Exception
+Message: C:\wamp\www\khcn\public/upload/files/temp/1359033220_import2.xls is an Invalid Spreadsheet file.
+Stack trace: 9
+#0
+-- File: C:\wamp\www\khcn\library\Classes\PHPExcel\Reader\Excel2003XML.php
+-- Line: 341
+-- Function: loadIntoExisting
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#1
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 115
+-- Function: load
+-- Class: PHPExcel_Reader_Excel2003XML
+
+#2
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\ImportController.php
+-- Line: 79
+-- Function: import_dt
+-- Class: Admin_ImportController
+
+#3
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: importDtAction
+-- Class: Admin_ImportController
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#5
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#6
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#7
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#8
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+

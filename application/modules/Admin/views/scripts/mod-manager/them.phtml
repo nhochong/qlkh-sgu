@@ -1,0 +1,78 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Moderator";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+
+<div class="content-box-header">
+
+<h3>Thêm moderator</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<?php echo $this->form?>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#ten_dang_nhap").blur(function(){
+		var ten_dang_nhap = $('#ten_dang_nhap').val();
+		$.ajax({ type: "POST", 
+				 url: "<?php echo $this->url(array('module' => 'admin', 'controller' => 'mod-manager','action' => 'kiem-tra-mod'))?>", 
+				 data: {ten_dang_nhap : ten_dang_nhap},
+				 success: function(data){
+					 $('#ajax').replaceWith('');
+			         // if the result is TRUE write a message to the page
+			         if (data == "YES") {
+			           $('#ten_dang_nhap').after('<span id="ajax" class="input-notification error png_bg">' +
+			             'Tên đăng nhập đã được sử dụng.</span>');
+			         }else if(data == "NO"){
+			        	$('#ten_dang_nhap').after('<span id="ajax" class="input-notification success png_bg">' +
+			            'Có thể sử dụng.</span>');
+			         }}
+			});
+	}); 
+	$("#email").blur(function(){
+		var email = $('#email').val();
+		$.ajax({ type: "POST", 
+				 url: "<?php echo $this->url(array('module' => 'admin', 'controller' => 'mod-manager','action' => 'kiem-tra-email'))?>", 
+				 data: {email : email},
+				 success: function(data){
+					 $('#ajax_2').replaceWith('');
+			         // if the result is TRUE write a message to the page
+			         if (data == "YES") {
+			           $('#email').after('<span id="ajax_2" class="input-notification error png_bg">' +
+			             'E-mail này đã được sử dụng .</span>');
+			         }else if(data == "NO"){
+			        	$('#email').after('<span id="ajax_2" class="input-notification success png_bg">' +
+			            'Bạn có thể dùng E-mail này .</span>');
+			         }else{
+			        	$('#email').after('<span id="ajax_2" class="input-notification error png_bg">' +
+				            'Địa chỉ E-mail không đúng .</span>');
+			         }}
+			});
+	});  
+});
+</script>
+<script>
+$(function() {
+	$( "#ngay_sinh" ).datepicker({
+		showOn: "button",
+		changeMonth: true,
+		changeYear: true,
+		buttonImage: "<?php echo $baseURL . '/images/calendar.gif'?>",
+		buttonImageOnly: true,
+		altFormat: 'dd-mm-yy',
+		dateFormat: 'dd-mm-yy',
+		yearRange : '1950:2000'			
+	});
+});
+</script>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->

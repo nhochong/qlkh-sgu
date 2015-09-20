@@ -1,0 +1,152 @@
+<?php $viewer = Khcn_Api::_()->getViewer();?>
+<?php $loaiTbs = Khcn_Api::_()->getDbTable('loai_thong_bao', 'default')->getDanhSachLTB(array('he_cao_hoc' => false));?>
+<div class="art-nav">
+<div class="l"></div>
+<div class="r"></div>
+<div class="art-nav-center">
+<ul class="art-menu nav">
+	<li>
+		<a id="index-index" parent="index-index" href="<?php echo $this->url(array('controller' => 'index','action' => 'index'),null,true);?>">
+			<span class="l"></span>
+			<span class="r"></span>
+			<span class="t"><?php echo $this->translate('Trang chủ ')?></span>
+		</a>
+	</li>
+	<li>
+		<a id="gioi-thieu" parent="index-gioi-thieu" href="<?php echo $this->url(array('controller' => 'gioi-thieu','action' => 'index'),null,true);?>">
+			<span class="l"></span>
+			<span class="r"></span>
+			<span class="t"><?php echo $this->translate('Giới thiệu ')?></span>
+		</a>
+		<ul>
+			<li><a id="gioi-thieu-index" parent="gioi-thieu" href="<?php echo $this->url(array('controller' => 'gioi-thieu','action' => 'index'),null,true);?>"><?php echo $this->translate('Giới thiệu')?></a></li>
+			<li><a id="gioi-thieu-nhan-su" parent="gioi-thieu" href="<?php echo $this->url(array('controller' => 'gioi-thieu','action' => 'nhan-su'),null,true);?>"><?php echo $this->translate('Nhân sự')?></a></li>			
+			<li><a id="gioi-thieu-hinh-anh" parent="gioi-thieu" href="<?php echo $this->url(array('controller' => 'gioi-thieu','action' => 'hinh-anh'),null,true);?>"><?php echo $this->translate('Hình ảnh')?></a></li>
+		</ul>
+	</li>
+	<li>
+		<a id="dao-tao-sdh" parent="de-tai" href="javascript:void(0)">
+			<span class="l"></span>
+			<span class="r"></span>
+			<span class="t"><?php echo $this->translate('Đào tạo Sau đại học ')?></span>
+		</a>
+		<ul>
+			<li>
+				<a id="dao-tao-index" parent="dao-tao-sdh" href="javascript:void(0)"><?php echo $this->translate('Hệ cao học ĐH Sài Gòn')?></a>
+				<ul>
+					<li><a id="dao-tao-thong-bao" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'dao-tao','action' => 'thong-bao','loai' => Default_Model_DbTable_LoaiThongBao::HE_CAO_HOC_DHSG),null,true);?>"><?php echo $this->translate('Thông báo')?></a></li>
+					<li><a id="lich-hoc-index" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'lich-hoc','action' => 'index','loai' => 'dhsg'),null,true);?>"><?php echo $this->translate('Lịch học')?></a></li>
+					<li><a id="lich-thi-index" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'lich-thi','action' => 'index','loai' => 'dhsg'),null,true);?>"><?php echo $this->translate('Lịch thi')?></a></li>
+					<li><a id="danh-sach-lop-index" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'danh-sach-lop','action' => 'index','loai' => 'dhsg'),null,true);?>"><?php echo $this->translate('Danh sách lớp')?></a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="dao-tao-dhvinh" parent="dao-tao-sdh" href="javascript:void(0)"><?php echo $this->translate('Hệ cao học liên kết ĐH Vinh')?></a>
+				<ul>
+					<li><a id="dao-tao-thong-bao" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'dao-tao','action' => 'thong-bao','loai' => Default_Model_DbTable_LoaiThongBao::HE_CAO_HOC_DHVINH),null,true);?>"><?php echo $this->translate('Thông báo')?></a></li>
+					<li><a id="lich-hoc-index" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'lich-hoc','action' => 'index','loai' => 'dhvinh'),null,true);?>"><?php echo $this->translate('Lịch học')?></a></li>
+					<li><a id="lich-thi-index" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'lich-thi','action' => 'index','loai' => 'dhvinh'),null,true);?>"><?php echo $this->translate('Lịch thi')?></a></li>
+					<li><a id="danh-sach-lop-index" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'danh-sach-lop','action' => 'index','loai' => 'dhvinh'),null,true);?>"><?php echo $this->translate('Danh sách lớp')?></a></li>
+				</ul>
+			</li>
+			<!--<li><a id="tuyen-sinh-index" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'tuyen-sinh','action' => 'index'),null,true);?>"><?php echo $this->translate('Lịch tuyển sinh SĐH')?></a></li>			
+			<li><a id="lich-bieu-index" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'lich-bieu','action' => 'index'),null,true);?>"><?php echo $this->translate('Lịch biểu SĐH')?></a></li>
+			<li><a id="bieu-mau-danh-sach" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'bieu-mau','action' => 'danh-sach','loai' => Khcn_Api::_()->getItem('default_loai_bieu_mau', Default_Model_DbTable_LoaiBieuMau::ID_DTSDH)->getIdentity()),null,true);?>"><?php echo $this->translate('Biểu mẫu')?></a></li>-->
+		</ul>
+	</li>
+	<li>
+		<a id="hoi-thao-bai-bao" href="javascript:void(0)">
+			<span class="l"></span>
+			<span class="r"></span>
+			<span class="t"><?php echo $this->translate('Hội nghị - Hội thảo ')?></span>
+		</a>
+		<ul>
+			<li><a id="dao-tao-thong-bao" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'dao-tao','action' => 'thong-bao','loai' => Default_Model_DbTable_LoaiThongBao::HOI_NGHI_HOI_THAO),null,true);?>"><?php echo $this->translate('Thông báo')?></a></li>
+			<li><a id="hoi-thao-index" parent="hoi-thao-bai-bao" href="<?php echo $this->url(array('controller' => 'hoi-thao','action' => 'index'),null,true);?>"><?php echo $this->translate('Hội nghị - Hội thảo')?></a></li>
+			<li><a id="tai-lieu-index" parent="hoi-thao-bai-bao" href="<?php echo $this->url(array('controller' => 'sinh-hoat-chuyen-de','action' => 'index'),null,true);?>"><?php echo $this->translate('Sinh hoạt chuyên đề')?></a></li>
+			<li><a id="tai-lieu-index" parent="hoi-thao-bai-bao" href="<?php echo $this->url(array('controller' => 'tai-lieu','action' => 'index'),null,true);?>"><?php echo $this->translate('Phổ biến Kiến thức')?></a></li>
+		</ul>
+	</li>
+	<li>
+		<a id="quan-ly-khoa-hoc" href="javascript:void(0)">
+			<span class="l"></span>
+			<span class="r"></span>
+			<span class="t"><?php echo $this->translate('Quản lý Khoa học ')?></span>
+		</a>
+		<ul>
+			<li><a id="dao-tao-thong-bao" parent="dao-tao-sdh" href="<?php echo $this->url(array('controller' => 'dao-tao','action' => 'thong-bao','loai' => Default_Model_DbTable_LoaiThongBao::NGHIEN_CUU_KHOA_HOC),null,true);?>"><?php echo $this->translate('Thông báo')?></a></li>
+			<li><a id="de-tai-index" parent="quan-ly-khoa-hoc" href="<?php echo $this->url(array('controller' => 'de-tai','action' => 'index'),null,true);?>"><?php echo $this->translate('Đề tài nghiên cứu khoa học')?></a></li>
+			<li><a id="de-tai-giao-trinh" parent="quan-ly-khoa-hoc" href="<?php echo $this->url(array('controller' => 'de-tai','action' => 'giao-trinh'),null,true);?>"><?php echo $this->translate('Giáo trình')?></a></li>
+			<li><a id="de-tai-tai-lieu" parent="quan-ly-khoa-hoc" href="<?php echo $this->url(array('controller' => 'de-tai','action' => 'tai-lieu'),null,true);?>"><?php echo $this->translate('Tài liệu tham khảo')?></a></li>
+			<li><a id="bai-bao-index" parent="quan-ly-khoa-hoc" href="<?php echo $this->url(array('controller' => 'bai-bao','action' => 'index'),null,true);?>"><?php echo $this->translate('Bài báo khoa học')?></a></li>
+			<li><a id="de-tai-thong-ke" parent="quan-ly-khoa-hoc" href="<?php echo $this->url(array('controller' => 'de-tai','action' => 'thong-ke'),null,true);?>"><?php echo $this->translate('Thống kê')?></a></li>
+		</ul>
+	</li>
+	<li>
+		<a id="danh-muc" href="javascript:void(0)">
+			<span class="l"></span>
+			<span class="r"></span>
+			<span class="t"><?php echo $this->translate('Qui định & Biểu mẫu ')?></span>
+		</a>
+		<ul>
+			<li>
+				<a href="<?php echo $this->url(array('controller' => 'qui-dinh','action' => 'index'),null,true);?>" id="qui-dinh-index" parent="danh-muc"><?php echo $this->translate('Qui định')?></a>
+				<ul>
+				<?php 
+					$quiDinhs = Default_Model_Constraints::quidinh_loai();
+					foreach ($quiDinhs as $k=>$v){
+				?>
+					<li><a id="qui-dinh-danh-sach" parent="danh-muc" href="<?php echo $this->url(array('controller' => 'qui-dinh','action' => 'danh-sach','loai' => $k),null,true);?>"><?php echo $this->translate($v)?></a></li>
+				<?php }?>
+				</ul>
+			</li>
+			<li>
+				<a href="<?php echo $this->url(array('controller' => 'bieu-mau','action' => 'index'),null,true);?>" id="bieu-mau-index" parent="danh-muc"><?php echo $this->translate('Biểu mẫu')?></a>
+				<ul>
+				<?php 
+					$loaiBMs = Khcn_Api::_()->getDbTable('loai_bieu_mau', 'default')->getList(array('parent_id' => 0, 'is_dtsdh' => 0));
+					foreach ($loaiBMs as $loai_bm){
+				?>
+					<li><a id="bieu-mau-danh-sach" parent="danh-muc" href="<?php echo $this->url(array('controller' => 'bieu-mau','action' => 'danh-sach','loai' => $loai_bm->getIdentity()),null,true);?>"><?php echo $loai_bm->getTitle()?></a></li>
+				<?php }?>
+				</ul>
+			</li>
+			<li>
+				<a href="<?php echo $this->url(array('controller' => 'ho-so','action' => 'index'),null,true);?>" id="ho-so-index" parent="danh-muc"><?php echo $this->translate('Hồ sơ')?></a>
+				<ul>
+				<?php 
+					$loaiHSs = Khcn_Api::_()->getDbTable('loai_ho_so', 'default')->getAll();
+					foreach ($loaiHSs as $loai_hs){
+				?>
+					<li><a id="ho-so-danh-sach" parent="danh-muc" href="<?php echo $this->url(array('controller' => 'ho-so','action' => 'danh-sach', 'ma_loai' => $loai_hs->getIdentity()),null,true);?>"><?php echo $loai_hs->getTitle()?></a></li>
+				<?php }?>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a id="lich-cong-tac" parent="lich-cong-tac" href="<?php echo $this->url(array('controller' => 'lich-cong-tac','action' => 'index'),null,true);?>">
+			<span class="l"></span>
+			<span class="r"></span>
+			<span class="t"><?php echo $this->translate('Lịch công tác ')?></span>
+		</a>
+	</li>
+	<li>
+		<a id="tin-tuc" parent="tin-tuc" href="<?php echo $this->url(array('controller' => 'gioi-thieu','action' => 'lien-he'),null,true);?>">
+			<span class="l"></span>
+			<span class="r"></span>
+			<span class="t"><?php echo $this->translate('Liên hệ ')?></span>
+		</a>
+	</li>
+</ul>
+</div>
+</div>
+<?php $request = Zend_Controller_Front::getInstance()->getRequest();?>
+<?php $controller_action = $request->getControllerName() . '-' . $request->getActionName();?>
+<script type="text/javascript">
+	if(document.getElementById('<?php echo $controller_action ?>')){
+		var parent = document.getElementById('<?php echo $controller_action ?>').getAttribute('parent');
+		document.getElementById(parent).setAttribute('class','active');
+	}
+</script>
+	

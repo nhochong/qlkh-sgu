@@ -1,0 +1,69 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Hình ảnh";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách hình ảnh</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div class="danh_sach_hinh_anh">
+<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'cau-hinh','action' => 'xoas-ha'),null,true)?>" method="post" name="f2">
+<div class="clear"></div>
+<table class="tbl_hinhanh" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('deletes',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+			<th>Hình</th>
+			<th class="center">Trạng thái</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+				<?php echo $this->formButton('add','Thêm',array('onclick' => 'window.location.href="' . $this->url(array('module' => 'admin','controller' => 'cau-hinh','action' => 'them-ha'),null,true) . '"','class' => 'button'))?>
+			</div>
+			<div class="pagination"> 
+            	<?php echo $this->paginator?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->paginator as $hinh_anh) 
+    	{
+    ?>
+    		<tr>
+				<td><?php echo $this->formCheckbox('item[]',$hinh_anh['id'],null)?></td>
+				<td class="hinh_anh"><img src="<?php echo $baseURL . '/flash/image-scroller/images/' . $hinh_anh['ten_file']?>" /></td>
+				<td class="center">
+					<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'cau-hinh','action' => 'cap-nhat-tt-ha','id' => $hinh_anh['id'],'status' => $hinh_anh['trang_thai']))?>">
+					<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/trangthai_' . $hinh_anh['trang_thai'] . '.png'?>"> </a>
+				</td>
+				<td>				
+					<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'cau-hinh','action' => 'xoa-ha','id' => $hinh_anh['id']),null,true)?>" title="Delete" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+					<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+				</a></td>
+			</tr>
+    <?php
+    	}
+    ?>
+                              </tbody>
+</table>
+</form>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

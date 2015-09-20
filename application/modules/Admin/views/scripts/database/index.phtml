@@ -1,0 +1,69 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Backup";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách backup</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div class="danh_sach_backup">
+<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'database','action' => 'xoas'),null,true)?>" method="post" name="f2">
+<div class="clear"></div>
+<table class="tbl_quidinh" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('deletes',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+			<th>Tên</th>
+			<th class="center">Loại</th>
+			<th class="center">Ngày tạo</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+				<?php echo $this->formButton('add','Backup',array('onclick' => 'window.location.href="' . $this->url(array('module' => 'admin','controller' => 'database','action' => 'backup'),null,true) . '"','class' => 'button'))?>
+			</div>
+			<div class="pagination"> 
+            	<?php echo $this->paginator?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->paginator as $backup) 
+    	{
+    ?>
+    		<tr>
+			<td><?php echo $this->formCheckbox('item[]',$backup['id'],null)?></td>
+			<td class="ten"><?php echo $backup['ten_file']?></td>
+			<td class="center"><?php echo $this->loais[$backup['loai']]?></td>
+			<td class="center"><?php echo $backup['ngay_tao']?></td>
+			<td>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'database','action' => 'xoa','id' => $backup['id']),null,true)?>" title="Delete" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+				<img src="<?php echo $this->baseUrl() . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+			</a></td>
+		</tr>
+    <?php
+    	}
+    ?>
+                              </tbody>
+</table>
+</form>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

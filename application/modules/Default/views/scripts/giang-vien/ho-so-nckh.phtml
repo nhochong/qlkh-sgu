@@ -1,0 +1,64 @@
+<div class="info_giang_vien">
+	<fieldset>
+	<table class="tbl_giangvien_info" align="center">
+		<tbody>
+			<tr>
+				<td class="title"><?php echo $this->translate('Mã')?></td>
+				<td class="content"><?php echo $this->giang_vien->ma?></td>			
+			</tr>
+			<tr>
+				<td class="title"><?php echo $this->translate('Họ & Tên')?></td>
+				<td class="content"><?php echo $this->giang_vien->getHoTen()?></td>			
+			</tr>
+			<tr>
+				<td class="title"><?php echo $this->translate('Đơn vị')?></td>
+				<td class="content"><?php echo $this->giang_vien->getDonVi()->ten?></td>			
+			</tr>
+			<tr>
+				<td class="title"><?php echo $this->translate('Chức vụ')?></td>
+				<td class="content"><?php echo $this->giang_vien->chuc_vu?></td>			
+			</tr>
+			<tr>
+				<td class="title"><?php echo $this->translate('Số lượng đề tài')?></td>
+				<td class="content"><?php echo $this->giang_vien->getSoLuongDT()?></td>			
+			</tr>
+		</tbody>
+	</table>
+	</fieldset>
+</div>
+
+<div class="tbl_deTais">
+	<fieldset>
+	<table align="center">
+		<thead>
+			<tr class="alt-row">
+				<th style="width: 5%"><?php echo $this->translate('STT')?></th>
+				<th style="width: 15%"><?php echo $this->translate('Mã')?></th>
+				<th style="width: 45%" class="ten"><?php echo $this->translate('Tên')?></th>
+				<th style="width: 20%" class="center"><?php echo $this->translate('Tình trạng')?></th>
+				<th style="width: 15%" class="center"><?php echo $this->translate('Chức vụ')?></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php $count_dt = 0;?>
+			<?php foreach($this->datas as $nam => $deTais):?>
+			<tr class="nam">
+				<td colspan="6"><?php echo $nam?></td>
+			</tr>
+				<?php foreach($deTais as $de_tai):?>
+				<tr>
+					<td class="center"><?php echo ++$count_dt?></td>
+					<td><?php echo $de_tai->ma?></td>
+					<td class="ten"><a href="<?php echo $this->url(array('controller' => 'de-tai','action' => 'chi-tiet','id' => $de_tai->id),null,true)?>" title="<?php echo $de_tai->ten?>"><?php echo Khcn_Api::_()->subPhrase($de_tai->ten, 100)?></a> </td>
+					<td class="center status"><?php echo $this->tinhTrangs[$de_tai->tinh_trang]?></td>
+					<td class="center"><?php echo $de_tai->getChucVuByGV($this->giang_vien)?></td>
+				</tr>
+				<?php endforeach;?>
+			<tr>
+				<td colspan="6"></td>
+			</tr>
+			<?php endforeach;?>
+		</tbody>	
+	</table>
+	</fieldset>
+</div>

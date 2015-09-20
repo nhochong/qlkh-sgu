@@ -1,0 +1,200 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Đề tài";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<script src="<?php echo $baseURL . '/../application/templates/admin/scripts/facebox.js'?>"></script>
+<?php echo $this->render('don-vi/faceboxDV.phtml')?>
+<?php echo $this->render('giang-vien/faceboxGV.phtml')?>
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+
+<div class="content-box-header">
+
+<h3>Cập nhật đề tài</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<?php echo $this->form?>
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#ma").blur(function(){
+		var ma = $('#ma').val();
+		var $form = $("form#f2");
+		$.ajax({ type: "POST", 
+				 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'kiem-tra-id-ma'))?>", 
+				 data: $form.serialize(),
+				 success: function(data){
+					 $('#ajax').replaceWith('');
+			         // if the result is TRUE write a message to the page
+			         if (data == "YES") {
+			           $('#ma').after('<span id="ajax" class="input-notification error png_bg">' +
+			             'Mã đề tài đã tồn tại.</span>');
+			         }else if(data == "NO"){
+			        	$('#ma').after('<span id="ajax" class="input-notification success png_bg">' +
+			            'Có thể sử dụng.</span>');
+			         }else if (data == "ERROR") {
+			            $('#ma').after('<span id="ajax" class="input-notification error png_bg">' +
+			             'Mã không đúng định dạng.</span>');
+			         }}
+			});
+	});
+
+	$("#ma_don_vi").change(function(){
+		var id = $('#ma_don_vi').val();
+		$.ajax({
+			 type: "POST",
+			 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'load'))?>", 
+			 data: {'id' : id},
+			 success: function(response){
+				 $('#chu_nhiem').empty().append(response);
+			 }
+		});
+		
+		$.ajax({
+			 type: "POST",
+			 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'bo-mon','action' => 'load'))?>", 
+			 data: {'id' : id},
+			 success: function(response){
+				 $('#bo_mon_id').empty().append(response);
+			 }
+		});
+	});
+
+	$("#them_tv").click( 
+		      function() { 
+		          ajaxAddField();
+		       }
+		    );
+		 
+	  $("#xoa_tv").click(
+	      function() {
+	          removeField();
+	      }
+	    );  
+});
+
+var id = $("#code").val();
+
+//Retrieve new element's html from controller
+function ajaxAddField() {
+	$.ajax(
+	{
+		 type: "POST",
+		 url: "<?=$this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'newfield', 'format' => 'html'));?>",
+		 data: {"id" : id},
+		 success: function(newElement) {
+		
+		   // Insert new element before the Add button
+		   $("#btn_dk").before(newElement);
+		
+		   // Increment and store id
+		   $("#code").val(++id);
+		 }
+	}
+	);
+}
+
+function removeField() {
+
+	//Get the last used id
+	var lastId = $("#code").val() - 1;
+	
+	//Build the attribute search string.  This will match the last added  dt and dd elements.  
+	//Specifically, it matches any element where the id begins with 'newName<int>-'.
+	searchString = '*[id^=dk_tv_' + lastId + ']';
+	//Remove the elements that match the search string.
+	$(searchString).remove();
+	//Decrement and store id
+	$("#code").val(--id);
+}
+
+function change(dk,id)
+{
+	var ma = dk.value;
+	$.ajax({
+			 type: "POST",
+			 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'load'))?>", 
+			 data: {'id' : ma},
+			 success: function(response){
+				 $('#thanh_vien_' + id).empty().append(response);
+		     }
+		});	
+}
+
+$(function() {
+	$( "#thoi_gian_bat_dau" ).datepicker({
+		showOn: "button",
+		changeYear: true,
+		changeMonth: true,
+		buttonImage: "<?php echo $baseURL . '/images/calendar.gif'?>",
+		buttonImageOnly: true,
+		altFormat: 'yy-mm-dd',
+		dateFormat: 'yy-mm-dd',
+		yearRange : '2005:2030'
+	});
+});
+
+$(function() {
+	$( "#thoi_gian_hoan_thanh" ).datepicker({
+		showOn: "button",
+		changeYear: true,
+		changeMonth: true,
+		buttonImage: "<?php echo $baseURL . '/images/calendar.gif'?>",
+		buttonImageOnly: true,
+		altFormat: 'yy-mm-dd',
+		dateFormat: 'yy-mm-dd',
+		yearRange : '2005:2030'
+	});
+});
+
+$(function() {
+	$( "#ngay_gia_han" ).datepicker({
+		showOn: "button",
+		changeYear: true,
+		changeMonth: true,
+		buttonImage: "<?php echo $baseURL . '/images/calendar.gif'?>",
+		buttonImageOnly: true,
+		altFormat: 'yy-mm-dd',
+		dateFormat: 'yy-mm-dd',
+		yearRange : '2005:2030'
+	});
+});
+
+function inputNumber(e)
+{
+	var keynum;
+	if(window.event) // IE
+	{
+	  keynum = e.keyCode;
+	}
+	else if(e.which) // Netscape/Firefox/Opera
+	{
+	  keynum = e.which;
+	}
+	if ( ((keynum > 45) && (keynum <58)) || (keynum == 8) || (keynum == 9) || (keynum == 190) || (keynum == 39)|| (keynum == 37) ) 	 			return true;
+	else 
+		return false;
+}
+
+function formatInt (dieu_khien)
+{
+	  var separator = ",";
+	  var int = dieu_khien.value.replace ( new RegExp ( separator, "g" ), "" );
+	  var regexp = new RegExp ( "\\B(\\d{3})(" + separator + "|$)" );
+	  do
+	  {
+			  int = int.replace ( regexp, separator + "$1" );
+	  }
+	  while ( int.search ( regexp ) >= 0 )
+	  dieu_khien.value = int;  
+}
+</script>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->

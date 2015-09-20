@@ -1,0 +1,269 @@
+<?php
+
+/**
+ * {0}
+ * 
+ * @author
+ * @version 
+ */
+
+class Admin_LichCongTacController extends Khcn_Controller_Action_Admin
+{
+	protected $lich_ct = null;
+	
+	public function init ()
+    {
+        $this->lich_ct = new Default_Model_LichCt();
+    }
+    
+    public function indexAction() 
+    {
+        // TODO Auto-generated {0}::indexAction() default action
+        $lichCTs = $this->lich_ct->getAll();
+        $paginator = Zend_Paginator::factory($lichCTs);
+        $currentPage = 1;
+        //Check if the user is not on page 1
+        $page = $this->_getParam('page');
+        if (! empty($page)) { //Where page is the current page
+            $currentPage = $this->_getParam('page');
+        }
+        //Set the properties for the pagination
+        $paginator->setItemCountPerPage(10);
+        $paginator->setPageRange(10);
+        $paginator->setCurrentPageNumber($currentPage);
+        Zend_Paginator::setDefaultScrollingStyle('Sliding');
+        Zend_View_Helper_PaginationControl::setDefaultViewPartial('includes/pagination.phtml');
+        $paginator->setView($this->view);
+        $this->view->paginator = $paginator;
+    }
+    
+	public function themAction() 
+    {
+        // TODO Auto-generated {0}::indexAction() default action
+        $form = new Admin_Form_LichCT();
+        $form->submitCon->setLabel('Lưu và tiếp tục');
+        $form->submitExit->setLabel('Lưu và thoát');
+        $form->cancel->setLabel('Không lưu');
+        $this->view->form = $form;
+    	if($this->getRequest()->isPost())
+		{
+			$formData = $this->getRequest()->getPost();
+			if($form->isValid($formData))
+			{
+				$db = Zend_Registry::get('connectDB');
+				try{
+					$lich_ct = new Default_Model_LichCt();
+					$lich_ct->setTuan($form->getValue('tuan'))
+							->setThang($form->getValue('thang'))
+							->setNgayBatDau(date('Y-m-d',strtotime($form->getValue('ngay_bat_dau'))))
+							->setNgayKetThuc(date('Y-m-d',strtotime($form->getValue('ngay_ket_thuc'))))
+							->setGhiChu($form->getValue('ghi_chu'));
+					$lich_ct->them();
+					
+					$lct_id = $db->lastInsertId();
+					$thus = Default_Model_Constraints::lct_thu();
+					$nbd = date('Y-m-d',strtotime($form->getValue('ngay_bat_dau')));
+					foreach ($thus as $k=>$v){
+						$ngay = strtotime ( '+' . ($k - 1) . ' day' , strtotime ( $nbd ) ) ;
+						$ngay = date ( 'Y-m-d' , $ngay );
+						$ndct = new Default_Model_Ndct(); 
+						$ndct->setNgay($ngay)
+							 ->setSang($form->getValue( $k . '_s'))
+							 ->setChieu($form->getValue( $k . '_c'))
+							 ->setGhiChu($form->getValue( $k . '_gc'))
+							 ->setMaCongTac($lct_id);
+						$ndct->them();
+					}
+				}catch (Zend_Db_Exception $e){
+					$db->rollBack();
+					$_SESSION['msg'] = 'Lỗi !. Đã có lỗi trong quá trình xử lý, vui lòng thử lại .';
+					$_SESSION['type_msg'] = 'error';
+		    		$this->_redirect('/admin/lich-cong-tac/index');
+				}
+				
+				$_SESSION['msg'] = 'Thành công !. Dữ liệu đã được lưu trữ .';
+				$_SESSION['type_msg'] = 'success';
+				if($form->submitCon->isChecked()){
+					$this->_redirect('/admin/lich-cong-tac/them');					
+				}else{
+					$this->_redirect('/admin/lich-cong-tac/index');
+				}
+			}
+			else
+			{
+				$form->populate($formData);
+			}
+		}
+    }
+    
+    public function xoasAction()
+    {
+	    if(count($_POST['item']) == 0)
+		{
+			$_SESSION['msg'] = "Lỗi! Vui lòng chọn dữ liệu trước khi xóa.";
+			$_SESSION['type_msg'] = "error";
+			$this->_redirect('/admin/lich-cong-tac/index');
+		}
+		$db = Zend_Registry::get('connectDB');
+		$str = '';	
+		$thangs = Default_Model_Constraints::lichct_thang();
+		$ndct = new Default_Model_Ndct();				
+		foreach($_POST['item'] as $id){			
+			$lich_ct = $this->lich_ct->getLichCT($id);
+			if($lich_ct != NULL)
+			{	
+				$db->beginTransaction();
+				try{			
+					//xoa database
+					$this->lich_ct->xoa($id);
+					$ndct->xoa($id);			
+					$db->commit();
+				}catch (Zend_Db_Exception $e){
+					$db->rollBack();
+					$str .= 'Tuần ' . $lich_ct['tuan'] . ' tháng ' . $thangs[$lich_ct['thang']] . ', ';
+				}	
+			}			
+		}
+    	#lỗi
+		if($str != ''){
+			$_SESSION['msg'] = "Lỗi. Các lịch công tác sau đây không xóa được : " . $str;
+			$_SESSION['type_msg'] = "error";
+			$this->_redirect('/admin/lich-cong-tac/index');	
+		}
+		
+		$_SESSION['msg'] = 'Thành công !. Dữ liệu đã được xóa .';
+		$_SESSION['type_msg'] = 'success';
+		$this->_redirect('/admin/lich-cong-tac/index');			
+    }
+    
+	public function xoaAction()
+    {
+    	$id = $this->_getParam('id');
+    	if(!empty($id)){
+    		$lich_ct = $this->lich_ct->getLichCT($id);
+    		if($lich_ct != null){
+				$db = Zend_Registry::get('connectDB');
+				$ndct = new Default_Model_Ndct();		
+    			$db->beginTransaction();
+				try{			
+					//xoa database
+					$this->lich_ct->xoa($id);
+					$ndct->xoa($id);			
+					$db->commit();
+				}catch (Zend_Db_Exception $e){
+					$db->rollBack();
+					$_SESSION['msg'] = 'Lỗi !. Đã có lỗi trong quá trình xử lý, vui lòng thử lại .';
+					$_SESSION['type_msg'] = 'error';
+		    		$this->_redirect('/admin/lich-cong-tac/index');
+				}	    			
+    			$_SESSION['msg'] = 'Thành công !. Dữ liệu đã được xóa .';
+				$_SESSION['type_msg'] = 'success';
+	    		$this->_redirect('/admin/lich-cong-tac/index');
+    		}else{
+    			$_SESSION['msg'] = 'Lỗi !. Mã lịch công tác không tồn tại .';
+				$_SESSION['type_msg'] = 'error';
+	    		$this->_redirect('/admin/lich-cong-tac/index');
+    		}
+    	}else{
+    		$this->_redirect('/admin/lich-cong-tac/index');
+    	}
+    }
+    
+	public function suaAction()
+    {
+    	$form = new Admin_Form_LichCT();
+    	$form->removeElement('submitCon');
+        $form->submitExit->setLabel('Lưu');
+        $form->cancel->setLabel('Không lưu');
+        $form->ngay_bat_dau->setAttribs(array('id' => '','readonly' => 'readonly'));
+        $form->ngay_ket_thuc->setAttribs(array('id' => '','readonly' => 'readonly'));
+        $this->view->form = $form;        
+        if ($this->getRequest()->isPost()) {
+            $formData = $this->getRequest()->getPost();
+            if ($form->isValid($formData)) {         	
+            	$db = Zend_Registry::get('connectDB');				
+				$db->beginTransaction();
+				try{
+					$lich_ct = new Default_Model_LichCt();
+					$lich_ct->setId($form->getValue('id'))
+							->setTuan($form->getValue('tuan'))
+							->setThang($form->getValue('thang'))
+							->setGhiChu($form->getValue('ghi_chu'));
+					$lich_ct->sua();
+					
+					$thus = Default_Model_Constraints::lct_thu();
+					$nbd = date('Y-m-d',strtotime($form->getValue('ngay_bat_dau')));
+					foreach ($thus as $k=>$v){
+						$ngay = strtotime ( '+' . ($k - 1) . ' day' , strtotime ( $nbd ) ) ;
+						$ngay = date ( 'Y-m-d' , $ngay );
+						$ndct = new Default_Model_Ndct(); 
+						$ndct->setNgay($ngay)
+							 ->setSang($form->getValue( $k . '_s'))
+							 ->setChieu($form->getValue( $k . '_c'))
+							 ->setGhiChu($form->getValue( $k . '_gc'))
+							 ->setMaCongTac($form->getValue('id'));
+						$ndct->sua();
+					}
+					$db->commit();
+				}catch (Zend_Db_Exception $e){
+					$db->rollBack();
+					$_SESSION['msg'] = 'Lỗi !. Đã có lỗi trong quá trình xử lý, vui lòng thử lại .';
+					$_SESSION['type_msg'] = 'error';
+		    		$this->_redirect('/admin/lich-cong-tac/index');
+				}
+                
+                $_SESSION['msg'] = 'Thành công !. Dữ liệu đã được cập nhật .';
+				$_SESSION['type_msg'] = 'success';
+                $this->_redirect('/admin/lich-cong-tac/index');
+            } else {
+                $form->populate($formData);
+            }
+        } else {
+        	$id = $this->_getParam('id');
+        	if(!empty($id)){
+	            $data = $this->lich_ct->getLichCT($id);
+	            if($data != null){
+	            	$data = $this->lich_ct->LichCTToArray($data);
+		            $nd_ct = new Default_Model_Ndct();
+			    	$ndcts = $nd_ct->getNDCTByMaCT($id);
+			    	foreach ($ndcts as $ndct){
+			    		$data[date('N',strtotime($ndct['ngay'])) . '_s'] = $ndct['sang'];
+			    		$data[date('N',strtotime($ndct['ngay'])) . '_c'] = $ndct['chieu'];
+			    		$data[date('N',strtotime($ndct['ngay'])) . '_gc'] = $ndct['ghi_chu'];
+			    	}
+	            	$form->populate($data);
+	            }else{
+	            	$_SESSION['msg'] = 'Lỗi !. Mã lịch công tác không tồn tại .';
+					$_SESSION['type_msg'] = 'error';
+					$this->_redirect('/admin/lich-cong-tac/index');
+	            }
+        	}else{
+            	$this->_redirect('/admin/lich-cong-tac/index');
+            }
+        }
+    }
+    
+	public function capNhatTtAction()
+    {
+    	$id = $this->_getParam('id');
+    	$status = $this->_getParam('status');
+    	if(!empty($id)){
+    		$lich_ct = $this->lich_ct->getLichCT($id);
+    		if($lich_ct != null){
+	    		$kq = $this->lich_ct->CapNhatTT($id,$status);
+	    		if(!$kq){
+	    			$_SESSION['msg'] = 'Lỗi !. Đã có lỗi trong quá trình xử lý, vui lòng thử lại .';
+					$_SESSION['type_msg'] = 'error';
+		    		$this->_redirect('/admin/lich-cong-tac/index');
+	    		}
+	    		$this->_redirect('/admin/lich-cong-tac/index');
+    		}else{
+	    		$_SESSION['msg'] = 'Lỗi !. Mã lịch công tác không tồn tại .';
+				$_SESSION['type_msg'] = 'error';
+	    		$this->_redirect('/admin/lich-cong-tac/index');
+    		}
+    	}else{
+    		$this->_redirect('/admin/lich-cong-tac/index');
+    	}
+    }
+}

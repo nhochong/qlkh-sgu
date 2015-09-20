@@ -1,0 +1,23 @@
+<?php $this->titleBlock("Thay đổi thông tin");?>
+<div class="msg-error">
+	<?php echo $this->dfMessage();?>
+</div><br/>
+<div class="change">
+	<?php echo $this->form;?>
+<!-- chen vao jquery ngày tháng đã có săn trong js-css -->	
+<script>
+	$(function() {
+		$( "#ngay_sinh" ).datepicker({
+		showOn: "button",
+		changeMonth: true,
+		changeYear: true,
+		buttonImage: "<?php echo $this->baseUrl() . '/images/calendar.gif' ?>",
+		buttonImageOnly: true,
+		altFormat: 'dd-mm-yy',
+		dateFormat: 'dd-mm-yy',
+		yearRange : '1950:2000'
+		});
+	});
+</script>
+</div>
+

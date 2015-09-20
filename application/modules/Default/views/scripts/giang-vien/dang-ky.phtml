@@ -1,0 +1,80 @@
+<?php $this->titleBlock("Đăng Ký Giảng Viên");?>
+
+<?php if($this->is_queue):?>
+	<div id="form_giang_vien_create" class="global_form form_giang_vien_create" >
+		<div>
+			<div>
+				<ul class="form-notices"><li><?php echo $this->translate('Thông tin giảng viên cần được xác nhận. Xin vui lòng liên hệ phòng Khoa học Công nghệ để được kích hoạt nhanh nhất.')?></li></ul>
+				<div class="form-elements">
+					<div id="account-wrapper" class="form-wrapper-heading">
+						<span><?php echo $this->translate('Thông tin giảng viên')?></span>
+					</div>
+					<div id="ma-wrapper" class="form-wrapper">
+						<div id="ma-label" class="form-label"><label for="ma" class="required"><?php echo $this->translate('Mã giảng viên')?></label></div>
+						<div id="ma-element" class="form-element"><?php echo $this->queue->ma_giang_vien?></div>
+					</div>
+					<div id="ho-wrapper" class="form-wrapper">
+						<div id="ho-label" class="form-label"><label for="ho" class="required"><?php echo $this->translate('Họ & Tên')?></label></div>
+						<div id="ho-element" class="form-element"><?php echo $this->queue->ho . ' ' . $this->queue->ten?></div>
+					</div>
+					<div id="email-wrapper" class="form-wrapper">
+						<div id="email-label" class="form-label"><label for="email" class="required"><?php echo $this->translate('Email')?></label></div>
+						<div id="email-element" class="form-element"><?php echo $this->queue->email?></div>
+					</div>
+					<div id="don_vi_id-wrapper" class="form-wrapper">
+						<div id="don_vi_id-label" class="form-label"><label for="don_vi_id" class="optional"><?php echo $this->translate('Đơn vị')?></label></div>
+						<div id="don_vi_id-element" class="form-element"><?php echo Khcn_Api::_()->getItem('default_don_vi', $this->queue->don_vi_id)->getTitle() ?></div>
+					</div>
+					<div id="hoc_vi_id-wrapper" class="form-wrapper">
+						<div id="hoc_vi_id-label" class="form-label"><label for="hoc_vi_id" class="optional"><?php echo $this->translate('Học vị')?></label></div>
+						<div id="hoc_vi_id-element" class="form-element"><?php echo Khcn_Api::_()->getItem('default_hoc_vi', $this->queue->hoc_vi_id)->getTitle() ?></div>
+					</div>
+					<div id="chuc_vu-wrapper" class="form-wrapper">
+						<div id="chuc_vu-label" class="form-label"><label for="chuc_vu" class="optional"><?php echo $this->translate('Chức vụ')?></label></div>
+						<div id="chuc_vu-element" class="form-element"><?php echo $this->queue->chuc_vu?></div>
+					</div>
+					<div id="so_dien_thoai-wrapper" class="form-wrapper">
+						<div id="so_dien_thoai-label" class="form-label"><label for="so_dien_thoai" class="optional"><?php echo $this->translate('Số điện thoại')?></label></div>
+						<div id="so_dien_thoai-element" class="form-element"><?php echo $this->queue->so_dien_thoai?></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php else:?>
+	<div>
+		<?php echo $this->form->render($this) ?>
+	</div>
+<?php endif;?>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+	var validImage = '<?php echo $this->baseUrl() . '/images/tick_circle.png'?>';
+	var invalidImage = '<?php echo $this->baseUrl() . '/images/cross_circle.png'?>';
+	$("#ma").blur(function(){
+		var ma = $('#ma').val();
+		if(ma != ''){
+			$.ajax({ type: "POST", 
+				 url: "<?php echo $this->url(array('controller' => 'index','action' => 'kiem-tra-ma-gv'))?>", 
+				 data: {ma_giang_vien : ma},
+				 success: function(data){
+					var response = $.parseJSON(data);
+					 $('#ajax').replaceWith('');
+					 if(response.status == false){
+						$('#ma').after('<span id="ajax" class="notification error png_bg">' +
+			             '<img src="' + invalidImage + '" title="' + response.message + '"/></span>');
+					 }else{
+						$('#ma').after('<span id="ajax" class="notification success png_bg">' +
+			            '<img src="' + validImage + '" title="' + response.message + '"/></span>');
+					 }
+				}
+			});
+		}else{
+			$('#ajax').replaceWith('');
+			$('#ma').after('<span id="ajax" class="notification error png_bg">' +
+				            '<img src="' + invalidImage + '" title="Vui lòng nhập mã giảng viên"/></span>');
+		}
+	}); 
+});
+</script>
+

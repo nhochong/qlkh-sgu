@@ -1,0 +1,99 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Danh sách xác nhận giảng viên";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách giảng viên</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+<?php echo $this->form;?>
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div id="ds_gv">
+<form action="<?php echo $this->url()?>" method="post" name="f2">
+<div class="clear"></div>
+<fieldset>
+<table class="tbl_giangvien" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('check_all',null,array('id' => 'check_all','class' => 'check-all'))?></th>			
+			<th><?php echo $this->translate('Username')?></th>
+			<th class="center"><?php echo $this->translate('Mã giảng viên')?></th>
+			<th class="center"><?php echo $this->translate('Họ tên')?></th>
+			<th class="center"><?php echo $this->translate("Đơn vị")?></th>
+			<th class="center"><?php echo $this->translate("Chức vụ")?></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+				<?php echo $this->formSubmit('submit','Xác nhận',array('class' => 'button'))?>
+			</div>
+			<div class="pagination"> 
+            	<?php echo $this->paginator?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+	<?php if(count($this->paginator)):?>
+    <?php
+    	foreach ($this->paginator as $item) 
+    	{
+    ?>
+    		<tr>
+			<td><?php echo $this->formCheckbox('items[]',$item['queue_id'],null)?></td>
+			<td><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'nguoi-dung','action' => 'sua','id' => $item['nguoi_dung_id']),null,true)?>"><?php echo $item['ten_dang_nhap']?></a></td>
+			<td class="center">
+				<?php echo $item['ma_giang_vien'];?>
+				<?php 
+					$giang_vien = Khcn_Api::_()->getDbTable('giang_vien', 'default')->getGiangVienByOptions(array('ma_giang_vien' => $item['ma_giang_vien']));
+					if($giang_vien){?>
+						<span>(<a title="Xem thông tin giảng viên" href="<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'sua','id' => $giang_vien->id),null,true)?>" target="_blank">?</a>)</span>						
+					<?php }
+				?>
+			</td>
+			<td class="center">
+				<?php $hoc_vi = Khcn_Api::_()->getItem('default_hoc_vi', $item['hoc_vi_id'])?>
+				<?php echo ($hoc_vi->id == '0' ? '' : $hoc_vi->ma ) . '. ' . $item['ho'] . ' ' . $item['ten'];?>
+			</td>
+			<td class="center">
+				<?php $don_vi = Khcn_Api::_()->getItem('default_don_vi', $item['don_vi_id'])?>
+				<?php echo Khcn_Api::_()->subPhrase($don_vi->ten, 50);?>
+			</td>
+			<td class="center"><?php echo Khcn_Api::_()->subPhrase($item['chuc_vu'], 50);?></td>
+			<td class="tbl_giangvien_options">
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'nguoi-dung','action' => 'approve-queue','id' => $item['queue_id']),null,true)?>" title="Xác nhận">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/tick_circle.png'?>" alt="Delete">
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'nguoi-dung','action' => 'delete-queue','id' => $item['queue_id']),null,true)?>" title="Xóa" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+			</a></td>
+		</tr>
+    <?php
+    	}
+    ?>
+	<?php else:?>
+	<tr>
+		<td colspan="7">
+			<div class="tip">
+				<span><?php echo $this->translate('Không tìm thấy dữ liệu, vui lòng thử lại.');?></span>			
+			</div>
+		</td>
+	</tr>
+	<?php endif;?>
+    </tbody>
+</table>
+</fieldset>
+</form>
+</div>
+</div>

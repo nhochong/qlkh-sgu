@@ -1,0 +1,157 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Đề tài";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<script>
+	var currentOrder = '<?php echo $this->filterValues['order'] ?>';
+    var currentOrderDirection = '<?php echo $this->filterValues['direction'] ?>';
+    var changeOrder = function(order, default_direction)
+    {
+		// Just change direction
+		if( order == currentOrder ) {
+			if(currentOrderDirection == 'ASC'){
+				direction = 'DESC';
+			}
+			if(currentOrderDirection == 'DESC'){
+				direction = '';
+				$('#order').val('');
+			}
+			$('#direction').val( direction );
+		} else {
+			$('#order').val(order);
+			$('#direction').val(default_direction);
+		}
+		$('#f3').submit();
+    }
+	$(document).ready(function(){
+		if(currentOrderDirection == 'ASC'){
+			$('#icon_order').removeClass("order").addClass("order_asc");
+		}else if(currentOrderDirection == 'DESC'){
+			$('#icon_order').removeClass("order_asc").addClass("order_desc");
+		}else{
+			$('#icon_order').removeClass("order_desc").addClass("order");
+		}
+	});
+</script>
+<div id="message"></div>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách đề tài</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+<?php echo $this->form;?>
+<div class="content-box-content">
+<div class="total_detai"><h3><?php echo $this->paginator->getTotalItemCount();?> Đề tài</h3></div>
+<?php if($this->paginator->getTotalItemCount()):?>
+<div class="tab-content default-tab" id="tab1">
+<div id="ds_dt">
+<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'xoas'),null,true)?>" method="post" name="f2" id="f2">
+<div class="clear"></div>
+<fieldset>
+<table class="tbl_detai" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('check_all',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+			<th style="width: 70px;">
+				<span id="icon_order" class="order"><a href="javascript:void(0);" onclick="javascript:changeOrder('ma', 'ASC');">Mã</span></a>
+			</th>
+			<th class="ten">Tên</th>
+			<th class="center">Đơn vị</th>
+			<th class="center">Tình trạng</th>
+			<th style="width: 40px;"></th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+				<?php echo $this->formButton('add','Thêm',array('onclick' => 'window.location.href="' . $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'them'),null,true) . '"','class' => 'button'))?>
+			</div>
+			<div class="pagination"> 
+            	<?php echo $this->paginator?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->paginator as $de_tai) 
+    	{
+    ?>
+    		<tr>
+			<td><?php echo $this->formCheckbox('item[]',$de_tai['id'],array('id' => 'ma[]'))?></td>
+			<td><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'sua','id' => $de_tai['id']),null,true)?>"><?php echo $de_tai['ma']?></a></td>
+			<td class="ten"><?php echo $de_tai['ten']?></td>
+			<td class="center"><?php echo $de_tai['ten_don_vi'];?></td>
+			<td class="center"><?php echo $this->formSelect('tinh_trang',$de_tai['tinh_trang'],array('id' => 'tinh_trang','onchange' => 'changeTT(this,' . $de_tai['id'] . ')'),Default_Model_Constraints::detai_tinhtrang()) ;?></td>			
+			<td>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'sua','id' => $de_tai['id']),null,true)?>" title="Edit"> 
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/pencil.png'?>" alt="Edit"> </a>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'xoa','id' => $de_tai['id']),null,true)?>" title="Delete" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+			</a></td>
+		</tr>
+    <?php
+    	}
+    ?>
+    </tbody>
+</table>
+</fieldset>
+</form>
+</div>
+</div>
+<?php endif;?>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#reset").click(function(){
+		$("#tinh_trang").val(-1);
+		$("#ma_linh_vuc").val(0);
+		$("#ma_don_vi").val(0);
+	});
+
+	$("#them_hdd").click(function(){
+		var $form = $("#f2");
+		$.ajax({ type: "POST", 
+				 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'them-hdd'))?>",
+				 data: $form.serialize()
+		});
+	});
+});
+
+function changeTT(dk,ma)
+{
+	var status = dk.value;
+	$.ajax({ type: "GET", 
+	 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'cap-nhat-tt'))?>",
+	 data: {'id' : ma,'status' : status},
+	 success: function(data){
+         if (data == "YES") {
+	         alert('Thành công. Dữ liệu đã được cập nhật.');
+        	 //$('#message').html('<div id="msg" class="notification success png_bg"><a href="#" class="close"><img src="<?php #echo Khcn_View_Helper_GetBaseUrl::getBaseUrl()?>/../../application/templates/admin/images/icons/cross_grey_small.png" title="Close this notification" alt="close" /></a><div>Thành công !. Dữ liệu đã được cập nhật.</div></div>');
+         }else if(data == "NO"){
+	         alert('Lỗi. Đã có lỗi trong quá trình xử lý, vui lòng kiểm tra lại.');
+        	 //$('#message').html('<div id="msg" class="notification error png_bg"><a href="#" class="close"><img src="<?php #echo Khcn_View_Helper_GetBaseUrl::getBaseUrl()?>/../../application/templates/admin/images/icons/cross_grey_small.png" title="Close this notification" alt="close" /></a><div>Lỗi !.Đã có lỗi trong quá trình xử lý, vui lòng kiểm tra lại.</div></div>');
+         }}
+	});
+}
+</script>
+
+<!-- Đây là đoạn script phân trang dùng ajax -->
+<?php $linkpage = $this->baseUrl()."/index.php/admin/de-tai/danh-sach/page";?>
+<script type="text/javascript">
+//	$(document).ready(function(  ){
+//		$("#ds_dt").load("<?php #echo  $linkpage . '/1';?>");
+//	});
+//	
+//	function loadPage(page) {
+//		$("#ds_dt").load("<?php #echo  $linkpage . '/';?>"  + page);
+//	}     
+</script>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

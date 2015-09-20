@@ -1,0 +1,29 @@
+<?php $this->titleBlock("Cổng thông tin trực tuyến - Cesti");?>
+<?php if(false && $this->displayForm):?>
+<div id="form_input_ma_giang_vien">
+	<?php if(isset($this->error)):?>
+		<ul class="form-errors">
+			<li>
+				<ul class="errors">
+					<li><?php echo $this->error?></li>
+				</ul>
+			</li>
+		</ul>
+	<?php endif;?>
+	<form action="<?php echo $this->url()?>" method="POST">
+		<label for="keyword" class="required"><?php echo $this->translate('Mã giảng viên')?> :</label>
+		<input type="text" name="ma_giang_vien" id="ma_giang_vien" value="<?php echo (!empty($this->ma_giang_vien) ? $this->ma_giang_vien : '')?>"/>
+		<button type="submit"><?php echo $this->translate('Xem')?></button>
+	</form>
+</div>
+<?php endif;?>
+
+<?php if(true || $this->canViewCesti):?>
+<div class="introduce" align="center" >
+	<?php if(!empty($this->cesti_info)):?>
+		<?php echo $this->cesti_info;?>
+	<?php else:?>
+		<p>Đang cập nhật ...</p>
+	<?php endif;?>
+</div>
+<?php endif;?>

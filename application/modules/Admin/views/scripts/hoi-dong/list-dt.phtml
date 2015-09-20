@@ -1,0 +1,64 @@
+<tr id="danh_sach_dt">
+	<td colspan="2">	
+	<fieldset>
+	<table align="center">
+		<thead>
+			<tr class="alt-row">
+				<th>
+				<?php 
+					if($this->hd == 'hdd'){
+						echo $this->formCheckbox('check_all',null,array('id' => 'check_all','class' => 'check-all','checked' => $this->checked));
+					}
+				?>
+				</th>
+				<th>Mã đề tài</th>
+				<th class="ten" style="width: 60%">Tên đề tài</th>
+				<th class="center">Đơn vị</th>
+			</tr>
+		</thead>
+		<tbody>
+	    <?php
+	    if($this->hd == 'hdd'){
+	    	foreach ($this->deTais as $de_tai) 
+	    	{
+	    ?>
+	    		<tr>
+				<td><?php echo $this->formCheckbox('item[]',$de_tai['id'],array('id' => 'ma[]','checked' => $this->checked))?></td>
+				<td><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'sua','id' => $de_tai['id']),null,true)?>"><?php echo $de_tai['ma']?></a></td>
+				<td class="ten"><?php echo $de_tai['ten']?></td>
+				<td class="center"><?php echo $de_tai['ten_don_vi']?></td>
+			</tr>
+	    <?php
+	    	}
+	    }else{
+	    	foreach ($this->deTais as $de_tai) 
+	    	{
+	    ?>
+	    		<tr>
+				<td><?php echo $this->formCheckbox('hdnt[]',$de_tai['id'],array('class' => 'unique'))?></td>
+				<td><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'de-tai','action' => 'sua','id' => $de_tai['id']),null,true)?>"><?php echo $de_tai['ma']?></a></td>
+				<td class="ten"><?php echo $de_tai['ten']?></td>
+				<td class="center"><?php echo $de_tai['ten_don_vi']?></td>
+			</tr>
+	    <?php	    	
+	    }}
+	    ?>
+	    </tbody>	
+	</table>
+	</fieldset>
+	</td>
+</tr>
+<script language="javascript">
+$(document).ready(function(){ // this line makes sure this code runs on page load
+    $('#check_all').click(function () {
+    	$(this).parents('fieldset').find(':checkbox').attr('checked', this.checked);
+    });
+	
+    //dung cho hdnt,chi dc chon duy nhat 1 de tai
+    var $unique = $('input.unique');
+	$unique.click(function() {
+	    $unique.removeAttr('checked');
+	    $(this).attr('checked', true);
+	});
+});
+</script>

@@ -1,0 +1,25 @@
+<?php $this->titleBlock("Biểu mẫu");?>
+<div class="rules">
+	<?php foreach($this->loaiBMs as $loai_bm):?>
+		<div><img src="<?php echo $this->baseUrl() . '/images/folder.gif'?>"/> <?php echo $loai_bm->getTitle()?></div>
+		<?php $childs = Khcn_Api::_()->getDbTable('loai_bieu_mau', 'default')->getByParent($loai_bm->getIdentity());?>
+		<?php if(count($childs) > 0):?>
+			<ul class="rules">
+				<?php foreach ($childs as $child):?>
+					<li class="child"><a class="Normal" href="<?php echo $this->baseUrl() . '/bieu-mau/danh-sach/loai/' . $child->getIdentity() ?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder.gif'?>" /> <?php echo $child->getTitle() ?></a></li>
+				<?php endforeach?>
+			</ul>
+		<?php endif;?>
+		<?php $bieuMaus = $loai_bm->getDanhSachBieuMau()?>
+		<?php if(count($bieuMaus) > 0):?>
+			<ul class="rules">
+				<?php foreach ($bieuMaus as $bieu_mau):?>
+					<li><a class="Normal" href="<?php echo $this->baseUrl() . '/upload/files/bieu_mau/' . $bieu_mau->ten_file ?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder2.gif'?>" /> <?php echo $bieu_mau->getTitle() ?></a></li>
+				<?php endforeach?>
+			</ul>
+		<?php else:?>
+			<p>Đang cập nhật ...</p>
+		<?php endif;?>
+		</br>
+	<?php endforeach;?>
+</div>

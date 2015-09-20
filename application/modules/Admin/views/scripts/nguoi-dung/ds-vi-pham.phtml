@@ -1,0 +1,74 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Người Dùng";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách nguời dùng vi phạm</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div class="danh_sach_nguoi_dung">
+<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'nguoi-dung','action' => 'xoas'),null,true)?>" method="post" name="f2">
+<div class="clear"></div>
+<table class="tbl_thongbao" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('deletes',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+			<th>Username</th>
+			<th class="center">Họ tên</th>
+			<th class="center">Email</th>
+			<th class="center">Ngày tạo</th>
+			<th class="center">Trạng thái</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+			</div>
+			<div class="pagination"> 
+            	<?php echo $this->paginator?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->paginator as $nguoi_dung) 
+    	{
+    ?>
+    		<tr>
+			<td><?php echo $this->formCheckbox('item[]',$nguoi_dung->getIdentity(),null)?></td>
+			<td><?php echo $nguoi_dung->ten_dang_nhap?></td>
+			<td class="center"><?php echo $nguoi_dung->ten_hien_thi?></td>
+			<td class="center"><?php echo $nguoi_dung->email?></td>
+			<td class="center"><?php echo date('d-m-Y',strtotime($nguoi_dung->ngay_tao))?></td>
+			<td class="center">
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'nguoi-dung','action' => 'cap-nhat-tt','id' => $nguoi_dung->getIdentity(),'status' => $nguoi_dung->enabled))?>">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/trangthai_' . $nguoi_dung->enabled . '.png'?>"> </a>
+			</td>
+			<td>				
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'nguoi-dung','action' => 'xoa','id' => $nguoi_dung->getIdentity()),null,true)?>" title="Delete" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+			</a></td>
+		</tr>
+    <?php
+    	}
+    ?>
+                              </tbody>
+</table>
+</form>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

@@ -1,0 +1,235 @@
+<?php
+
+/**
+ * {0}
+ * 
+ * @author
+ * @version 
+ */
+	
+require_once 'Zend/Controller/Action.php';
+
+class Default_DeTaiController extends Khcn_Controller_Action_Standard
+{
+	/**
+	 * The default action - show the home page
+	 */
+	protected $de_tai = null;
+	protected $dang_ky = null;
+	
+	public function init()
+    {
+        $this->de_tai = new Default_Model_DeTai();
+        $this->dang_ky = new Default_Model_DangKy();
+    }
+	
+	public function indexAction() 
+    {
+		$params = Default_Model_Functions::filterParams($this->_getAllParams());
+        $this->view->form = $form = new Default_Form_SearchDT(); 
+		$form->direction->removeDecorator('Label');
+        $form->populate($params);
+		if( empty($params['from']) ) {
+			$params['from'] = date('Y');
+		}
+		if( empty($params['direction']) ) {
+			$params['direction'] = 'DESC';
+		} 
+		
+		$deTais = $this->de_tai->getDSDTCapTruong($params);																		
+        //Set the properties for the pagination
+        $paginator = Zend_Paginator::factory($deTais);
+        $paginator->setItemCountPerPage(20);
+        $paginator->setPageRange(10);
+        $paginator->setCurrentPageNumber($this->_getParam('page',1));
+        Zend_Paginator::setDefaultScrollingStyle('Sliding');
+        Zend_View_Helper_PaginationControl::setDefaultViewPartial('includes/pagination.phtml');
+        $paginator->setView($this->view);
+        $this->view->paginator = $paginator;   
+    }
+	
+	public function capKhoaAction() 
+    {
+		$params = Default_Model_Functions::filterParams($this->_getAllParams());
+        $this->view->form = $form = new Default_Form_SearchDT(); 
+		$form->removeElement('order');
+        $form->populate($params);
+		if( empty($params['from']) ) {
+			$params['from'] = date('Y');
+		}
+		if( empty($params['direction']) ) {
+			$params['direction'] = 'DESC';
+		} 
+		
+		$deTais = $this->de_tai->getDSDTCapKhoa($params);																		
+        //Set the properties for the pagination
+        $paginator = Zend_Paginator::factory($deTais);
+        $paginator->setItemCountPerPage(20);
+        $paginator->setPageRange(10);
+        $paginator->setCurrentPageNumber($this->_getParam('page',1));
+        Zend_Paginator::setDefaultScrollingStyle('Sliding');
+        Zend_View_Helper_PaginationControl::setDefaultViewPartial('includes/pagination.phtml');
+        $paginator->setView($this->view);
+        $this->view->paginator = $paginator;   
+    }
+	
+	public function ngoaiTruongAction() 
+    {
+		$params = Default_Model_Functions::filterParams($this->_getAllParams());
+        $this->view->form = $form = new Default_Form_SearchDT(); 
+		$form->removeElement('order');
+        $form->populate($params);
+		if( empty($params['from']) ) {
+			$params['from'] = date('Y');
+		}
+		if( empty($params['direction']) ) {
+			$params['direction'] = 'DESC';
+		} 
+		
+		$deTais = $this->de_tai->getDSDTCapNgoaiTruong($params);																		
+        //Set the properties for the pagination
+        $paginator = Zend_Paginator::factory($deTais);
+        $paginator->setItemCountPerPage(20);
+        $paginator->setPageRange(10);
+        $paginator->setCurrentPageNumber($this->_getParam('page',1));
+        Zend_Paginator::setDefaultScrollingStyle('Sliding');
+        Zend_View_Helper_PaginationControl::setDefaultViewPartial('includes/pagination.phtml');
+        $paginator->setView($this->view);
+        $this->view->paginator = $paginator;   
+    }
+    
+	public function chiTietAction() 
+    {
+        // TODO Auto-generated {0}::indexAction() default action
+        $id = $this->_getParam('id');
+        if(!empty($id)){
+        	$deTai = Khcn_Api::_()->getItem('default_de_tai', $id);
+        	if($deTai != null){
+        		$thanhViens = $this->dang_ky->getDSDKByMaDeTai($id);
+	        	$this->view->de_tai = $deTai;
+	        	$this->view->thanhViens = $thanhViens;
+        		$this->view->tinhTrangs = $tinhTrangs = Default_Model_Constraints::detai_tinhtrang();
+				$this->view->capQLs = $capQLs = Default_Model_Constraints::detai_capquanly();
+				$this->view->xepLoais = $xepLoais = Default_Model_Constraints::detai_xeploai();
+	        }else{
+	        	$this->_redirect('de-tai/index');
+	        }
+        }else {
+        	$this->_redirect('de-tai/index');
+        }
+    }
+    
+	public function danhSachAction() 
+    {
+		$this->_redirect('de-tai/cap-truong');     
+        // TODO Auto-generated {0}::indexAction() default action
+		$params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+		if(isset($params['catid']) && !empty($params['catid'])){
+			$params['ma_linh_vuc'] = $params['catid'];
+			$linh_vuc = new Default_Model_LinhVuc();
+        	$linhVuc = $linh_vuc->getLinhVuc($params['catid']); 
+			if($linhVuc == null)
+        		$this->_redirect('de-tai/index');
+			$this->view->header = $linhVuc['ten'];
+		}else if(isset($params['stat']) && !empty($params['stat'])){
+			$params['tinh_trang'] = $params['stat'];
+			$status = Default_Model_Constraints::detai_tinhtrang();
+			if(!array_key_exists($params['stat'], $status))
+        		$this->_redirect('de-tai/index');       																			
+	        $this->view->header = $status[$params['stat']];	
+		}else if(isset($params['dept']) && !empty($params['dept'])){
+			$params['ma_don_vi'] = $params['dept'];
+			$bizDonVi = new Default_Model_DonVi();	
+        	$donVi = $bizDonVi->getDonVi($params['dept']);
+        	if($donVi == null)
+        		$this->_redirect('de-tai/index');																
+			$this->view->header = $donVi['ten'];
+		}else if(isset($params['level']) && !empty($params['level'])){
+			$params['cap_quan_ly'] = $params['level'];
+			$capQLs = Default_Model_Constraints::detai_capquanly();
+        	if(!array_key_exists($params['level'], $capQLs))
+        		$this->_redirect('de-tai/index');     																			
+	        $this->view->header = $capQLs[$params['level']];
+		}else{
+			$this->view->header = "Đề Tài";
+		}
+		
+		if(empty($params['from']))
+			$params['from'] = date('Y');
+		if(empty($params['to']))
+			$params['to'] = $params['from'] + 1;
+		
+		$deTais = $this->de_tai->getDSDT($params);																		
+        //Set the properties for the pagination
+        $paginator = Zend_Paginator::factory($deTais);
+        $paginator->setItemCountPerPage(15);
+        $paginator->setPageRange(10);
+        $paginator->setCurrentPageNumber($this->_getParam('page',1));
+        Zend_Paginator::setDefaultScrollingStyle('Sliding');
+        Zend_View_Helper_PaginationControl::setDefaultViewPartial('includes/pagination.phtml');
+        $paginator->setView($this->view);
+        $this->view->paginator = $paginator;   
+        $form = new Default_Form_FilterDT();
+        $this->view->form = $form; 	 	
+        $form->populate($params);
+		$this->view->order = isset($params['order']) ? $params['order'] : '';
+		$this->view->direction = isset($params['direction']) ? $params['direction'] : '';
+    }
+    
+    public function capNhatSessionAction()
+    {
+    	$url = $_SERVER['HTTP_REFERER'];
+		$request = new Zend_Controller_Request_Http($url);
+		Zend_Controller_Front::getInstance()->getRouter()->route($request);
+		// All parameters
+		$params = $request->getParams();
+		$url = "/" . $params['controller'] . "/" . $params['action'] . "?";
+		unset($params['controller'],$params['action'],$params['module'],$params['loc']);
+		foreach ($params as $k=>$v){
+			$url .= $k . '=' . $v . "&";
+		}
+		$this->_redirect($url);
+    }
+    
+    public function thongKeAction()
+    {
+    	$form_nam = new Default_Form_ReportYear();
+    	$form_don_vi = new Default_Form_ReportDept();
+    	$this->view->form_nam = $form_nam;
+    	$this->view->form_don_vi = $form_don_vi;
+    	$this->view->tab = 0;
+    }
+    
+    public function tkNamAction()
+    {
+    	$from = $_POST['from'];
+    	$to = $_POST['to'];
+		$amount = $_POST['amount'];
+    	if($to > date('Y'))
+    		$to = date('Y');
+    	try{
+    		$this->view->result = $result = $this->de_tai->thong_ke($from, $to, null, $amount);
+    	}catch (Zend_Db_Exception $ex){
+    		echo "Lỗi. Vui lòng thử lại sau";
+    		exit;
+    	}	
+    	$this->_helper->layout->disableLayout();
+    }
+    
+	public function tkDonViAction()
+    {
+    	$from = $_POST['from'];
+    	$to = $_POST['to'];
+		$amount = $_POST['amount'];
+    	if($to > date('Y'))
+    		$to = date('Y');
+    	$ma_don_vi = $_POST['ma_don_vi'];
+    	try{
+    		$this->view->result = $result = $this->de_tai->thong_ke($from, $to, $ma_don_vi, $amount);  		
+    	}catch (Zend_Db_Exception $ex){
+    		echo "Lỗi. Vui lòng thử lại sau";
+    		exit;
+    	}	
+    	$this->_helper->layout->disableLayout();
+    }
+}

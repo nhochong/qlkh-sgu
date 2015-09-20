@@ -1,0 +1,139 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Thông báo";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<script>
+	var currentOrder = '<?php echo $this->filterValues['order'] ?>';
+    var currentOrderDirection = '<?php echo $this->filterValues['direction'] ?>';
+    var changeOrder = function(order, default_direction)
+    {
+		// Just change direction
+		if( order == currentOrder ) {
+			$('#direction').val( currentOrderDirection == 'ASC' ? 'DESC' : 'ASC' );
+		} else {
+			$('#order').val(order);
+			$('#direction').val(default_direction);
+		}
+		$('#f3').submit();
+    }
+	
+	function update(type, thong_bao_id){
+		var element = document.getElementById('thong_bao_content_' + type + '_' + thong_bao_id);
+		var checkbox = document.getElementById('thong_bao_' + type + '_' + thong_bao_id);
+		var status = 0;
+		
+		if(checkbox.checked==true) status = 1;
+		else status = 0;
+		var content = element.innerHTML;
+		element.innerHTML= "<img  src='<?php echo $this->baseUrl()?>/../application/modules/Default/externals/images/loading.gif'></img>";
+		
+		$.ajax({ 
+			type: "POST", 
+			url: "<?php echo $this->url(array('module' => 'admin','controller' => 'thong-bao','action' => 'update'))?>", 
+			data: {
+				'format' : 'json',
+				'thong_bao_id' : thong_bao_id,
+				'type': type,
+				'status' : status
+			},
+			success: function(data){
+				element.innerHTML = content;
+				checkbox = document.getElementById('thong_bao_' + type + '_' + thong_bao_id);
+				if( status == 1) checkbox.checked=true;
+				else checkbox.checked=false;
+			}
+		});
+    }
+</script>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách thông báo</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+<?php echo $this->form;?>
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div class="danh_sach_thong_bao">
+<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'thong-bao','action' => 'xoas'),null,true)?>" method="post" name="f2">
+<div class="clear"></div>
+<table class="tbl_thongbao" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('deletes',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+			<th class="tieu_de">Tiêu đề</th>
+			<th class="center">Loại</th>
+			<th class="center"><a href="javascript:void(0);" onclick="javascript:changeOrder('ngay_tao', 'DESC');">Ngày tạo</a></th>
+			<th class="center">Trạng thái</th>
+			<th class="center"><a href="javascript:void(0);" onclick="javascript:changeOrder('quan_trong', 'DESC');">Quan trọng</a></th>
+			<th class="center"><a href="javascript:void(0);" onclick="javascript:changeOrder('noi_bat', 'DESC');">Nổi bật</a></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+				<?php echo $this->formButton('add','Thêm',array('onclick' => 'window.location.href="' . $this->url(array('module' => 'admin','controller' => 'thong-bao','action' => 'them'),null,true) . '"','class' => 'button'))?>
+			</div>
+			<div class="pagination"> 
+            	<?php echo $this->paginator?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->paginator as $thong_bao) 
+    	{
+    ?>
+    		<tr>
+			<td><?php echo $this->formCheckbox('item[]',$thong_bao['id'],null)?></td>
+			<td class="tieu_de"><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'thong-bao','action' => 'sua','id' => $thong_bao['id']),null,true)?>"><?php echo $thong_bao['tieu_de']?></a></td>
+			<td class="center"><?php echo $thong_bao->getTenLoai()?></td>
+			<td class="center"><?php echo date('d-m-Y', strtotime($thong_bao['ngay_tao']))?></td>
+			<td class="center">
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'thong-bao','action' => 'cap-nhat-tt','id' => $thong_bao['id'],'status' => $thong_bao['trang_thai']))?>">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/trangthai_' . $thong_bao['trang_thai'] . '.png'?>"> </a>
+			</td>
+			<td class="center">
+				<div id='thong_bao_content_quan_trong_<?php echo $thong_bao->getIdentity(); ?>'>
+					<?php if($thong_bao->quan_trong): ?>
+						<input type="checkbox" id='thong_bao_quan_trong_<?php echo $thong_bao->getIdentity(); ?>'  onclick="update('quan_trong', <?php echo $thong_bao->getIdentity(); ?>,this)" checked />
+					<?php else: ?>
+						<input type="checkbox" id='thong_bao_quan_trong_<?php echo $thong_bao->getIdentity(); ?>'  onclick="update('quan_trong', <?php echo $thong_bao->getIdentity(); ?>,this)" />
+					<?php endif; ?>
+				</div>
+			</td>
+			<td class="center">
+				<div id='thong_bao_content_noi_bat_<?php echo $thong_bao->getIdentity(); ?>'>
+					<?php if($thong_bao->noi_bat): ?>
+						<input type="checkbox" id='thong_bao_noi_bat_<?php echo $thong_bao->getIdentity(); ?>'  onclick="update('noi_bat', <?php echo $thong_bao->getIdentity(); ?>,this)" checked />
+					<?php else: ?>
+						<input type="checkbox" id='thong_bao_noi_bat_<?php echo $thong_bao->getIdentity(); ?>'  onclick="update('noi_bat', <?php echo $thong_bao->getIdentity(); ?>,this)" />
+					<?php endif; ?>
+				</div>
+			</td>
+			<td>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'thong-bao','action' => 'sua','id' => $thong_bao['id']),null,true)?>" title="Edit"> 
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/pencil.png'?>" alt="Edit"> </a>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'thong-bao','action' => 'xoa','id' => $thong_bao['id']),null,true)?>" title="Delete" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+			</a></td>
+		</tr>
+    <?php
+    	}
+    ?>
+                              </tbody>
+</table>
+</form>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

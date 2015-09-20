@@ -1,0 +1,630 @@
+KHCN CMS - 2013-05-27T22:56:34+07:00
+DEBUG [7]: Khcn_Loader_Exception
+Message: Could not load class: default_models_DbTable_DonVi
+Stack trace: 14
+#0
+-- File: C:\wamp\www\khcn\library\Khcn\Loader.php
+-- Line: 160
+-- Function: loadClass
+-- Class: Khcn_Loader
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 374
+-- Function: load
+-- Class: Khcn_Loader
+
+#2
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 403
+-- Function: loadClass
+-- Class: Khcn_Api
+
+#3
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 304
+-- Function: getItemTable
+-- Class: Khcn_Api
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Db\Table\Row\Abstract.php
+-- Line: 139
+-- Function: _getTable
+-- Class: Khcn_Db_Table_Row
+
+#5
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 82
+-- Function: __construct
+-- Class: Zend_Db_Table_Row_Abstract
+
+#6
+-- File: C:\wamp\www\khcn\application\modules\default\models\DonVi.php
+-- Line: 13
+-- Function: __construct
+-- Class: Khcn_Db_Table_Row
+
+#7
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\DonViController.php
+-- Line: 29
+-- Function: __construct
+-- Class: Default_Model_DonVi
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_DonViController
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-27T23:03:50+07:00
+DEBUG [7]: Khcn_Loader_Exception
+Message: Could not load class: default_models_DbTable_DonVi
+Stack trace: 14
+#0
+-- File: C:\wamp\www\khcn\library\Khcn\Loader.php
+-- Line: 160
+-- Function: loadClass
+-- Class: Khcn_Loader
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 374
+-- Function: load
+-- Class: Khcn_Loader
+
+#2
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 403
+-- Function: loadClass
+-- Class: Khcn_Api
+
+#3
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 304
+-- Function: getItemTable
+-- Class: Khcn_Api
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Db\Table\Row\Abstract.php
+-- Line: 139
+-- Function: _getTable
+-- Class: Khcn_Db_Table_Row
+
+#5
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 82
+-- Function: __construct
+-- Class: Zend_Db_Table_Row_Abstract
+
+#6
+-- File: C:\wamp\www\khcn\application\modules\default\models\DonVi.php
+-- Line: 13
+-- Function: __construct
+-- Class: Khcn_Db_Table_Row
+
+#7
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\DonViController.php
+-- Line: 29
+-- Function: __construct
+-- Class: Default_Model_DonVi
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_DonViController
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 69
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-27T23:12:03+07:00
+DEBUG [7]: Khcn_Loader_Exception
+Message: Could not load class: default_models_DbTable_DonVi
+Stack trace: 14
+#0
+-- File: C:\wamp\www\khcn\library\Khcn\Loader.php
+-- Line: 160
+-- Function: loadClass
+-- Class: Khcn_Loader
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 374
+-- Function: load
+-- Class: Khcn_Loader
+
+#2
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 403
+-- Function: loadClass
+-- Class: Khcn_Api
+
+#3
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 304
+-- Function: getItemTable
+-- Class: Khcn_Api
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Db\Table\Row\Abstract.php
+-- Line: 139
+-- Function: _getTable
+-- Class: Khcn_Db_Table_Row
+
+#5
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 82
+-- Function: __construct
+-- Class: Zend_Db_Table_Row_Abstract
+
+#6
+-- File: C:\wamp\www\khcn\application\modules\default\models\DonVi.php
+-- Line: 13
+-- Function: __construct
+-- Class: Khcn_Db_Table_Row
+
+#7
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\DonViController.php
+-- Line: 29
+-- Function: __construct
+-- Class: Default_Model_DonVi
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_DonViController
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-27T23:14:33+07:00
+DEBUG [7]: Khcn_Loader_Exception
+Message: Could not load class: default_models_DbTable_DonVi
+Stack trace: 14
+#0
+-- File: C:\wamp\www\khcn\library\Khcn\Loader.php
+-- Line: 160
+-- Function: loadClass
+-- Class: Khcn_Loader
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 374
+-- Function: load
+-- Class: Khcn_Loader
+
+#2
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 403
+-- Function: loadClass
+-- Class: Khcn_Api
+
+#3
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 304
+-- Function: getItemTable
+-- Class: Khcn_Api
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Db\Table\Row\Abstract.php
+-- Line: 139
+-- Function: _getTable
+-- Class: Khcn_Db_Table_Row
+
+#5
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 82
+-- Function: __construct
+-- Class: Zend_Db_Table_Row_Abstract
+
+#6
+-- File: C:\wamp\www\khcn\application\modules\default\models\DonVi.php
+-- Line: 13
+-- Function: __construct
+-- Class: Khcn_Db_Table_Row
+
+#7
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\DonViController.php
+-- Line: 29
+-- Function: __construct
+-- Class: Default_Model_DonVi
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_DonViController
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-27T23:21:45+07:00
+DEBUG [7]: Khcn_Loader_Exception
+Message: Could not load class: default_models_DbTable_DonVi
+Stack trace: 14
+#0
+-- File: C:\wamp\www\khcn\library\Khcn\Loader.php
+-- Line: 160
+-- Function: loadClass
+-- Class: Khcn_Loader
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 374
+-- Function: load
+-- Class: Khcn_Loader
+
+#2
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 403
+-- Function: loadClass
+-- Class: Khcn_Api
+
+#3
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 304
+-- Function: getItemTable
+-- Class: Khcn_Api
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Db\Table\Row\Abstract.php
+-- Line: 139
+-- Function: _getTable
+-- Class: Khcn_Db_Table_Row
+
+#5
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 82
+-- Function: __construct
+-- Class: Zend_Db_Table_Row_Abstract
+
+#6
+-- File: C:\wamp\www\khcn\application\modules\default\models\DonVi.php
+-- Line: 13
+-- Function: __construct
+-- Class: Khcn_Db_Table_Row
+
+#7
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\DonViController.php
+-- Line: 29
+-- Function: __construct
+-- Class: Default_Model_DonVi
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_DonViController
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-27T23:21:57+07:00
+DEBUG [7]: Khcn_Loader_Exception
+Message: Could not load class: default_models_DbTable_DonVi
+Stack trace: 14
+#0
+-- File: C:\wamp\www\khcn\library\Khcn\Loader.php
+-- Line: 160
+-- Function: loadClass
+-- Class: Khcn_Loader
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 374
+-- Function: load
+-- Class: Khcn_Loader
+
+#2
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 403
+-- Function: loadClass
+-- Class: Khcn_Api
+
+#3
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 304
+-- Function: getItemTable
+-- Class: Khcn_Api
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Db\Table\Row\Abstract.php
+-- Line: 139
+-- Function: _getTable
+-- Class: Khcn_Db_Table_Row
+
+#5
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 82
+-- Function: __construct
+-- Class: Zend_Db_Table_Row_Abstract
+
+#6
+-- File: C:\wamp\www\khcn\application\modules\default\models\DonVi.php
+-- Line: 13
+-- Function: __construct
+-- Class: Khcn_Db_Table_Row
+
+#7
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\DonViController.php
+-- Line: 29
+-- Function: __construct
+-- Class: Default_Model_DonVi
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_DonViController
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 68
+-- Function: run
+-- Class: Zend_Application
+
+
+
+KHCN CMS - 2013-05-27T23:22:34+07:00
+DEBUG [7]: Khcn_Loader_Exception
+Message: Could not load class: default_models_DbTable_DonVi
+Stack trace: 14
+#0
+-- File: C:\wamp\www\khcn\library\Khcn\Loader.php
+-- Line: 160
+-- Function: loadClass
+-- Class: Khcn_Loader
+
+#1
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 374
+-- Function: load
+-- Class: Khcn_Loader
+
+#2
+-- File: C:\wamp\www\khcn\library\Khcn\Api.php
+-- Line: 403
+-- Function: loadClass
+-- Class: Khcn_Api
+
+#3
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 304
+-- Function: getItemTable
+-- Class: Khcn_Api
+
+#4
+-- File: C:\wamp\www\khcn\library\Zend\Db\Table\Row\Abstract.php
+-- Line: 139
+-- Function: _getTable
+-- Class: Khcn_Db_Table_Row
+
+#5
+-- File: C:\wamp\www\khcn\library\Khcn\Db\Table\Row.php
+-- Line: 82
+-- Function: __construct
+-- Class: Zend_Db_Table_Row_Abstract
+
+#6
+-- File: C:\wamp\www\khcn\application\modules\default\models\DonVi.php
+-- Line: 13
+-- Function: __construct
+-- Class: Khcn_Db_Table_Row
+
+#7
+-- File: C:\wamp\www\khcn\application\modules\admin\controllers\DonViController.php
+-- Line: 29
+-- Function: __construct
+-- Class: Default_Model_DonVi
+
+#8
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_DonViController
+
+#9
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#10
+-- File: C:\wamp\www\khcn\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#11
+-- File: C:\wamp\www\khcn\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#12
+-- File: C:\wamp\www\khcn\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#13
+-- File: C:\wamp\www\khcn\public\index.php
+-- Line: 69
+-- Function: run
+-- Class: Zend_Application
+
+
+

@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+div#mysagscroller{
+	width: 200px;  /*width of scroller*/
+	height:250px;
+}
+
+div#mysagscroller ul li{
+	background:navy;
+	background-image:none;
+	color:white;
+	padding:5px;
+	margin-bottom:5px; /*bottom spacing between each LI*/
+}
+
+div#mysagscroller ul li:first-letter{
+	font-size:28px;
+	background:white;
+	color:black;
+	padding:0 2px;
+	margin-right:2px;
+}
+
+
+/* #SAG scroller demo #2 */
+
+div#mysagscroller2{
+	width: 165px; /*width of scroller*/
+	height:300px;
+	border:5px solid #C0C0C0;
+	margin-left:-10px;
+	margin-top:-5px;
+}
+div#mysagscroller2 ul li{
+	background-image:none;
+	padding-left:0px !important;
+	margin-bottom:20px;
+	text-align:center;
+}
+div#mysagscroller2 ul li img{
+	border-width:0; /*this causes each image to be flush against each other*/
+	width: 165px; /*width of scroller*/
+	height:80px;
+}
+div#mysagscroller2 ul li a:hover{
+	font-style:normal;
+	color:#09F;
+}

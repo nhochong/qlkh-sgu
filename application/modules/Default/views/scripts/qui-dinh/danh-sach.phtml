@@ -1,0 +1,17 @@
+<?php $this->titleBlock("Qui Định - " . $this->ten_loai);?>
+<?php if(count($this->lists) > 0 ){?>
+<ul class="rules list_folder_file">
+	<?php 
+		foreach ($this->lists as $qui_dinh)
+		{
+	?>
+			<li><a class="file" href="<?php echo $this->url(array('controller' => 'qui-dinh','action' => 'chi-tiet','id' => $qui_dinh['id']),null,true); ?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder2.gif'?>" /> <?php echo $qui_dinh['ten']?></a></li>
+	<?php 
+		}
+	?>
+</ul>
+<?php
+	}else{
+?>
+		<p>Đang cập nhật ...</p>
+<?php }?>

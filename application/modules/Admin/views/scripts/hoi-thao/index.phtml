@@ -1,0 +1,91 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Hội thảo";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<script>
+	var currentOrder = '<?php echo $this->filterValues['order'] ?>';
+    var currentOrderDirection = '<?php echo $this->filterValues['direction'] ?>';
+    var changeOrder = function(order, default_direction)
+    {
+		// Just change direction
+		if( order == currentOrder ) {
+			$('#direction').val( currentOrderDirection == 'ASC' ? 'DESC' : 'ASC' );
+		} else {
+			$('#order').val(order);
+			$('#direction').val(default_direction);
+		}
+		$('#f3').submit();
+    }
+</script>
+<?php echo $this->message()?>
+<div class="content-box-header">
+
+<h3>Danh sách hội thảo</h3>
+<div class="clear"></div>
+
+</div>
+<!-- End .content-box-header -->
+<?php echo $this->form;?>
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1">
+<div class="danh_sach_hoi_thao">
+<form action="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-thao','action' => 'xoas'),null,true)?>" method="post" name="f2">
+<div class="clear"></div>
+<table class="tbl_hoithao" align="center">
+	<thead>
+		<tr class="alt-row">
+			<th><?php echo $this->formCheckbox('deletes',null,array('id' => 'check_all','class' => 'check-all'))?></th>
+			<th class="chu_de">Chủ đề</th>
+			<th class="center">Đơn vị phụ trách</th>
+			<th class="center"><a href="javascript:void(0);" onclick="javascript:changeOrder('ngay_to_chuc', 'DESC');">Ngày tổ chức</a></th>
+			<th class="center">Trạng thái</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+			<div class="bulk-actions align-left">
+				<?php echo $this->formSubmit('submit','Xóa',array('onclick' => 'if(confirm("Bạn có thật sự muốn xóa không?")==false) return false','class' => 'button'))?>
+				<?php echo $this->formButton('add','Thêm',array('onclick' => 'window.location.href="' . $this->url(array('module' => 'admin','controller' => 'hoi-thao','action' => 'them'),null,true) . '"','class' => 'button'))?>
+			</div>
+			<div class="pagination"> 
+            	<?php echo $this->paginator?>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+    <?php
+    	foreach ($this->paginator as $hoi_thao) 
+    	{
+    ?>
+    		<tr>
+			<td><?php echo $this->formCheckbox('item[]',$hoi_thao->id,null)?></td>
+			<td><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-thao','action' => 'sua','id' => $hoi_thao->id),null,true)?>" title="<?php echo $hoi_thao->chu_de?>"><?php echo Khcn_Api::_()->subPhrase($hoi_thao->chu_de, 100);?></a></td>
+			<td class="center"><?php echo Khcn_Api::_()->subPhrase($hoi_thao->don_vi_phu_trach, 50);?></td>
+			<td class="center"><?php echo $hoi_thao->ngay_to_chuc?></td>
+			<td class="center">
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-thao','action' => 'cap-nhat-tt','id' => $hoi_thao->id,'status' => $hoi_thao->trang_thai))?>">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/trangthai_' . $hoi_thao->trang_thai . '.png'?>"> </a>
+			</td>
+			<td>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-thao','action' => 'sua','id' => $hoi_thao->id),null,true)?>" title="Edit"> 
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/pencil.png'?>" alt="Edit"> </a>
+				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'hoi-thao','action' => 'xoa','id' => $hoi_thao->id),null,true)?>" title="Delete" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">
+				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/cross.png'?>" alt="Delete">
+			</a></td>
+		</tr>
+    <?php
+    	}
+    ?>
+                              </tbody>
+</table>
+</form>
+</div>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content -->

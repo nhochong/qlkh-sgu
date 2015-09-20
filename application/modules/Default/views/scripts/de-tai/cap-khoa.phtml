@@ -1,0 +1,82 @@
+<?php $this->titleBlock("Đề Tài - Cấp Khoa");?>
+<div class="search_dt">
+	<?php echo $this->form;?>
+	<div class="total"><?php echo $this->paginator->getTotalItemCount();?> Đề tài</div>
+	<div class="pagination">
+		<?php echo $this->paginator?>
+	</div>
+</div>
+<div class="list-detai">
+<table class="blog"> 
+	<tbody>
+	<?php 
+		if ($this->paginator){
+			foreach ($this->paginator as $deTai)
+			{
+	?>
+		<tr>
+		<td>
+		<div class="detai">
+			<table border="0" width="100%">
+				<tbody>
+					<tr>
+						<td colspan="3" class="header"><p><a href="<?php echo $this->url(array('controller' => 'de-tai', 'action' => 'chi-tiet' , 'id' => $deTai['id']),NULL,true)?>" class="storytitle"><?php echo $deTai['ma_don_vi'] . " - " . $deTai['nam'] . " - "?><?php echo $deTai['ten']?></a></p></td>						
+					</tr>
+					<tr>
+						<td width="50%" class="left">
+							<table>
+								<tr>
+									<td class="l">Chủ nhiệm</td>
+									<td class="r"><span>:</span> <?php echo $deTai['hoc_vi'] . ' ' . $deTai['ten_chu_nhiem']?></td>
+								</tr>
+								<tr>
+									<td class="l">Tình trạng</td>
+									<td class="r"><span>:</span> <?php echo $deTai['tinh_trang']?></td>
+								</tr>
+								<tr>
+									<td class="l">Cấp quản lý</td>
+									<td class="r"><span>:</span> <?php echo $deTai['cap_quan_ly']?></td>
+								</tr>
+							</table>
+						</td>
+						<td class="right">
+							<table>
+								<tr>
+									<td class="l">Đơn vị</td>
+									<td class="r"><span>:</span> <?php echo $deTai['ten_don_vi']?></td>
+								</tr>
+								<tr>
+									<td class="l">Lĩnh vực</td>
+									<td class="r"><span>:</span> <?php echo $deTai['ten_linh_vuc']?></td>
+								</tr>
+								<tr>
+									<td class="l">Xếp loại</td>
+									<td class="r"><span>:</span> <?php echo $deTai['xep_loai']?></td>
+								</tr>
+							</table>
+						</td>						
+					</tr>					
+				</tbody>
+			</table>
+		</div>
+		</td>
+		</tr>
+	<?php 
+			}
+		}
+	?>
+	</tbody>
+</table>
+<div class="pagination">
+<?php echo $this->paginator?>
+</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	function submitForm(){		
+		$('#f2').submit();
+	}
+});
+</script>

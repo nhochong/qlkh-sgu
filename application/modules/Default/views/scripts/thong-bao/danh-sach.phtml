@@ -1,0 +1,39 @@
+<?php $this->titleBlock("Thông Báo - " . $this->loaiThongBao->getTitle());?>
+<div class="list-announcement">
+<?php if ($this->paginator->getTotalItemCount() > 0):?>
+<table class="blog" cellpadding="0" cellspacing="0">
+	<tbody>	
+		<?php 
+			foreach ($this->paginator as $thong_bao)
+			{
+		?>
+				<tr>
+					<td valign="top">
+					<div class="announcements">
+					<span class="tieude">
+						<strong><?php echo date('d/m/Y', strtotime($thong_bao->ngay_tao))?></strong>
+						-
+						<a href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'chi-tiet' , 'id' => $thong_bao->getIdentity()),NULL,true)?>"><?php echo $thong_bao->getTitle()?></a>
+						<?php 
+						if($thong_bao->isNew()){
+						?>	
+							<img class="new" alt="new" src="<?php echo $this->baseUrl() . '/images/news.gif'?>">
+						<?php }?>
+					</span>						
+					<a class="chitiet" href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'chi-tiet' , 'id' => $thong_bao->getIdentity()),NULL,true)?>">Chi tiết...</a>
+					<div class="cleared"></div>
+					</div>
+					<span class="article_separator">&nbsp;</span></td>
+				</tr>
+		<?php 
+			}
+		?>		
+	</tbody>
+</table>
+<div class="pagination">
+<?php echo $this->paginator?>
+</div>
+<?php else:?>
+	<p>Đang cập nhật ...</p>
+<?php endif;?>
+</div>

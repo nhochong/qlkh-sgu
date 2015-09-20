@@ -1,0 +1,61 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Giảng viên";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+
+<div class="content-box-header">
+
+<h3>Cập nhật giảng viên</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<?php echo $this->form?>
+<script type="text/javascript">
+$(document).ready(function(){ 
+$("#ma").blur(function(){
+	var ma = $('#ma').val();
+	var $form = $("form#f2");
+	$.ajax({ type: "POST", 
+			 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'giang-vien','action' => 'kiem-tra-id-ma'))?>", 
+			 data: $form.serialize(),
+			 success: function(data){
+				 $('#ajax').replaceWith('');
+		         // if the result is TRUE write a message to the page
+		         if (data == "YES") {
+		           $('#ma').after('<span id="ajax" class="input-notification error png_bg">' +
+		             'Mã giảng viên đã tồn tại.</span>');
+		         }else if(data == "NO"){
+		        	$('#ma').after('<span id="ajax" class="input-notification success png_bg">' +
+		            'Có thể sử dụng.</span>');
+		         }}
+		});
+});  
+});
+
+function inputNumber(e)
+{
+	var keynum;
+	if(window.event) // IE
+	{
+	  keynum = e.keyCode;
+	}
+	else if(e.which) // Netscape/Firefox/Opera
+	{
+	  keynum = e.which;
+	}
+	if ( ((keynum > 45) && (keynum <58)) || (keynum == 8) || (keynum == 9) || (keynum == 190) || (keynum == 39)|| (keynum == 37) ) 	 			return true;
+	else 
+		return false;
+}
+</script>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->

@@ -1,0 +1,68 @@
+<div class="art-block" id="widget_su_kien_quan_trong">
+<div class="art-block-tl"></div>
+<div class="art-block-tr"></div>
+<div class="art-block-bl"></div>
+<div class="art-block-br"></div>
+<div class="art-block-tc"></div>
+<div class="art-block-bc"></div>
+<div class="art-block-cl"></div>
+<div class="art-block-cr"></div>
+<div class="art-block-cc"></div>
+<div class="art-block-body">
+
+<div class="art-blockheader">
+<div class="l"></div>
+<div class="r"></div>
+<div class="t"><span id="" class="Head">Sự kiện quan trọng</span></div>
+</div>
+
+<div align="right"></div>
+<div class="art-blockcontent">
+<div class="art-blockcontent-tl"></div>
+<div class="art-blockcontent-tr"></div>
+<div class="art-blockcontent-bl"></div>
+<div class="art-blockcontent-br"></div>
+<div class="art-blockcontent-tc"></div>
+<div class="art-blockcontent-bc"></div>
+<div class="art-blockcontent-cl"></div>
+<div class="art-blockcontent-cr"></div>
+<div class="art-blockcontent-cc"></div>
+<div class="art-blockcontent-body"><!-- block-content -->
+<div id=""><!-- Start_Module_605 -->
+<?php 
+	$thongBaos = Khcn_Api::_()->getDbTable('thong_bao', 'default')->getDSThongBaos(array('trang_thai' => true, 'quan_trong' => true));
+	$tinTucs = Khcn_Api::_()->getDbTable('tin_tuc', 'default')->getTinTucs(array('trang_thai' => true, 'quan_trong' => true));
+	if(count($tinTucs) > 0 || count($thongBaos) > 0){
+?>
+	<ul class="list_hoat_dong_quan_trong">
+		<?php foreach($thongBaos as $thong_bao):?>
+			<li><a href="<?php echo $thong_bao->getHref()?>"><?php echo $thong_bao->getTitle()?></a></li>
+		<?php endforeach;?>
+		<?php foreach($tinTucs as $tin_tuc):?>
+			<li><a href="<?php echo $tin_tuc->getHref()?>"><?php echo $tin_tuc->getTitle()?></a></li>
+		<?php endforeach;?>
+	</ul>
+
+<?php	
+	}else{
+?>
+	<style type="text/css">
+		#widget_su_kien_quan_trong {
+			display: none;
+		}
+	</style>
+	<?php }?>
+<!-- End_Module_605 -->
+</div>
+
+<!-- /block-content -->
+
+<div class="cleared"></div>
+</div>
+</div>
+
+<div align="right"></div>
+
+<div class="cleared"></div>
+</div>
+</div>

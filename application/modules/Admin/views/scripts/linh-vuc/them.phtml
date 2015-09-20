@@ -1,0 +1,45 @@
+<?php
+	echo $this->doctype();
+	$this->title = "Lĩnh vực";
+	$this->headTitle($this->title);
+	$baseURL = $this->baseUrl();
+?>
+<?php echo $this->message()?>
+<div class="content-box"><!-- Start Content Box -->
+
+<div class="content-box-header">
+
+<h3>Thêm lĩnh vực</h3>
+</div>
+<!-- End .content-box-header -->
+
+<div class="content-box-content">
+
+<div class="tab-content default-tab" id="tab1"><!-- This is the target div. id must match the href of this div's tab -->
+<?php echo $this->form?>
+<script type="text/javascript">
+$(document).ready(function(){ 
+$("#ma").blur(function(){
+	var ma = $('#ma').val();
+	var $form = $("form#f2");
+	$.ajax({ type: "POST", 
+			 url: "<?php echo $this->url(array('module' => 'admin','controller' => 'linh-vuc','action' => 'kiem-tra-ma'))?>", 
+			 data: $form.serialize(),
+			 success: function(data){
+				 $('#ajax').replaceWith('');
+		         // if the result is TRUE write a message to the page
+		         if (data == "YES") {
+		           $('#ma').after('<span id="ajax" class="input-notification error png_bg">' +
+		             'Mã lĩnh vực đã tồn tại.</span>');
+		         }else if(data == "NO"){
+		        	$('#ma').after('<span id="ajax" class="input-notification success png_bg">' +
+		            'Có thể sử dụng.</span>');
+		         }}
+		});
+});  
+});
+</script>
+</div>
+<!-- End #tab1 --></div>
+<!-- End .content-box-content --></div>
+<!-- End .content-box -->
