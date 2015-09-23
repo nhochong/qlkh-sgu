@@ -19,7 +19,7 @@ class Default_Model_BaiBao extends Khcn_Model_Item_Abstract{
 	}
 	
 	public function getGiangViens(){
-		$tacGias = Khcn_Api::_()->getDbTable('tac_gia','default')->getTacGias($this->getIdentity());
+		$tacGias = Khcn_Api::_()->getDbTable('bai_bao_tac_gia','default')->getTacGias($this->getIdentity());
 		$giangViens = array();
 		foreach($tacGias as $tac_gia){
 			$giang_vien = Khcn_Api::_()->getItem('default_giang_vien', $tac_gia->giang_vien_id);

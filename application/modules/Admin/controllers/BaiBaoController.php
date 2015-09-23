@@ -21,6 +21,31 @@ class Admin_BaiBaoController extends Khcn_Controller_Action_Admin
         Zend_View_Helper_PaginationControl::setDefaultViewPartial('includes/pagination.phtml');
     }
     
+	public function newfieldAction() {
+	    $id = $_POST['id'];
+		$donVis = Khcn_Api::_()->getDbTable('don_vi', 'default')->getDonVisAssoc();
+		unset($donVis['1']);
+		$defaultDonVi = 2;
+		$dvOptions = array("multiOptions" => $donVis);	
+		$ma_don_vi = new Zend_Form_Element_Select('don_vi_' .$id,$dvOptions);
+		$ma_don_vi->setRequired(true)
+				  ->setValue($defaultDonVi)
+				  ->setDecorators(Khcn_Form_Decorator_Select::getDecorator())
+				  ->setAttribs(array('id' => 'don_vi_' .$id,'onchange' => 'change(this,' . $id . ')'));
+							    
+		$gvOptions = array("multiOptions" => Khcn_Api::_()->getDbTable('giang_vien', 'default')->getGiangViensByDonViAssoc($defaultDonVi));					    
+		$thanh_vien = new Zend_Form_Element_Select('thanh_vien_' .$id,$gvOptions);
+		$thanh_vien->setRequired(true)
+				   ->setDecorators(Khcn_Form_Decorator_Select::getDecorator())
+				   ->setAttribs(array('class' => 'text-input','id' => 'thanh_vien_' .$id));
+	    $result = '<tr id="dk_tv_' . $id . '"><td></td><td><fieldset><legend>Thành viên</legend>';
+		$result .= $ma_don_vi->__toString() . $thanh_vien->__toString();
+		$result .= '</td></fieldset></tr>';
+	    echo $result;
+	    $this->_helper->viewRenderer->setNoRender();
+    	$this->_helper->layout()->disableLayout();
+	}
+	
 	public function themAction() 
     {
         // TODO Auto-generated {0}::indexAction() default action
@@ -29,6 +54,7 @@ class Admin_BaiBaoController extends Khcn_Controller_Action_Admin
 		if(!$this->getRequest()->isPost()){
 			return;
 		}		
+		$form->preValidation($_POST);
 		if(!$form->isValid($this->getRequest()->getPost())){
 			return;
 		}		
@@ -59,6 +85,15 @@ class Admin_BaiBaoController extends Khcn_Controller_Action_Admin
 			$values = $form->getValues();
 			$bai_bao -> setFromArray($values);
 			$bai_bao->save();
+			
+			$bai_bao_id = $bai_bao->bai_bao_id;
+			for($i = 0 ; $i< $values['code'] ; $i++){
+				$row = Khcn_Api::_()->getDbTable('bai_bao_tac_gia', 'default')->createRow();
+				$row->bai_bao_id = $bai_bao_id;
+				$row->giang_vien_id = $values['thanh_vien_' . $i];
+				$row->save();
+			}
+					
 			$db->commit();
 			
 			$_SESSION['msg'] = 'Thành công !. Dữ liệu đã được lưu trữ .';
@@ -124,9 +159,50 @@ class Admin_BaiBaoController extends Khcn_Controller_Action_Admin
 		$form->removeElement('submitCon');			
 		$form->submitExit->setLabel('Lưu');
 		if(!$this->getRequest()->isPost()){
+			//populate thành viên
+			$thanhViens = $bai_bao->getGiangViens();
+			$code = count($thanhViens);
+			$form->code->setValue($code);
+			$donVis = Khcn_Api::_()->getDbTable('don_vi', 'default')->getDonVisAssoc();
+			unset($donVis['1']);
+			$dvOptions = array("multiOptions" => $donVis);            	
+			$i = 0;
+			foreach ($thanhViens as $thanh_vien)
+			{	            						
+				$don_vi = new Zend_Form_Element_Select('don_vi_' . $i,$dvOptions);
+				$don_vi->setValue($thanh_vien['ma_don_vi'])
+					   ->setDecorators(Khcn_Form_Decorator_Select::getDecorator())
+					   ->setAttribs(array('class' => 'text-input','id' => 'don_vi_' . $i,'onchange' => 'change(this,' . $i . ')'));
+					   
+				$gvOptions = array("multiOptions" => Khcn_Api::_()->getDbTable('giang_vien', 'default')->getGiangViensByDonViAssoc($thanh_vien->ma_don_vi));
+				$ma_giang_vien = $thanh_vien->getIdentity();
+				$thanh_vien = new Zend_Form_Element_Select('thanh_vien_' . $i,$gvOptions);
+				$thanh_vien->setRequired(true)
+						   ->setValue($ma_giang_vien)
+						   ->setDecorators(Khcn_Form_Decorator_Select::getDecorator())
+						   ->setAttribs(array('class' => 'text-input','id' => 'thanh_vien_' . $i))
+						   ->setRegisterInArrayValidator(false);
+								   
+				$form->addElements(array($don_vi,$thanh_vien));
+				
+				$form->addDisplayGroup(array('don_vi_' . $i,'thanh_vien_' . $i),'dk_tv_' . $i,array(
+					'order' => $i + 6,
+					'legend' => 'Thành viên',
+					'decorators' => array(
+						 'FormElements',
+						 'Fieldset',
+						 array(array('data' => 'HtmlTag'), array('tag' => 'td')),
+						 array(array('row' => 'HtmlTag'), array('tag' => 'td')),
+						 array('HtmlTag', array('tag' => 'tr', 'id' => 'dk_tv_' . $i)),
+					),
+				));
+				
+				$i++;
+			}
 			return;
 		}
 		
+		$form->preValidation($_POST);
 		if(!$form->isValid($this->getRequest()->getPost())){
 			return;
 		}
@@ -158,6 +234,21 @@ class Admin_BaiBaoController extends Khcn_Controller_Action_Admin
 			$values = $form->getValues();
 			$bai_bao -> setFromArray($values);
 			$bai_bao->save();
+			
+			// Update thanh vien
+			// Clear all
+			Khcn_Api::_()->getDbTable('bai_bao_tac_gia', 'default')->delete(array(
+				'bai_bao_id' => $bai_bao->getIdentity()
+			));
+			
+			// Them thanh vien
+			for($i = 0 ; $i< $values['code'] ; $i++){
+				$row = Khcn_Api::_()->getDbTable('bai_bao_tac_gia', 'default')->createRow();
+				$row->bai_bao_id = $bai_bao->getIdentity();
+				$row->giang_vien_id = $values['thanh_vien_' . $i];
+				$row->save();
+			}
+			
 			$db->commit();
 			$_SESSION['msg'] = 'Thành công !. Dữ liệu đã được cập nhật .';
 			$_SESSION['type_msg'] = 'success';

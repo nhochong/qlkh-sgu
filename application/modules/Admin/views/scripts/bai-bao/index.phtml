@@ -66,8 +66,6 @@
 			</td>
 			<td class="center"><?php echo $bai_bao->thong_tin?></td>
 			<td>
-				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'add','id' => $bai_bao->getIdentity()),null,true)?>" title="Thêm Giảng Viên"> 
-				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/add.png'?>" alt="Add"> </a>
 				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'sua','id' => $bai_bao->getIdentity()),null,true)?>" title="Sửa"> 
 				<img src="<?php echo $baseURL . '/../application/templates/admin/images/icons/pencil.png'?>" alt="Edit"> </a>
 				<a href="<?php echo $this->url(array('module' => 'admin','controller' => 'bai-bao','action' => 'xoa','id' => $bai_bao->getIdentity()),null,true)?>" title="Xóa" onclick="if(confirm('Bạn có thật sự muốn xóa không?')==false) return false ">

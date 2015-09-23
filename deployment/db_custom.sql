@@ -322,18 +322,20 @@ DROP TABLE IF EXISTS `bai_bao`;
 CREATE TABLE `bai_bao` (
   `bai_bao_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ten` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `mo_ta` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ma_don_vi` int(11) NOT NULL,
   `thong_tin` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `so_luong_thanh_vien` int(4) DEFAULT NULL,
-  `thang` int(4) DEFAULT NULL,
-  `nam` int(4) DEFAULT NULL,
-  `dot` int(4) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `noi_dang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ngay_dang` datetime NOT NULL,
+  `so` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `chi_so` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `diem_cong_trinh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ten_file` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ngay_tao` datetime NOT NULL,
   `search` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`bai_bao_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+DROP TABLE IF EXISTS `bai_bao_tac_gia`;
 CREATE TABLE `bai_bao_tac_gia` (
   `tac_gia_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `bai_bao_id` int(11) unsigned NOT NULL,

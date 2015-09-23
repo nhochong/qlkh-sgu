@@ -138,3 +138,47 @@ Stack trace:
 #10 E:\wamp\www\khcn\library\Khcn\Application.php(160): Default_Bootstrap->run()
 #11 E:\wamp\www\khcn\public\index.php(170): Khcn_Application->run()
 #12 {main}
+2015-09-23T18:16:30+00:00 CRIT (2): 
+Error Code: ba71f9
+exception 'Zend_Db_Table_Row_Exception' with message 'Specified column "id" is not in the row' in D:\xampp\htdocs\qlkh-sgu\library\Zend\Db\Table\Row\Abstract.php:179
+Stack trace:
+#0 D:\xampp\htdocs\qlkh-sgu\application\modules\Admin\controllers\BaiBaoController.php(88): Zend_Db_Table_Row_Abstract->__get('id')
+#1 D:\xampp\htdocs\qlkh-sgu\library\Zend\Controller\Action.php(516): Admin_BaiBaoController->themAction()
+#2 D:\xampp\htdocs\qlkh-sgu\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('themAction')
+#3 D:\xampp\htdocs\qlkh-sgu\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#4 D:\xampp\htdocs\qlkh-sgu\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#5 D:\xampp\htdocs\qlkh-sgu\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#6 D:\xampp\htdocs\qlkh-sgu\public\index.php(170): Khcn_Application->run()
+#7 {main}
+2015-09-23T18:18:48+00:00 CRIT (2): 
+Error Code: 31b4cd
+exception 'Zend_Db_Statement_Mysqli_Exception' with message 'Mysqli statement execute error : Column 'giang_vien_id' cannot be null' in D:\xampp\htdocs\qlkh-sgu\library\Zend\Db\Statement\Mysqli.php:214
+Stack trace:
+#0 D:\xampp\htdocs\qlkh-sgu\library\Zend\Db\Statement.php(320): Zend_Db_Statement_Mysqli->_execute(Array)
+#1 D:\xampp\htdocs\qlkh-sgu\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\xampp\htdocs\qlkh-sgu\library\Zend\Db\Adapter\Abstract.php(575): Zend_Db_Adapter_Abstract->query('INSERT INTO `ba...', Array)
+#3 D:\xampp\htdocs\qlkh-sgu\library\Zend\Db\Table\Abstract.php(1075): Zend_Db_Adapter_Abstract->insert('bai_bao_tac_gia', Array)
+#4 D:\xampp\htdocs\qlkh-sgu\library\Khcn\Db\Table.php(154): Zend_Db_Table_Abstract->insert(Array)
+#5 D:\xampp\htdocs\qlkh-sgu\library\Zend\Db\Table\Row\Abstract.php(467): Khcn_Db_Table->insert(Array)
+#6 D:\xampp\htdocs\qlkh-sgu\library\Zend\Db\Table\Row\Abstract.php(438): Zend_Db_Table_Row_Abstract->_doInsert()
+#7 D:\xampp\htdocs\qlkh-sgu\application\modules\Admin\controllers\BaiBaoController.php(247): Zend_Db_Table_Row_Abstract->save()
+#8 D:\xampp\htdocs\qlkh-sgu\library\Zend\Controller\Action.php(516): Admin_BaiBaoController->suaAction()
+#9 D:\xampp\htdocs\qlkh-sgu\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('suaAction')
+#10 D:\xampp\htdocs\qlkh-sgu\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#11 D:\xampp\htdocs\qlkh-sgu\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#12 D:\xampp\htdocs\qlkh-sgu\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#13 D:\xampp\htdocs\qlkh-sgu\public\index.php(170): Khcn_Application->run()
+#14 {main}
+2015-09-23T18:25:29+00:00 CRIT (2): 
+Error Code: 3a675b
+exception 'Zend_Db_Table_Row_Exception' with message 'Specified column "ma_giang_vien" is not in the row' in D:\xampp\htdocs\qlkh-sgu\library\Zend\Db\Table\Row\Abstract.php:179
+Stack trace:
+#0 D:\xampp\htdocs\qlkh-sgu\library\Zend\Db\Table\Row\Abstract.php(280): Zend_Db_Table_Row_Abstract->__get('ma_giang_vien')
+#1 D:\xampp\htdocs\qlkh-sgu\application\modules\Admin\controllers\BaiBaoController.php(178): Zend_Db_Table_Row_Abstract->offsetGet('ma_giang_vien')
+#2 D:\xampp\htdocs\qlkh-sgu\library\Zend\Controller\Action.php(516): Admin_BaiBaoController->suaAction()
+#3 D:\xampp\htdocs\qlkh-sgu\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('suaAction')
+#4 D:\xampp\htdocs\qlkh-sgu\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#5 D:\xampp\htdocs\qlkh-sgu\application\modules\Default\Bootstrap.php(40): Zend_Controller_Front->dispatch()
+#6 D:\xampp\htdocs\qlkh-sgu\library\Khcn\Application.php(160): Default_Bootstrap->run()
+#7 D:\xampp\htdocs\qlkh-sgu\public\index.php(170): Khcn_Application->run()
+#8 {main}

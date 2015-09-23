@@ -3,9 +3,9 @@
   'params' => 
   array (
     'host' => 'localhost',
-    'username' => 'root',
+    'username' => 'hungnt',
     'password' => '123456',
-    'dbname' => 'khcnsgu',
+    'dbname' => 'qlkhsdhs_sgu',
     'charset' => 'UTF8',
     'adapterNamespace' => 'Zend_Db_Adapter',
   ),

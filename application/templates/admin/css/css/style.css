@@ -364,3 +364,7 @@ ul.shortcut-buttons-set{
 #global_page_admin-lich-cong-tac-hoat-dong ul.list_hoat_dong li.hd_left.important {
 	color: red;
 }
+#global_page_admin-bai-bao-them form select,
+#global_page_admin-bai-bao-sua form select {
+	max-width: 300px;
+}
