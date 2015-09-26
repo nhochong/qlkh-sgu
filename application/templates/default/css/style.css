@@ -2182,7 +2182,7 @@ div.login #widget_user_form_login #remember {
 	font-size: 15px;
 	font-weight: bold;
 	float: left;
-	width: 90px;
+	width: 120px;
 }
 #global_page_default-bai-bao-chi-tiet .info_overview_content .ten_san_pham .content {
 	color: red;
@@ -2569,4 +2569,8 @@ ul.rules > li.child > a > img {
 div.content-news a.chitiet {
 	width: 100%;
 	text-align: right;
+}
+#global_page_default-bai-bao-index .thong_tin > div > div {
+    width: 50%;
+    float: left;
 }

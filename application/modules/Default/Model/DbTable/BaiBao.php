@@ -35,13 +35,9 @@ class Default_Model_DbTable_BaiBao extends Khcn_Db_Table{
 		}
 		if( !empty($params['don_vi_id']))
 		{
-			$select->where("$gvNameTable.ma_don_vi = ?", $params['don_vi_id']);
+			$select->where("$gvNameTable.don_vi_id = ?", $params['don_vi_id']);
 		}
-
-		if( !empty($params['nam']))
-		{
-			$select->where("YEAR($rName.nam) = ?", $params['nam']);
-		}
+		
 		return $select;
 	}
   

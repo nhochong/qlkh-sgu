@@ -98,8 +98,8 @@ class Admin_Form_BaiBao_Create extends Zend_Form{
 		$donVis = Khcn_Api::_()->getDbTable('don_vi', 'default')->getDonVisAssoc();
 		unset($donVis['1']);
 		$dvOptions = array("multiOptions" => $donVis);	
-		$ma_don_vi = new Zend_Form_Element_Select('ma_don_vi',$dvOptions);
-		$ma_don_vi->setRequired(true)
+		$don_vi_id = new Zend_Form_Element_Select('don_vi_id',$dvOptions);
+		$don_vi_id->setRequired(true)
 				  ->setLabel('Đơn vị (*)')
 				  ->setDecorators(array(
 							    'ViewHelper',
@@ -107,7 +107,7 @@ class Admin_Form_BaiBao_Create extends Zend_Form{
 							    array(array('data' => 'HtmlTag'), array('tag' => 'td')),
 							    array('Label', array('tag' => 'td')),
 							    array(array('row' => 'HtmlTag'), array('tag' => 'tr'))))
-				  ->setAttribs(array('class' => 'text-input','id' => 'ma_don_vi'))
+				  ->setAttribs(array('class' => 'text-input','id' => 'don_vi_id'))
 				  ->setOrder(1);
 		
 		// Tac gia
@@ -270,7 +270,7 @@ class Admin_Form_BaiBao_Create extends Zend_Form{
 							    ))
 			->setAttribs(array('class' => 'button','onclick' => 'window.location.href="' . $link . '"'));
 
-		$this->addElements(array($code, $ma_don_vi, $them_tv, $xoa_tv, $ten, $thong_tin, $noi_dang, $ngay_dang, $so, $chi_so, $diem_cong_trinh, $file, $submitCon, $submitExit, $cancel));						
+		$this->addElements(array($code, $don_vi_id, $them_tv, $xoa_tv, $ten, $thong_tin, $noi_dang, $ngay_dang, $so, $chi_so, $diem_cong_trinh, $file, $submitCon, $submitExit, $cancel));						
 
 		$this->addDisplayGroup(array('submitCon','submitExit','cancel'),'submit',array(
             'order' => 100,

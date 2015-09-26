@@ -810,4 +810,38 @@ class Default_Model_DbTable_DeTai extends Khcn_Db_Table{
 		
 		return $this->fetchAll($select);
 	}
+	
+	public function getDeTaisByGV($ho_ten, $ma_don_vi){
+		$cols = array();
+    	$tableInfo = array('gv' => 'giang_vien');
+    	$statement = $this->select()
+    					  ->setIntegrityCheck(false)
+    					  ->from($tableInfo,$cols)
+    					  ->join(array('dk' => 'dang_ky'),
+    					  		'gv.id = dk.ma_giang_vien',null)
+    					  ->join(array('dt' => 'de_tai'),
+    					  		'dk.ma_de_tai = dt.id',
+    					  		array('id' => 'dt.id',
+    					  			  'ma' => 'dt.ma',
+    					  			  'ten' => 'dt.ten',
+    					  			  'thoi_gian_bat_dau' => 'dt.thoi_gian_bat_dau',
+    					  			  'tinh_trang' => 'dt.tinh_trang'
+    					  		))
+    					  ->join(array('hv' => 'hoc_vi'),
+    					  		'hv.id = gv.ma_hoc_vi',
+    					  		array('hoc_vi' => 'hv.ma'
+    					  		))
+    					  ->join(array('lv' => 'linh_vuc'),
+    					  		'dt.ma_linh_vuc = lv.id',
+    					  		array('linh_vuc' => 'lv.ten'
+    					  		))
+    					  ->order('thoi_gian_bat_dau DESC');
+    	if($ho_ten['ho'] != null)
+    		$statement->where('gv.ho = ?',$ho_ten['ho']);
+    	if($ho_ten['ten'] != null)
+    		$statement->where('gv.ten = ?',$ho_ten['ten']);
+    	if($ma_don_vi != '0')
+    		$statement->where('gv.ma_don_vi = ?',$ma_don_vi);
+    	return $this->_db->query($statement)->fetchAll();
+	}
 }

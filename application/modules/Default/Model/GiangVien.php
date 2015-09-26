@@ -209,32 +209,6 @@ class Default_Model_GiangVien extends Khcn_Model_Item_Abstract{
     	return $result;
     }
     
-    public function tim_kiem($ho_ten,$ma_don_vi = '0')
-    {
-    	$link = new Zend_View_Helper_Url();
-    	$dang_ky = new Default_Model_DangKy();
-    	$tinhTrangs = Default_Model_Constraints::detai_tinhtrang();
-    	$dsDeTais = $this->giang_vien->getDSDTByGV($ho_ten,$ma_don_vi);
-    	$result = array();
-    	foreach ($dsDeTais as $de_tai)
-    	{
-    		$url = $link->url(array(    
-			            'controller' => 'de-tai',  
-			            'action'     => 'chi-tiet',  
-			            'id'   => $de_tai['id'],  
-			        ),null,true);
-			$chu_nhiem = $dang_ky->getChuNhiemDT($de_tai['id']);
-	      	$result[] = array('code' => $de_tai['ma'],
-	      					  'title' => $de_tai['ten'],
-	      					  'description' => 'Chủ nhiệm : ' . $chu_nhiem['hoc_vi'] . ' ' . $chu_nhiem['ho'] . ' ' . $chu_nhiem['ten'] . '
-	      									   | Lĩnh vực : ' . $de_tai['linh_vuc'] .'
-	      									   | Tình trạng : ' . $tinhTrangs[$de_tai['tinh_trang']],
-	      					  'link' => $url
-	      	);
-    	}
-    	return $result;
-    }
-    
     public function kiem_tra_giang_vien($ho_ten,$ma_don_vi = null,$ma_hoc_vi = null)
     {
     	return $this->giang_vien->kiem_tra_giang_vien($ho_ten,$ma_don_vi,$ma_hoc_vi);

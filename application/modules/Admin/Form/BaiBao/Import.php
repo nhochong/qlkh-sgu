@@ -6,11 +6,11 @@ class Admin_Form_BaiBao_Import extends Zend_Form{
         	 ->setAttrib('enctype', 'multipart/form-data')
         	 ->setMethod('post')
         	 ->setAttribs(array('onsubmit' => 'return kiem_tra()','name' => 'f3'));
-					
+		$baseUrl = Khcn_View_Helper_GetBaseUrl::getBaseUrl();		
 		$file = new Zend_Form_Element_File('file');
 		$file->setLabel('Upload file')
 		 	 ->setRequired(true)
-	 		 ->setDescription('(*.xlsx, *.xls)')
+	 		 ->setDescription('(*.xlsx, *.xls)<br/> Click <a href="' . $baseUrl . '/../application/templates/admin/files/bai_bao_khoa_hoc_import.xlsx">here</a> to download sample file.')
 		 	 ->setDestination(BASE_PATH . '/upload/files/temp/')
 		 	 ->addValidator(new Zend_Validate_File_Extension(array('xls','xlsx')))
 		 	 ->setDecorators(array(
@@ -21,7 +21,8 @@ class Admin_Form_BaiBao_Import extends Zend_Form{
 							    array('Label', array('tag' => 'td')),
 							    array(array('row' => 'HtmlTag'), array('tag' => 'tr'))))
 			 ->setAttribs(array('id' => 'file'));;	
-			    
+		$file->getDecorator('Description')->setOption('escape', false);	    
+		
 		$submit = new Zend_Form_Element_Submit('submit');
         $submit->setLabel('Lưu vào csdl')
         	   ->setDecorators(array(

@@ -4,16 +4,23 @@
 		<div class="info_overview_header"><?php echo $this->translate('Thông Tin Bài Báo')?></div>
 		<div class="info_overview_content">
 			<div class="ten_san_pham">
-				<div class="title title_left"><?php echo $this->translate('Chủ đề')?></div>
-				<div class="content"><?php echo $this->bai_bao->ten?></div>
+				<div class="title title_left"><?php echo $this->translate('Tên sản phẩm')?></div>
+				<div class="content"><?php echo $this->bai_bao->getTitle()?></div>
 			</div>
 			<div class="thong_tin">
-				<div class="content" style="margin-left: 90px; margin-top: 10px; color: blue; font-weight: bold;">
-					<span style="text-transform: capitalize;"><?php echo $this->bai_bao->thong_tin?></span>
-					-
-					<span><?php echo $this->translate('Đợt: ') . $this->bai_bao->dot?></span>
-					-
-					<span><?php echo $this->bai_bao->thang . '/' . $this->bai_bao->nam?></span>
+				<div class="content" style="margin-left: 120px; margin-top: 10px; color: blue; font-weight: bold;">
+					<div class="don_vi">
+						<div class="left"><?php echo $this->translate('Đơn vị: ') . $this->bai_bao->getDonVi()->getTitle();?></div>
+						<div class="right"><?php echo $this->translate('Điểm công trình: ') . $this->bai_bao->diem_cong_trinh;?></div>
+					</div>
+					<div class="noi_dang_ngay_dang">
+						<div class="left"><?php echo $this->translate('Nơi đăng: ') . $this->bai_bao->noi_dang?></div>
+						<div class="right"><?php echo $this->translate('Ngày đăng: ') . date('d-m-Y', strtotime($this->bai_bao->noi_dang))?></div>
+					</div>
+					<div class="so_chi_so">
+						<div class="left"><?php echo $this->translate('Số: ') . $this->bai_bao->so?></div>
+						<div class="right"><?php echo $this->translate('Chỉ số: ') . $this->bai_bao->chi_so?></div>
+					</div>
 				</div>
 			</div>
 			<div class="tac_gias">
@@ -40,5 +47,5 @@
 		</div>
 		<?php endif;?>
 	</div>
-	<div class="content_detail"><?php echo $this->bai_bao->mo_ta;?></div>
+	<div class="content_detail"><?php echo $this->bai_bao->thong_tin;?></div>
 </div>

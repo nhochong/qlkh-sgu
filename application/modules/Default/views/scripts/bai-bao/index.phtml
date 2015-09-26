@@ -7,17 +7,23 @@
 		if ($this->paginator->getTotalItemCount() > 0){
 			foreach ($this->paginator as $bai_bao)
 			{
-				$giangViens = $bai_bao->getGiangViens();
 	?>
 		<div class="baibao">
 			<div class="ten_san_pham"><a href="<?php echo $this->url(array('controller' => 'bai-bao', 'action' => 'chi-tiet' , 'id' => $bai_bao->bai_bao_id),NULL,true)?>" class="ten"><?php echo $bai_bao->ten?></a></div>
 			<div class="info">
 				<div class="thong_tin">
-					<span style="text-transform: capitalize;"><?php echo $bai_bao->thong_tin?></span>
-					-
-					<span><?php echo $this->translate('Đợt: ') . $bai_bao->dot?></span>
-					-
-					<span><?php echo $bai_bao->thang . '/' . $bai_bao->nam?></span>
+					<div class="don_vi">
+						<div class="left"><?php echo $this->translate('Đơn vị: ') . $bai_bao->getDonVi()->getTitle();?></div>
+						<div class="right"><?php echo $this->translate('Điểm công trình: ') . $bai_bao->diem_cong_trinh;?></div>
+					</div>
+					<div class="noi_dang_ngay_dang">
+						<div class="left"><?php echo $this->translate('Nơi đăng: ') . $bai_bao->noi_dang?></div>
+						<div class="right"><?php echo $this->translate('Ngày đăng: ') . date('d-m-Y', strtotime($bai_bao->noi_dang))?></div>
+					</div>
+					<div class="so_chi_so">
+						<div class="left"><?php echo $this->translate('Số: ') . $bai_bao->so?></div>
+						<div class="right"><?php echo $this->translate('Chỉ số: ') . $bai_bao->chi_so?></div>
+					</div>
 				</div>
 			</div>
 		</div>

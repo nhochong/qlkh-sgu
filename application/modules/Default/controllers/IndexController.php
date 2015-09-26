@@ -146,21 +146,12 @@ class Default_IndexController extends Khcn_Controller_Action_Standard
 			
 	    	$this->view->keyword = $keyword;
 	    	$this->view->tab = 0;
-			$this->view->searchtypes = $searchtypes = Khcn_Api::_()->getDbTable('searchtypes', 'default')->getSearchTypesEnabledAssoc();
 		}else if($name != null){
 			if( $formGV->isValid($this->_getAllParams()) ) {
 				$values = $formGV->getValues();
 			}
     		$giang_vien = new Default_Model_GiangVien();
-    		$hits = $giang_vien->tim_kiem($name, $values['ma_don_vi']);
-    		foreach ($hits as $hit){
-				$result[] = array(
-					'code' => $hit['code'],
-					'title' => $hit['title'] ,
-					'description' => $hit['description'],
-					'link' => $hit['link']
-		    	);	
-		    }
+    		$result = Khcn_Api::_()->getDbTable('giang_vien', 'default')->searchByGiangVien($name, $values['ma_don_vi']);
 	    	$this->view->name = $name;
     		$this->view->tab = 1;
     	}else{
@@ -183,7 +174,8 @@ class Default_IndexController extends Khcn_Controller_Action_Standard
 	    Zend_View_Helper_PaginationControl::setDefaultViewPartial('includes/pagination_getmethod.phtml');
 	    $paginator->setView($this->view);
 	    $this->view->paginator = $paginator;
-		$this->view->total = $paginator->getTotalItemCount();	    
+		$this->view->total = $paginator->getTotalItemCount();	  
+		$this->view->searchtypes = $searchtypes = Khcn_Api::_()->getDbTable('searchtypes', 'default')->getSearchTypesEnabledAssoc();  
     }
     
 	public function kiemTraUserAction()

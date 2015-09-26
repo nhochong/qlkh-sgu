@@ -322,7 +322,7 @@ DROP TABLE IF EXISTS `bai_bao`;
 CREATE TABLE `bai_bao` (
   `bai_bao_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ten` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `ma_don_vi` int(11) NOT NULL,
+  `don_vi_id` int(11) NOT NULL,
   `thong_tin` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `noi_dang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ngay_dang` datetime NOT NULL,

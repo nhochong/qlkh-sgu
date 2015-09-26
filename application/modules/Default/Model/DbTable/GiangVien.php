@@ -208,8 +208,64 @@ class Default_Model_DbTable_GiangVien extends Khcn_Db_Table{
 		return $rows; 
     }
     
-    
-	public function getDSDTByGV($ho_ten,$ma_don_vi)
+    public function searchByGiangVien($ho_ten, $ma_don_vi = 0){
+		$ho_ten = Default_Model_Functions::tach_ho_ten($ho_ten);
+    	$ho = $ho_ten['ho'];
+    	$ten = $ho_ten['ten'];
+		
+		//  Search de tai
+    	$dsDeTais = Khcn_Api::_()->getDbTable('de_tai', 'default')->getDeTaisByGV($ho_ten, $ma_don_vi);
+		
+		$link = new Zend_View_Helper_Url();
+    	$dang_ky = new Default_Model_DangKy();
+    	$tinhTrangs = Default_Model_Constraints::detai_tinhtrang();
+    	$result = array();
+    	foreach ($dsDeTais as $de_tai)
+    	{
+    		$url = $link->url(array(    
+			            'controller' => 'de-tai',  
+			            'action'     => 'chi-tiet',  
+			            'id'   => $de_tai['id'],  
+			        ),null,true);
+			$chu_nhiem = $dang_ky->getChuNhiemDT($de_tai['id']);
+	      	$result[] = array(
+							  'type' => 'default_de_tai',
+							  'code' => $de_tai['ma'],
+	      					  'title' => $de_tai['ten'],
+	      					  'description' => 'Chủ nhiệm : ' . $chu_nhiem['hoc_vi'] . ' ' . $chu_nhiem['ho'] . ' ' . $chu_nhiem['ten'] . '
+	      									   | Lĩnh vực : ' . $de_tai['linh_vuc'] .'
+	      									   | Tình trạng : ' . $tinhTrangs[$de_tai['tinh_trang']],
+	      					  'link' => $url
+	      	);
+    	}
+		
+		// Search Bai Bao
+		$params = array(
+			'ho' => $ho,
+			'ten' => $ten,
+			'don_vi_id' => $ma_don_vi,
+		);
+		$bbTable = Khcn_Api::_()->getDbTable('bai_bao', 'default');
+		$select = $bbTable->getBaiBaosSelect($params);
+		$dsBaiBaos = $bbTable->fetchAll($select);
+		foreach ($dsBaiBaos as $bai_bao)
+    	{
+    		$url = $link->url(array(    
+			            'controller' => 'bai-bao',  
+			            'action'     => 'chi-tiet',  
+			            'id'   => $bai_bao['bai_bao_id'],  
+			        ),null,true);
+	      	$result[] = array(
+							  'type' => 'default_bai_bao',
+	      					  'title' => $bai_bao->getTitle(),
+							  'description' => '',
+	      					  'link' => $url
+	      	);
+    	}
+		
+		return $result;
+	}
+	public function getDSDTByGV($ho_ten,$ma_don_vi = 0)
     {
     	$ho_ten = Default_Model_Functions::tach_ho_ten($ho_ten);
     	$ho = $ho_ten['ho'];
@@ -245,9 +301,32 @@ class Default_Model_DbTable_GiangVien extends Khcn_Db_Table{
     		$statement->where('gv.ten = ?',$ten);
     	if($ma_don_vi != '0')
     		$statement->where('gv.ma_don_vi = ?',$ma_don_vi);
-    	$result = $this->_db->query($statement);
-    	$rows = $result->fetchAll();
-		return $rows; 
+    	$dsDeTais = $this->_db->query($statement)->fetchAll();
+		
+		$link = new Zend_View_Helper_Url();
+    	$dang_ky = new Default_Model_DangKy();
+    	$tinhTrangs = Default_Model_Constraints::detai_tinhtrang();
+    	$result = array();
+    	foreach ($dsDeTais as $de_tai)
+    	{
+    		$url = $link->url(array(    
+			            'controller' => 'de-tai',  
+			            'action'     => 'chi-tiet',  
+			            'id'   => $de_tai['id'],  
+			        ),null,true);
+			$chu_nhiem = $dang_ky->getChuNhiemDT($de_tai['id']);
+	      	$result[] = array(
+							  'type' => 'default_de_tai',
+							  'code' => $de_tai['ma'],
+	      					  'title' => $de_tai['ten'],
+	      					  'description' => 'Chủ nhiệm : ' . $chu_nhiem['hoc_vi'] . ' ' . $chu_nhiem['ho'] . ' ' . $chu_nhiem['ten'] . '
+	      									   | Lĩnh vực : ' . $de_tai['linh_vuc'] .'
+	      									   | Tình trạng : ' . $tinhTrangs[$de_tai['tinh_trang']],
+	      					  'link' => $url
+	      	);
+    	}
+		
+		return $result; 
     }
     
 	public function kiem_tra_giang_vien($ho_ten,$ma_don_vi,$ma_hoc_vi)

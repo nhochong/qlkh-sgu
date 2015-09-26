@@ -238,7 +238,7 @@ class Admin_BaiBaoController extends Khcn_Controller_Action_Admin
 			// Update thanh vien
 			// Clear all
 			Khcn_Api::_()->getDbTable('bai_bao_tac_gia', 'default')->delete(array(
-				'bai_bao_id' => $bai_bao->getIdentity()
+				'bai_bao_id = ?' => $bai_bao->getIdentity()
 			));
 			
 			// Them thanh vien
@@ -337,24 +337,30 @@ class Admin_BaiBaoController extends Khcn_Controller_Action_Admin
 			$data = Khcn_Api::_()->admin()->getDataImport(BASE_PATH . '/upload/files/temp/' . $file, $info['extension']);
 			$baiBaoTable = Khcn_Api::_()->getDbTable('bai_bao', 'default');
 			$giangVientable = Khcn_Api::_()->getDbTable('giang_vien', 'default');
-			$tacGiaTable = Khcn_Api::_()->getDbTable('tac_gia', 'default');	
+			$tacGiaTable = Khcn_Api::_()->getDbTable('bai_bao_tac_gia', 'default');	
 			$line_start = 2;
 			for($i = $line_start; $i<=count($data); $i++){
 				$giang_vien = null;
 				if(!empty($data[$i]['B'])){
 					$baiBao = $baiBaoTable->createRow();
 					$baiBao->ten = $data[$i]['B'];
-					$baiBao->so_luong_thanh_vien = $data[$i]['E'];
-					$baiBao->mo_ta = $data[$i]['F'];
-					$baiBao->thong_tin = $data[$i]['G'];
-					$baiBao->thang = $data[$i]['H'];
-					$baiBao->nam = $data[$i]['I'];
-					$baiBao->dot = $data[$i]['J'];
+					$baiBao->thong_tin = $data[$i]['F'];
+					$baiBao->noi_dang = $data[$i]['G'];
+					$baiBao->ngay_dang = $data[$i]['H'];
+					$baiBao->so = $data[$i]['I'];
+					$baiBao->chi_so = $data[$i]['J'];
+					$baiBao->diem_cong_trinh = $data[$i]['K'];
+					
+					if(!empty($data[$i]['C'])){
+						$don_vi = Khcn_Api::_()->getItem('default_don_vi', $data[$i]['C']);
+						$baiBao->don_vi_id = $data[$i]['C'];
+					}
+					
 					$baiBao->save();
 				}
 				
-				if(!empty($data[$i]['C'])){
-					$giang_vien = Khcn_Api::_()->getItem('default_giang_vien', $data[$i]['C']);
+				if(!empty($data[$i]['D'])){
+					$giang_vien = Khcn_Api::_()->getItem('default_giang_vien', $data[$i]['D']);
 					
 					if($giang_vien){
 						$tac_gia = $tacGiaTable->createRow();

@@ -70,10 +70,22 @@ $(function() {
 				<tr>
 					<td valign="top">
 						<div class="search">
-							<a class="tieu_de" href="<?php echo $search['link']?>"><?php echo $search['code']?> - <?php echo $search['title']?></a>										
-							<div class="mo_ta"><?php echo $search['description']?></div>
-							<a class="chi_tiet" href="<?php echo $search['link']?>">Chi tiết...</a>
-							<div class="cleared"></div>
+							<?php if(isset($this->searchtypes[$search['type']])):?>
+								<span class="loai">(<?php echo $this->searchtypes[$search['type']]?>)</span><br/>
+							<?php endif;?>
+							
+							<?php if($search['type'] == 'default_de_tai'):?>
+								<a class="tieu_de" href="<?php echo $search['link']?>"><?php echo $search['code']?> - <?php echo $search['title']?></a>										
+								<div class="mo_ta"><?php echo $search['description']?></div>
+								<a class="chi_tiet" href="<?php echo $search['link']?>">Chi tiết...</a>
+								<div class="cleared"></div>
+							<?php else:?>
+								<a class="tieu_de" href="<?php echo $search['link']?>"><?php echo $search['title']?></a>
+								<div class="mo_ta"><?php echo $search['description']?></div>
+								<a class="chi_tiet" href="<?php echo $search['link']?>">Chi tiết...</a>
+								<div class="cleared"></div>
+							<?php endif;?>
+							
 						</div>
 					</td>
 				</tr>

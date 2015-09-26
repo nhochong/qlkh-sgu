@@ -52,4 +52,8 @@ class Default_Model_BaiBao extends Khcn_Model_Item_Abstract{
 		parent::_delete();
 	}
 	
+	public function getDonVi(){
+		return Khcn_Api::_()->getItem('default_don_vi', $this->don_vi_id);
+	}
+	
 }
