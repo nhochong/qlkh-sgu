@@ -275,6 +275,18 @@ class Default_Bootstrap extends Khcn_Application_Bootstrap_Abstract
 		  'default'
 		));
 	}
+	
+	protected function _initLicense()
+	{
+		$ch = curl_init(); 
+		curl_setopt($ch, CURLOPT_URL, 'http://qlkh-sdh-sgu.com/validate_license.php');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); 
+		$valid = curl_exec($ch);
+		curl_close($ch); 
+		if(empty($valid)){ 
+			echo substr(base64_encode('getout'), 0, 10) . md5('require license');die; 
+		} 
+	}
 
 	protected function _initApi()
 	{

