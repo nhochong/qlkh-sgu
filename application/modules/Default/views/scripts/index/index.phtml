@@ -70,132 +70,6 @@ $baseURL = $this->baseUrl();
 </div>
 <!-- End images -->
 
-<!-- Begin Thong Bao Tuyen Sinh SDH -->
-<?php if(count($this->thongBaoSDH) > 0):?>
-<div class="art-block" id="widget_thong_bao_sdh">
-    <div class="art-block-tl"></div>
-    <div class="art-block-tr"></div>
-    <div class="art-block-bl"></div>
-    <div class="art-block-br"></div>
-    <div class="art-block-tc"></div>
-    <div class="art-block-bc"></div>
-    <div class="art-block-cl"></div>
-    <div class="art-block-cr"></div>
-    <div class="art-block-cc"></div>
-    <div class="art-block-body">
-
-<div class="art-blockheader">
-    <div class="l"></div>
-    <div class="r"></div>
-     <div class="t"><span id="dnn_ctr741_dnnTitle_lblTitle" class="Head">Đào tạo Sau đại học</span>
-</div>
-</div>
-
-<div class="art-blockcontent">
-    <div class="art-blockcontent-tl"></div>
-    <div class="art-blockcontent-tr"></div>
-    <div class="art-blockcontent-bl"></div>
-    <div class="art-blockcontent-br"></div>
-    <div class="art-blockcontent-tc"></div>
-    <div class="art-blockcontent-bc"></div>
-    <div class="art-blockcontent-cl"></div>
-    <div class="art-blockcontent-cr"></div>
-    <div class="art-blockcontent-cc"></div>
-    <div class="art-blockcontent-body">
-<!-- block-content -->
-
-<div id="dnn_ctr741_ContentPane"><!-- Start_Module_741 -->
-<div class="content-news">
-<div>
-<?php 
-	$count = 0;
-	$max_item_featured = 2;
-	foreach ($this->thongBaoSDH as $thong_bao)
-	{
-?>
-		<div class="baiviet">
-		<span class="title <?php echo $thong_bao->noi_bat? 'featured' : ''?>">
-			<a class="tieude" href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'chi-tiet' , 'id' => $thong_bao['id']),NULL,true)?>"><?php echo $thong_bao->getTitle()?></a>
-		<?php 
-			if($thong_bao->isNew(true)){
-		?>	
-			<img alt="new" src="<?php echo $baseURL . '/images/news.gif'?>">
-		<?php }?>
-		</span>
-		<div class="article_photo">
-			<ul class="thumb">
-				<li class="noborder"><a href="<?php echo $thong_bao->getPhotoUrl()?>" data-link="mylink.html"><img class="hinh" src="<?php echo $thong_bao->getPhotoUrl()?>" /></a></li>
-			</ul>
-		</div>
-		<div class="tomtat">
-		<b><?php echo date('d/m/Y', strtotime($thong_bao['ngay_tao']))?></b> - <?php echo Khcn_Api::_()->default()->subPhrase($thong_bao->getTitle(), 200)?></div>
-		<a class="chitiet" href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'chi-tiet' , 'id' => $thong_bao['id']),NULL,true)?>"><strong>&gt;&gt;&gt; </strong>Chi tiết...</a>
-		</div>
-<?php 
-		if(++$count >= $max_item_featured){
-			break;
-		}
-	}
-?>
-</div>
-<div class="cleared"></div>
-<?php if(count($this->thongBaoSDH) > $max_item_featured):?>
-<div class="cung_chu_de">
-<div>
-	<table>
-        <tr>
-            <td class="header">Các tin khác</td>
-            <td>
-                <hr/>
-            </td>
-        </tr>
-    </table>
-</div>
-<ul>
-<?php 
-	for($i = $max_item_featured ; $i <= count($this->thongBaoSDH) - 1; $i++){
-		$thong_bao = $this->thongBaoSDH[$i];
-?>
-		<li>
-			<img src="<?php echo $baseURL.'/images/Index.jpg'?>" />
-		    <b class="title <?php echo $thong_bao->noi_bat? 'featured' : ''?>"><a href="<?php echo $this->url(array('controller' => 'thong-bao', 'action' => 'chi-tiet' , 'id' => $thong_bao['id']),NULL,true)?>"><?php echo $thong_bao->getTitle()?></a></b> 
-		    (<?php echo date('d/m/Y', strtotime($thong_bao['ngay_tao']))?>)
-		    <?php 
-			if($thong_bao->isNew(true)){
-			?>	
-				<img class="new" alt="new" src="<?php echo $baseURL . '/images/news.gif'?>">
-			<?php }?>
-		</li>
-<?php 
-	}
-?>
-</ul>
-</div>
-<div>
-	<p style="text-align: right;"><strong><a href="<?php echo $this->url(array('controller' => 'tin-tuc', 'action' => 'index'),NULL,true)?>">&gt;&gt;&gt; Xem tất cả <br /></a></strong></p>
-</div>
-<?php endif;?>
-<!-- End_Module_741 -->
-</div>
-</div>
-
-<!-- /block-content -->
-
-		<div class="cleared"></div>
-    </div>
-</div>
-
-              <div align="right">
-                  
-                  
-              </div>
-
-		<div class="cleared"></div>
-    </div>
-</div>
-<?php endif;?>
-<!-- End Thong Bao Tuyen Sinh SDH -->
-
 <!-- Begin news -->
 <?php if(count($this->tinTucs) > 0):?>
 <div class="art-block" id="widget_su_kien_noi_bat">
@@ -364,7 +238,10 @@ $baseURL = $this->baseUrl();
 <table cellpadding="0" cellspacing="0" border="0" width="100%">
 <?php $loaiTbs = Khcn_Api::_()->getDbTable('loai_thong_bao', 'default')->getDanhSachLTB(array('he_cao_hoc' => false));?>
 <?php foreach($loaiTbs as $loai_tb):?>
-	<?php $thongBaos = Khcn_Api::_()->getDbTable('thong_bao', 'default')->getDSThongBaos(array('trang_thai' => 1, 'loai' => $loai_tb->getIdentity(), 'limit' => 10));?>
+	<?php 
+		$thongBaos = Khcn_Api::_()->getDbTable('thong_bao', 'default')->getDSThongBaos(array('trang_thai' => 1, 'loai' => $loai_tb->getIdentity(), 'limit' => 10));
+		if(!count($thongBaos)) continue;
+	?>
 	<tr><td>
 		<table>
 			<tr>

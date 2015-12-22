@@ -55,7 +55,7 @@ class Admin_CauHinhController extends Khcn_Controller_Action_Admin
     public function hinhAnhAction()
     {
     	// TODO Auto-generated {0}::indexAction() default action
-        $hinhAnhs = $this->hinh_anh->getAll();
+        $hinhAnhs = Khcn_Api::_()->getDbTable('hinh_anh', 'default')->fetchAll();
         
         $paginator = Zend_Paginator::factory($hinhAnhs);
         $currentPage = 1;
@@ -138,13 +138,13 @@ class Admin_CauHinhController extends Khcn_Controller_Action_Admin
 			$this->_redirect('/admin/cau-hinh/hinh-anh');
 		}
 		foreach($_POST['item'] as $id){			
-			$hinh_anh = $this->hinh_anh->getHinhAnh($id);			
+			$hinh_anh = Khcn_Api::_()->getItem('default_hinh_anh', $id);
 			if($hinh_anh != NULL)
 			{			
 				if($hinh_anh['ten_file'] != '' && file_exists( BASE_PATH . '/flash/image-scroller/images/' . $hinh_anh['ten_file']))
 						unlink( BASE_PATH . '/flash/image-scroller/images/' . $hinh_anh['ten_file']);
 				//xoa database
-				$kq = $this->hinh_anh->xoa($id);
+				$kq = $hinh_anh->delete();
 			}			
 		}
 		$this->flash();
@@ -157,12 +157,12 @@ class Admin_CauHinhController extends Khcn_Controller_Action_Admin
     {
     	$id = $this->_getParam('id');
     	if(!empty($id)){
-    		$hinh_anh = $this->hinh_anh->getHinhAnh($id);
+    		$hinh_anh = Khcn_Api::_()->getItem('default_hinh_anh', $id);
     		if($hinh_anh != null){
 				if($hinh_anh['ten_file'] != '' && file_exists( BASE_PATH . '/flash/image-scroller/images/' . $hinh_anh['ten_file']))
 						unlink( BASE_PATH . '/flash/image-scroller/images/' . $hinh_anh['ten_file']);
 				
-    			$kq = $this->hinh_anh->xoa($id);
+    			$kq = $hinh_anh->delete();
     			if(!$kq){
     				$_SESSION['msg'] = 'Lỗi !. Đã có lỗi trong quá trình xử lý, vui lòng thử lại .';
 					$_SESSION['type_msg'] = 'error';
@@ -187,9 +187,10 @@ class Admin_CauHinhController extends Khcn_Controller_Action_Admin
     	$id = $this->_getParam('id');
     	$status = $this->_getParam('status');
     	if(!empty($id)){
-    		$hinh_anh = $this->hinh_anh->getHinhAnh($id);
+    		$hinh_anh = Khcn_Api::_()->getItem('default_hinh_anh', $id);
     		if($hinh_anh != null){
-	    		$kq = $this->hinh_anh->CapNhatTT($id,$status);
+				$hinh_anh->trang_thai = 1 - $status;
+	    		$kq = $hinh_anh->save();
 	    		if(!$kq){
 	    			$_SESSION['msg'] = 'Lỗi !. Đã có lỗi trong quá trình xử lý, vui lòng thử lại .';
 					$_SESSION['type_msg'] = 'error';
@@ -212,8 +213,9 @@ class Admin_CauHinhController extends Khcn_Controller_Action_Admin
      */
     private function flash()
     {
-    	$hinh_anh = new Default_Model_HinhAnh();
-		$hinhAnhs = $hinh_anh->getDSHA();
+    	$hinhAnhTable = Khcn_Api::_()->getDbTable('hinh_anh', 'default');
+		$select = $hinhAnhTable->select()->where('slideshow = 1');
+		$hinhAnhs = $hinhAnhTable->fetchAll($select);
 		$text = '<photos>';
 		foreach ($hinhAnhs as $hinhAnh){
 			$text .= '<photo image="images/' . $hinhAnh['ten_file'] . '" colorboxImage="images/' . $hinhAnh['ten_file'] . '" colorboxInfo="" colorboxClass="image" url="" target="_blank"><![CDATA[<head></head><body></body>]]></photo>';
