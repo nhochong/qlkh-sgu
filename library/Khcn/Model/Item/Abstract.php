@@ -320,7 +320,7 @@ abstract class Khcn_Model_Item_Abstract extends Khcn_Db_Table_Row implements Khc
       return null;
     }
 
-    return Zend_Registry::get('Zend_View')->getBaseUrl() . '/upload/files/' . $this->getClassType() . '/' . $this->$column;
+    return Zend_Registry::get('Zend_View')->baseUrl() . '/upload/files/' . $this->getClassType() . '/' . $this->$column;
   }
   
   /**

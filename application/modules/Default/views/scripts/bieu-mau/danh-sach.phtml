@@ -3,7 +3,7 @@
 	<?php if(count($this->childs) > 0):?>
 		<ul class="rules">
 			<?php foreach ($this->childs as $child):?>
-				<li class="child"><a class="Normal" href="<?php echo $this->baseUrl() . '/bieu-mau/danh-sach/loai/' . $child->getIdentity() ?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder.gif'?>" /> <?php echo $child->getTitle() ?></a></li>
+				<li class="child"><a class="Normal" href="<?php echo $this->url(array('controller' => 'bieu-mau','action' => 'danh-sach', 'loai' => $child->getIdentity()),null,true);?>">|--<img src="<?php echo $this->baseUrl() . '/images/folder.gif'?>" /> <?php echo $child->getTitle() ?></a></li>
 			<?php endforeach;?>
 		</ul>
 	<?php endif;?>
